@@ -27,21 +27,23 @@ public:
     Word() {}
     Word(std::string, Alphabet &);
     ~Word() {}
+    
     // Operaciones con las cadenas
     int wordLength();
     std::string wordInverse();
-   
+    void wordPrefixes(std::ostream &);
+    void wordSuffixes(std::ostream &);
+    void wordSubstrings(std::ostream &);
+
     void searchSymbol();
     void write();
 };
 
 Word::Word(std::string str, Alphabet &alph)
 {
-
     word_ = str;
     alphabet_ = alph;
 }
-
 
 void Word::searchSymbol()
 {
@@ -49,7 +51,7 @@ void Word::searchSymbol()
 
     for (size_t i = 0; i < word_.length(); i++)
     {
-       alphabet_.getAlphabet()[0].uniqueSymbol(word_[i]);
+        alphabet_.getAlphabet()[0].uniqueSymbol(word_[i]);
     }
 }
 
@@ -68,8 +70,43 @@ std::string Word::wordInverse()
 {
     std::string aux;
     for (size_t i = word_.length(); i > 0; i--)
-    {
         aux += word_[i - 1];
-    }
+
     return aux;
+}
+
+void Word::wordPrefixes(std::ostream &os)
+{
+    os << STR_EMPTY << " ";
+    for (size_t i = 0; i < word_.length(); i++)
+    {
+        for (size_t j = 0; j <= i; j++)
+            os << word_[j];
+
+        os << " ";
+    }
+    os << std::endl;
+}
+
+void Word::wordSuffixes(std::ostream &os)
+{
+
+    os << STR_EMPTY << " ";
+
+    for (int i = word_.length(); i >= 0; i--)
+        os << word_.substr(i) << " ";
+
+    os << std::endl;
+}
+
+void Word::wordSubstrings(std::ostream &os)
+{
+    os << STR_EMPTY << " ";
+
+    for (size_t i = 0; i < word_.length(); i++)
+    {
+        for (size_t j = 0; j < word_.length() - i; j++)
+            os << word_.substr(j, i + 1) << " ";
+    }
+    os << std::endl;
 }

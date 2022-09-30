@@ -115,15 +115,31 @@ void value(char *fileInput, char *fileOutput, int opcode)
     switch (opcode)
     {
     case 1:
-        nameFileOutput << "--Longitud de la cadena" << std::endl;
+        nameFileOutput << "Longitud de la cadena" << std::endl;
         for (size_t i = 0; i < aux.size(); i++)
             nameFileOutput << aux[i].wordLength() << std::endl;
         break;
     case 2:
-        nameFileOutput << "--Inversa de la cadena" << std::endl;
+        nameFileOutput << "Inversa de la cadena" << std::endl;
         for (size_t i = 0; i < aux.size(); i++)
             nameFileOutput << aux[i].wordInverse() << std::endl;
         break;
+    case 3:
+        nameFileOutput << "Prefijos de la cadena" << std::endl;
+        for (size_t i = 0; i < aux.size(); i++)
+            aux[i].wordPrefixes(nameFileOutput);
+        break;
+    case 4:
+        nameFileOutput << "Sufijos de la cadena" << std::endl;
+        for (size_t i = 0; i < aux.size(); i++)
+            aux[i].wordSuffixes(nameFileOutput);
+        break;
+    case 5:
+        nameFileOutput << "Subcadenas de la cadena" << std::endl;
+        for (size_t i = 0; i < aux.size(); i++)
+            aux[i].wordSubstrings(nameFileOutput);
+        break;
+
     default:    
         std::cout << "Error al ejecutar." << std::endl;
         std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
