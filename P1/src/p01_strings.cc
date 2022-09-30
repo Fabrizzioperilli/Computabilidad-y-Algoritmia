@@ -23,7 +23,8 @@
 #include "../include/Word.h"
 
 void help();
-void value(char *, char *, int);
+void read(char *, char *, int);
+void write(std::ofstream &, std::vector<Word>, int);
 std::vector<std::string> split(std::string, char);
 
 int main(int argc, char *argv[])
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
         int opcode = atoi(argv[3]);
         std::cout << "Ejecucion correcta. " << std::endl;
         std::cout << "Compruebe la salida en el fichero: " << argv[2] << std::endl;
-        value(argv[1], argv[2], opcode);
+        read(argv[1], argv[2], opcode);
     }
     else if ((argc == 2) && (argv[1] == optionHelp))
     {
@@ -66,7 +67,7 @@ void help()
     std::cout << "5 Subcadenas" << std::endl;
 }
 
-void value(char *fileInput, char *fileOutput, int opcode)
+void read(char *fileInput, char *fileOutput, int opcode)
 {
 
     std::string line;
@@ -80,25 +81,22 @@ void value(char *fileInput, char *fileOutput, int opcode)
     {
         getline(nameFileInput, line);
         auxLine = split(line, ' ');
-        
 
         Symbol symbol;
         for (size_t i = 0; i < auxLine.size() - 1; i++)
             if (auxLine[i] != STR_EMPTY)
                 symbol.add(auxLine[i]);
-                    
+
         Alphabet alphabet;
         alphabet.add(symbol);
         Word word(auxLine.back(), alphabet);
         aux.push_back(word);
-        
 
-        
-        if (symbol.empty()){
+        if (symbol.empty())
+        {
             std::cout << "El ultimo alfabeto es vacio " << std::endl;
             word.searchSymbol();
         }
-
 
         std::cout << "Simbolos: ";
         symbol.write();
@@ -109,9 +107,14 @@ void value(char *fileInput, char *fileOutput, int opcode)
         std::cout << "\nCadena: ";
         word.write();
         std::cout << std::endl;
-
     }
+    nameFileInput.close();
+    write(nameFileOutput, aux, opcode);
+}
 
+
+void write(std::ofstream &nameFileOutput, std::vector<Word> aux, int opcode)
+{
     switch (opcode)
     {
     case 1:
@@ -140,17 +143,13 @@ void value(char *fileInput, char *fileOutput, int opcode)
             aux[i].wordSubstrings(nameFileOutput);
         break;
 
-    default:    
+    default:
         std::cout << "Error al ejecutar." << std::endl;
         std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
         break;
     }
-
-    nameFileInput.close();
     nameFileOutput.close();
 }
-
-
 
 
 std::vector<std::string> split(std::string str, char pattern)
