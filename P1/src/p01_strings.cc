@@ -33,8 +33,9 @@ int main(int argc, char *argv[])
 
     if (argc == 4)
     {
-        std::cout << "Parametros correctos" << std::endl;
         int opcode = atoi(argv[3]);
+        std::cout << "Ejecucion correcta. " << std::endl;
+        std::cout << "Compruebe la salida en el fichero: " << argv[2] << std::endl;
         value(argv[1], argv[2], opcode);
     }
     else if ((argc == 2) && (argv[1] == optionHelp))
@@ -73,25 +74,64 @@ void value(char *fileInput, char *fileOutput, int opcode)
     std::ofstream nameFileOutput(fileOutput);
 
     std::vector<std::string> auxLine;
+    std::vector<Word> aux;
 
     while (!nameFileInput.eof())
     {
         getline(nameFileInput, line);
         auxLine = split(line, ' ');
+        
 
         Symbol symbol;
         for (size_t i = 0; i < auxLine.size() - 1; i++)
-            symbol.add(auxLine[i]);
-        
+            if (auxLine[i] != STR_EMPTY)
+                symbol.add(auxLine[i]);
+                    
         Alphabet alphabet;
         alphabet.add(symbol);
         Word word(auxLine.back(), alphabet);
+        aux.push_back(word);
         
-        // Cuando no se especifica el alfabeto
-        if (alphabet.empty()){
+
+        
+        if (symbol.empty()){
+            std::cout << "El ultimo alfabeto es vacio " << std::endl;
             word.searchSymbol();
         }
+
+
+        std::cout << "Simbolos: ";
+        symbol.write();
+
+        std::cout << "\nAlfabeto:  ";
+        alphabet.write();
+
+        std::cout << "\nCadena: ";
+        word.write();
+        std::cout << std::endl;
+
     }
+
+    switch (opcode)
+    {
+    case 1:
+        nameFileOutput << "--Longitud de la cadena" << std::endl;
+        for (size_t i = 0; i < aux.size(); i++)
+            nameFileOutput << aux[i].wordLength() << std::endl;
+        break;
+    case 2:
+        nameFileOutput << "--Inversa de la cadena" << std::endl;
+        for (size_t i = 0; i < aux.size(); i++)
+            nameFileOutput << aux[i].wordInverse() << std::endl;
+        break;
+    default:    
+        std::cout << "Error al ejecutar." << std::endl;
+        std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
+        break;
+    }
+
+    nameFileInput.close();
+    nameFileOutput.close();
 }
 
 

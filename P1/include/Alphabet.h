@@ -30,6 +30,10 @@ public:
     std::vector<Symbol> getAlphabet(){
         return alphabet_;
     }
+
+    void setAlphabet(std::vector<Symbol> sym){
+        alphabet_ = sym;
+    }
 };
 
 Alphabet::Alphabet(std::vector<Symbol> symbol)
@@ -48,7 +52,7 @@ void Alphabet::write()
         alphabet_[i].write();
 }
 
-bool Alphabet::empty(){
-
+bool Alphabet::empty()
+{
     return alphabet_.empty();
 }

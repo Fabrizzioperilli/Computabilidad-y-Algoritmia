@@ -16,6 +16,7 @@
 #pragma once
 #include "../include/Alphabet.h"
 
+const std::string STR_EMPTY = "&";
 class Word
 {
 private:
@@ -28,20 +29,34 @@ public:
     ~Word() {}
     // Operaciones con las cadenas
     int wordLength();
+    std::string wordInverse();
+   
     void searchSymbol();
     void write();
 };
 
 Word::Word(std::string str, Alphabet &alph)
 {
-    
+
     word_ = str;
     alphabet_ = alph;
+}
 
-    std::cout << "Alfabeto:  ";
-    alphabet_.write();
-    std::cout << std::endl;
-    std::cout << "Cadena: " << word_ << std::endl;
+
+void Word::searchSymbol()
+{
+    std::vector<std::string> aux;
+
+    for (size_t i = 0; i < word_.length(); i++)
+    {
+       alphabet_.getAlphabet()[0].uniqueSymbol(word_[i]);
+    }
+}
+
+void Word::write()
+{
+    for (size_t i = 0; i < word_.size(); i++)
+        std::cout << word_[i];
 }
 
 int Word::wordLength()
@@ -49,19 +64,12 @@ int Word::wordLength()
     return word_.length();
 }
 
-void Word::searchSymbol()
+std::string Word::wordInverse()
 {
-    char c;
-    for (size_t i = 0; i < word_.length(); i++)
+    std::string aux;
+    for (size_t i = word_.length(); i > 0; i--)
     {
-        std::cout << word_[i] << " ";
-        c = word_[i];
-        alphabet_.getAlphabet()[i].uniqueSymbol(c);
-
+        aux += word_[i - 1];
     }
-}
-
-void Word::write()
-{
-    alphabet_.write();
+    return aux;
 }

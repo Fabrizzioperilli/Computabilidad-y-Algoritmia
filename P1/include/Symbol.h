@@ -32,6 +32,7 @@ public:
     void uniqueSymbol(char);
     void add(std::string);
     inline std::string getSymbol();
+    bool empty();
     
 };
 
@@ -57,11 +58,8 @@ void Symbol::write(){
 
 void Symbol::uniqueSymbol(char c){
   
-    for (size_t i = 0; i < symbol_.size(); i++)
-    {
-        symbol_[i].append(1, c);
-        std::cout << symbol_[i] << " ";
-    }
+    std::string str(1, c);
+    symbol_.push_back(str);
     
 }
 
@@ -70,4 +68,8 @@ std::string Symbol::getSymbol(){
     for (size_t i = 0; i < symbol_.size(); i++)
         str = symbol_[i];
     return str;
+}
+
+bool Symbol::empty(){
+    return symbol_.empty();
 }
