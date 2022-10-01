@@ -16,51 +16,60 @@
 #pragma once
 #include "Symbol.h"
 
-class Alphabet
-{
-private:
-    std::vector<Symbol> alphabet_;
+class Alphabet {
+ private:
+  std::vector<Symbol> alphabet_;
 
-public:
-    Alphabet() {}
-    Alphabet(std::vector<Symbol>);
-    ~Alphabet() {}
-    void write();
-    void add(Symbol&);
-    bool empty();
-    std::vector<Symbol> getAlphabet(){
-        return alphabet_;
-    }
+ public:
+  Alphabet();
+  Alphabet(std::vector<Symbol>);
+  ~Alphabet();
 
-    void setAlphabet(std::vector<Symbol> sym){
-        alphabet_ = sym;
-    }
-    int nSymbol(){
-        return alphabet_[0].nSymbol();
-    }
-
-    bool inAlphabet(std::string str){
-        return alphabet_[0].findSymbol(str);
-    }
+  void Add(Symbol &);
+  bool Empty();
+  std::vector<Symbol> getAlphabet();
+  int Size();
+  bool Search(std::string);
+  void Write();
 };
 
-Alphabet::Alphabet(std::vector<Symbol> symbol)
-{
-    alphabet_ = symbol;
+Alphabet::Alphabet(){}
+
+
+Alphabet::Alphabet(std::vector<Symbol> symbol) { 
+    alphabet_ = symbol; 
 }
 
-void Alphabet::add(Symbol &symbol)
-{
-    alphabet_.push_back(symbol);
+
+Alphabet::~Alphabet(){}
+
+
+void Alphabet::Add(Symbol &symbol) { 
+    alphabet_.push_back(symbol); 
 }
 
-void Alphabet::write()
-{
-    for (size_t i = 0; i < alphabet_.size(); i++)
-        alphabet_[i].write();
+
+bool Alphabet::Empty() { 
+    return alphabet_.empty(); 
 }
 
-bool Alphabet::empty()
-{
-    return alphabet_.empty();
+
+std::vector<Symbol> Alphabet::getAlphabet() { 
+    return alphabet_; 
+}
+
+
+int Alphabet::Size() { 
+    return alphabet_[0].SymbolSize(); 
+}
+
+
+bool Alphabet::Search(std::string str) { 
+    return alphabet_[0].FindSymbol(str); 
+}
+
+  
+void Alphabet::Write() {
+  for (size_t i = 0; i < alphabet_.size(); i++) 
+      alphabet_[i].Write();
 }

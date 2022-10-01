@@ -15,72 +15,69 @@
 
 #pragma once
 
-#include <vector>
 #include <string.h>
+#include <vector>
 
-class Symbol
-{
+class Symbol {
 private:
-    std::vector<std::string> symbol_;
+  std::vector<std::string> symbol_;
 
-public:
-    Symbol();
-    Symbol(std::vector<std::string>);
-    ~Symbol();
-    void write();
+ public:
+  Symbol();
+  Symbol(std::vector<std::string>);
+  ~Symbol();
 
-    void uniqueSymbol(char);
-    void add(std::string);
-    inline std::vector<std::string> getSymbol();
-    bool empty();
-    int nSymbol()
-    {
-        return symbol_.size();
-    }
-    bool findSymbol(std::string str)
-    {
-        for (size_t i = 0; i < symbol_.size(); i++)
-            if (symbol_[i] == str)
-                return true;
-            
-    }
+  inline std::vector<std::string> GetSymbol();
+  
+  void Add(std::string);
+  bool Empty();
+  int SymbolSize();
+  bool FindSymbol(std::string);
+  void Write();
 };
-
-Symbol::Symbol(std::vector<std::string> str)
-{
-    symbol_ = str;
-}
 
 Symbol::Symbol() {}
 
+
+Symbol::Symbol(std::vector<std::string> str) { 
+    symbol_ = str; 
+}
+
+
 Symbol::~Symbol() {}
 
-void Symbol::add(std::string str)
-{
-    symbol_.push_back(str);
+
+std::vector<std::string> Symbol::GetSymbol() { 
+    return symbol_; 
 }
 
-void Symbol::write()
-{
 
-    for (size_t i = 0; i < symbol_.size(); i++)
-        std::cout << symbol_[i] << " ";
+void Symbol::Add(std::string str) { 
+    symbol_.push_back(str); 
 }
 
-void Symbol::uniqueSymbol(char c)
-{
 
-    std::string str(1, c);
-    symbol_.push_back(str);
+bool Symbol::Empty() { 
+    return symbol_.empty(); 
 }
 
-std::vector<std::string> Symbol::getSymbol()
-{
 
-    return symbol_;
+int Symbol::SymbolSize() { 
+    return symbol_.size(); 
 }
 
-bool Symbol::empty()
-{
-    return symbol_.empty();
+
+bool Symbol::FindSymbol(std::string str) {
+  for (size_t i = 0; i < symbol_.size(); i++)
+    if (symbol_[i] == str) 
+    return true;
 }
+
+
+void Symbol::Write() {
+  for (size_t i = 0; i < symbol_.size(); i++) 
+    std::cout << symbol_[i] << " ";
+}
+
+
+

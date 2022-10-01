@@ -13,156 +13,147 @@
 // Historial de revisiones:
 // Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
 
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <string.h>
-#include "Symbol.h"
+
+#include <fstream>
+#include <iostream>
+#include <vector>
+
 #include "Alphabet.h"
+#include "Symbol.h"
 #include "Word.h"
 
-void help();
-void read(char *, char *, int);
-void write(std::ofstream &, std::vector<Word>, int);
-std::vector<std::string> split(std::string, char);
+void Help();
+void Read(char *, char *, int);
+void Write(std::ofstream &, std::vector<Word>, int);
+std::vector<std::string> Split(std::string, char);
 
-int main(int argc, char *argv[])
-{
 
-    const std::string optionHelp = "--help";
+int main(int argc, char *argv[]) {
+  const std::string kOptionHelp = "--help";
 
-    if (argc == 4)
-    {
-        int opcode = atoi(argv[3]);
-        std::cout << "Ejecucion correcta. " << std::endl;
-        std::cout << "Compruebe la salida en el fichero: " << argv[2] << std::endl;
-        read(argv[1], argv[2], opcode);
-    }
-    else if ((argc == 2) && (argv[1] == optionHelp))
-    {
-        help();
-        return -1;
-    }
-    else
-    {
-        std::cout << "Error al ejecutar." << std::endl;
-        std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
-        return -1;
-    }
+  if (argc == 4) {
+    int opcode = atoi(argv[3]);
+    std::cout << "Ejecucion correcta. " << std::endl;
+    std::cout << "Compruebe la salida en el fichero: " << argv[2] << std::endl;
+    Read(argv[1], argv[2], opcode);
+  } 
+  else if ((argc == 2) && (argv[1] == kOptionHelp)) {
+    Help();
+    return -1;
+  } 
+  else {
+    std::cout << "Error al ejecutar." << std::endl;
+    std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
+    return -1;
+  }
 
-    return 0;
-}
-
-void help() {
-    std::cout << "Modo de funcionamiento: " << std::endl;
-    std::cout << "./p01_strings FicheroEntrada.txt FicheroSalida.txt NumeroOperacion" << std::endl;
-    std::cout << "--Operaciones con cadenas" << std::endl;
-    std::cout << "1 Longitud" << std::endl;
-    std::cout << "2 Inversa" << std::endl;
-    std::cout << "3 Prefijos" << std::endl;
-    std::cout << "4 Sufijos" << std::endl;
-    std::cout << "5 Subcadenas" << std::endl;
-}
-
-void read(char *fileInput, char *fileOutput, int opcode)
-{
-
-    std::string line;
-    std::ifstream nameFileInput(fileInput);
-    std::ofstream nameFileOutput(fileOutput);
-
-    std::vector<std::string> auxLine;
-    std::vector<Word> aux;
-
-    while (!nameFileInput.eof())
-    {
-        getline(nameFileInput, line);
-        auxLine = split(line, ' ');
-
-        Symbol symbol;
-        for (size_t i = 0; i < auxLine.size() - 1; i++)
-            if (auxLine[i] != STR_EMPTY)
-                symbol.add(auxLine[i]);
-
-        Alphabet alphabet;
-        alphabet.add(symbol);
-        Word word(auxLine.back(), alphabet);
-        aux.push_back(word);
-
-        if (symbol.empty())
-        {
-            std::cout << "El ultimo alfabeto es vacio " << std::endl;
-        }
-
-        std::cout << "Simbolos: ";
-        symbol.write();
-
-        std::cout << "\nAlfabeto:  ";
-        alphabet.write();
-
-        std::cout << "\nCadena: ";
-        word.write();
-        std::cout << std::endl;
-    }
-    nameFileInput.close();
-    write(nameFileOutput, aux, opcode);
+  return 0;
 }
 
 
-void write(std::ofstream &nameFileOutput, std::vector<Word> aux, int opcode)
-{
-    switch (opcode)
-    {
+void Help() {
+  std::cout << "Modo de funcionamiento: " << std::endl;
+  std::cout << "./p01_strings FicheroEntrada.txt FicheroSalida.txt NumeroOperacion" << std::endl;
+  std::cout << "--Operaciones con cadenas" << std::endl;
+  std::cout << "1 Longitud" << std::endl;
+  std::cout << "2 Inversa" << std::endl;
+  std::cout << "3 Prefijos" << std::endl;
+  std::cout << "4 Sufijos" << std::endl;
+  std::cout << "5 Subcadenas" << std::endl;
+}
+
+
+void Read(char *file_input, char *file_output, int opcode) {
+  std::string line;
+  std::ifstream namefile_input(file_input);
+  std::ofstream namefile_output(file_output);
+      
+  std::vector<std::string> split_line;
+  std::vector<Word> word_vector;
+
+  while (!namefile_input.eof()) {
+    getline(namefile_input, line);
+    split_line = Split(line, ' ');
+
+    Symbol symbol;
+    for (size_t i = 0; i < split_line.size() - 1; i++)
+      if (split_line[i] != STR_EMPTY) 
+        symbol.Add(split_line[i]);
+
+    Alphabet alphabet;
+    alphabet.Add(symbol);
+    Word word(split_line.back(), alphabet);
+    word_vector.push_back(word);
+
+    if (symbol.Empty()) {
+      std::cout << "El ultimo alfabeto es vacio " << std::endl;
+    }
+
+    std::cout << "Simbolos: ";
+    symbol.Write();
+
+    std::cout << "\nAlfabeto:  ";
+    alphabet.Write();
+
+    std::cout << "\nCadena: ";
+    word.Write();
+    std::cout << std::endl;
+  }
+  namefile_input.close();
+  Write(namefile_output, word_vector, opcode);
+}
+
+
+void Write(std::ofstream &namefile_output, std::vector<Word> word_vector, int opcode) {
+  switch (opcode) {
     case 1:
-        nameFileOutput << "Longitud de la cadena" << std::endl;
-        for (size_t i = 0; i < aux.size(); i++)
-            nameFileOutput << aux[i].wordLength() << std::endl;
-        break;
+      namefile_output << "Longitud de la cadena" << std::endl;
+      for (size_t i = 0; i < word_vector.size(); i++)
+        namefile_output << word_vector[i].WordLength() << std::endl;
+      break;
     case 2:
-        nameFileOutput << "Inversa de la cadena" << std::endl;
-        for (size_t i = 0; i < aux.size(); i++)
-            nameFileOutput << aux[i].wordInverse() << std::endl;
-        break;
+      namefile_output << "Inversa de la cadena" << std::endl;
+      for (size_t i = 0; i < word_vector.size(); i++)
+        namefile_output << word_vector[i].WordInverse() << std::endl;
+      break;
     case 3:
-        nameFileOutput << "Prefijos de la cadena" << std::endl;
-        for (size_t i = 0; i < aux.size(); i++)
-            aux[i].wordPrefixes(nameFileOutput);
-        break;
+      namefile_output << "Prefijos de la cadena" << std::endl;
+      for (size_t i = 0; i < word_vector.size(); i++)
+        word_vector[i].WordPrefixes(namefile_output);
+      break;
     case 4:
-        nameFileOutput << "Sufijos de la cadena" << std::endl;
-        for (size_t i = 0; i < aux.size(); i++)
-            aux[i].wordSuffixes(nameFileOutput);
-        break;
+      namefile_output << "Sufijos de la cadena" << std::endl;
+      for (size_t i = 0; i < word_vector.size(); i++)
+        word_vector[i].WordSuffixes(namefile_output);
+      break;
     case 5:
-        nameFileOutput << "Subcadenas de la cadena" << std::endl;
-        for (size_t i = 0; i < aux.size(); i++)
-            aux[i].wordSubstrings(nameFileOutput);
-        break;
+      namefile_output << "Subcadenas de la cadena" << std::endl;
+      for (size_t i = 0; i < word_vector.size(); i++)
+        word_vector[i].WordSubstrings(namefile_output);
+      break;
 
     default:
-        std::cout << "Error al ejecutar." << std::endl;
-        std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
-        break;
-    }
-    nameFileOutput.close();
+      std::cout << "Error al ejecutar." << std::endl;
+      std::cout << "Ejecute ./p01_strings --help para mas informacion" << std::endl;
+      break;
+  }
+  namefile_output.close();
 }
 
 
-std::vector<std::string> split(std::string str, char pattern)
-{
+std::vector<std::string> Split(std::string str, char pattern) {
+  int pos_init = 0;
+  int pos_found = 0;
+  std::string splitted;
+  std::vector<std::string> results;
 
-    int posInit = 0;
-    int posFound = 0;
-    std::string splitted;
-    std::vector<std::string> results;
+  while (pos_found >= 0) {
+    pos_found = str.find(pattern, pos_init);
+    splitted = str.substr(pos_init, pos_found - pos_init);
+    pos_init = pos_found + 1;
+    results.push_back(splitted);
+  }
 
-    while (posFound >= 0)
-    {
-        posFound = str.find(pattern, posInit);
-        splitted = str.substr(posInit, posFound - posInit);
-        posInit = posFound + 1;
-        results.push_back(splitted);
-    }
-
-    return results;
+  return results;
 }
