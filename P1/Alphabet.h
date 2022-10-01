@@ -35,6 +35,9 @@ public:
     void setAlphabet(std::vector<Symbol> sym){
         alphabet_ = sym;
     }
+    int nSymbol(){
+        return alphabet_[0].nSymbol();
+    }
 };
 
 Alphabet::Alphabet(std::vector<Symbol> symbol)

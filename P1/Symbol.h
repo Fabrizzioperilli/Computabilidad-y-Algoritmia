@@ -31,8 +31,11 @@ public:
 
     void uniqueSymbol(char);
     void add(std::string);
-    inline std::string getSymbol();
+    inline std::vector<std::string> getSymbol();
     bool empty();
+   int nSymbol(){
+    return symbol_.size();
+   }
     
 };
 
@@ -63,13 +66,12 @@ void Symbol::uniqueSymbol(char c){
     
 }
 
-std::string Symbol::getSymbol(){
-    std::string str;
-    for (size_t i = 0; i < symbol_.size(); i++)
-        str = symbol_[i];
-    return str;
+std::vector<std::string> Symbol::getSymbol(){
+    
+    return symbol_;
 }
 
 bool Symbol::empty(){
     return symbol_.empty();
 }
+

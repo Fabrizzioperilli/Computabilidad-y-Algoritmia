@@ -97,15 +97,15 @@ void read(char *fileInput, char *fileOutput, int opcode)
             word.searchSymbol();
         }
 
-        std::cout << "Simbolos: ";
-        symbol.write();
+        // std::cout << "Simbolos: ";
+        // symbol.write();
 
-        std::cout << "\nAlfabeto:  ";
-        alphabet.write();
+        // std::cout << "\nAlfabeto:  ";
+        // alphabet.write();
 
-        std::cout << "\nCadena: ";
-        word.write();
-        std::cout << std::endl;
+        // std::cout << "\nCadena: ";
+        // word.write();
+        // std::cout << std::endl;
     }
     nameFileInput.close();
     write(nameFileOutput, aux, opcode);

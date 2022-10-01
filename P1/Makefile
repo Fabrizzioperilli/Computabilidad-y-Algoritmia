@@ -14,7 +14,7 @@
 # Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 
-FILES= p01_strings.cc
+FILES= *.cc
 CXXFLAGS= -Wall -std=c++17 -ggdb
 
 

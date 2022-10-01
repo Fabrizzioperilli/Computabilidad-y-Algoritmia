@@ -27,7 +27,7 @@ public:
     Word() {}
     Word(std::string, Alphabet &);
     ~Word() {}
-    
+
     // Operaciones con las cadenas
     int wordLength();
     std::string wordInverse();
@@ -63,7 +63,17 @@ void Word::write()
 
 int Word::wordLength()
 {
-    return word_.length();
+    int count = 0;
+    std::string str;
+    for (int i = 0; i < alphabet_.nSymbol(); i++)
+    {
+        str = alphabet_.getAlphabet()[0].getSymbol()[i];
+        for (size_t i = 0; i < word_.length(); i++)
+            if (word_.substr(i, str.length()) == str)
+                count++;
+    }
+
+    return count;
 }
 
 std::string Word::wordInverse()
