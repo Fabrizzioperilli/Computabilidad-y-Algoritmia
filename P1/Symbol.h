@@ -33,10 +33,17 @@ public:
     void add(std::string);
     inline std::vector<std::string> getSymbol();
     bool empty();
-   int nSymbol(){
-    return symbol_.size();
-   }
-    
+    int nSymbol()
+    {
+        return symbol_.size();
+    }
+    bool findSymbol(std::string str)
+    {
+        for (size_t i = 0; i < symbol_.size(); i++)
+            if (symbol_[i] == str)
+                return true;
+            
+    }
 };
 
 Symbol::Symbol(std::vector<std::string> str)
@@ -53,25 +60,27 @@ void Symbol::add(std::string str)
     symbol_.push_back(str);
 }
 
-void Symbol::write(){
+void Symbol::write()
+{
 
     for (size_t i = 0; i < symbol_.size(); i++)
         std::cout << symbol_[i] << " ";
 }
 
-void Symbol::uniqueSymbol(char c){
-  
+void Symbol::uniqueSymbol(char c)
+{
+
     std::string str(1, c);
     symbol_.push_back(str);
-    
 }
 
-std::vector<std::string> Symbol::getSymbol(){
-    
+std::vector<std::string> Symbol::getSymbol()
+{
+
     return symbol_;
 }
 
-bool Symbol::empty(){
+bool Symbol::empty()
+{
     return symbol_.empty();
 }
-

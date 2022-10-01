@@ -53,9 +53,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void help()
-{
-
+void help() {
     std::cout << "Modo de funcionamiento: " << std::endl;
     std::cout << "./p01_strings FicheroEntrada.txt FicheroSalida.txt NumeroOperacion" << std::endl;
     std::cout << "--Operaciones con cadenas" << std::endl;
@@ -94,18 +92,17 @@ void read(char *fileInput, char *fileOutput, int opcode)
         if (symbol.empty())
         {
             std::cout << "El ultimo alfabeto es vacio " << std::endl;
-            word.searchSymbol();
         }
 
-        // std::cout << "Simbolos: ";
-        // symbol.write();
+        std::cout << "Simbolos: ";
+        symbol.write();
 
-        // std::cout << "\nAlfabeto:  ";
-        // alphabet.write();
+        std::cout << "\nAlfabeto:  ";
+        alphabet.write();
 
-        // std::cout << "\nCadena: ";
-        // word.write();
-        // std::cout << std::endl;
+        std::cout << "\nCadena: ";
+        word.write();
+        std::cout << std::endl;
     }
     nameFileInput.close();
     write(nameFileOutput, aux, opcode);

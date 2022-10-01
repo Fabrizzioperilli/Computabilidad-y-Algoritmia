@@ -38,6 +38,10 @@ public:
     int nSymbol(){
         return alphabet_[0].nSymbol();
     }
+
+    bool inAlphabet(std::string str){
+        return alphabet_[0].findSymbol(str);
+    }
 };
 
 Alphabet::Alphabet(std::vector<Symbol> symbol)

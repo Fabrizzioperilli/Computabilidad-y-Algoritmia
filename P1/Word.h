@@ -21,7 +21,7 @@ class Word
 {
 private:
     Alphabet alphabet_;
-    std::string word_;
+    std::vector<std::string> word_;
 
 public:
     Word() {}
@@ -35,88 +35,80 @@ public:
     void wordSuffixes(std::ostream &);
     void wordSubstrings(std::ostream &);
 
-    void searchSymbol();
     void write();
 };
 
-Word::Word(std::string str, Alphabet &alph)
+Word::Word(std::string strAux, Alphabet &alph)
 {
-    word_ = str;
     alphabet_ = alph;
-}
-
-void Word::searchSymbol()
-{
-    std::vector<std::string> aux;
-
-    for (size_t i = 0; i < word_.length(); i++)
+    std::string str;
+    std::string auxString;
+    for (int i = 0; i < alphabet_.nSymbol(); i++)
     {
-        alphabet_.getAlphabet()[0].uniqueSymbol(word_[i]);
+        str = alphabet_.getAlphabet()[0].getSymbol()[i]; // Cambiar getalphabeñ
+        for (int j = 0; j < strAux.length(); j++)
+        {
+            auxString = strAux.substr(j, str.length());
+            if (alphabet_.inAlphabet(auxString))
+                word_.push_back(auxString);
+        
+        }
+        break;
     }
 }
 
 void Word::write()
 {
     for (size_t i = 0; i < word_.size(); i++)
-        std::cout << word_[i];
+        std::cout << word_[i] << " ";
 }
 
 int Word::wordLength()
-{
-    int count = 0;
-    std::string str;
-    for (int i = 0; i < alphabet_.nSymbol(); i++)
-    {
-        str = alphabet_.getAlphabet()[0].getSymbol()[i];
-        for (size_t i = 0; i < word_.length(); i++)
-            if (word_.substr(i, str.length()) == str)
-                count++;
-    }
-
-    return count;
+{  
+    return word_.size();
 }
 
 std::string Word::wordInverse()
 {
-    std::string aux;
-    for (size_t i = word_.length(); i > 0; i--)
-        aux += word_[i - 1];
+    // std::string aux;
+    // for (size_t i = word_.length(); i > 0; i--)
+    //     aux += word_[i - 1];
 
-    return aux;
+    // return aux;
 }
 
 void Word::wordPrefixes(std::ostream &os)
 {
-    os << STR_EMPTY << " ";
-    for (size_t i = 0; i < word_.length(); i++)
-    {
-        for (size_t j = 0; j <= i; j++)
-            os << word_[j];
+    // os << STR_EMPTY << " ";
+    // for (size_t i = 0; i < word_.length(); i++)
+    // {
+    //     for (size_t j = 0; j <= i; j++)
+    //         os << word_[j];
 
-        os << " ";
-    }
-    os << std::endl;
+    //     os << " ";
+    // }
+    // os << std::endl;
 }
 
 void Word::wordSuffixes(std::ostream &os)
 {
 
-    os << STR_EMPTY << " ";
+    // os << STR_EMPTY << " ";
 
-    for (int i = word_.length(); i >= 0; i--)
-        os << word_.substr(i) << " ";
+    // for (int i = word_.length(); i >= 0; i--)
+    //     os << word_.substr(i) << " ";
 
-    os << std::endl;
+    // os << std::endl;
 }
 
 void Word::wordSubstrings(std::ostream &os)
 {
-    os << STR_EMPTY << " ";
+    // os << STR_EMPTY << " ";
 
-    for (size_t i = 0; i < word_.length(); i++)
-    {
-        for (size_t j = 0; j < word_.length() - i; j++)
-            os << word_.substr(j, i + 1) << " ";
-    }
-    os << std::endl;
+    // for (size_t i = 0; i < word_.length(); i++)
+    // {
+    //     for (size_t j = 0; j < word_.length() - i; j++)
+    //         os << word_.substr(j, i + 1) << " ";
+    // }
+    // os << std::endl;
 }
