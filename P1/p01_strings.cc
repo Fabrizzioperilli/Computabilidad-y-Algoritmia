@@ -90,15 +90,15 @@ void Read(char *file_input, char *file_output, int opcode) {
       std::cout << "El ultimo alfabeto es vacio " << std::endl;
     }
 
-    std::cout << "Simbolos: ";
-    symbol.Write();
+    // std::cout << "Simbolos: ";
+    // symbol.Write();
 
-    std::cout << "\nAlfabeto:  ";
-    alphabet.Write();
+    // std::cout << "\nAlfabeto:  ";
+    // alphabet.Write();
 
-    std::cout << "\nCadena: ";
-    word.Write();
-    std::cout << std::endl;
+    // std::cout << "\nCadena: ";
+    // word.Write();
+    // std::cout << std::endl;
   }
   namefile_input.close();
   Write(namefile_output, word_vector, opcode);

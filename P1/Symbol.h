@@ -68,9 +68,13 @@ int Symbol::SymbolSize() {
 
 
 bool Symbol::FindSymbol(std::string str) {
-  for (size_t i = 0; i < symbol_.size(); i++)
-    if (symbol_[i] == str) 
-    return true;
+bool flag;
+for (size_t i = 0; i < symbol_.size(); i++)
+  if (symbol_[i] == str) {
+    flag = true;
+      break;
+  }
+    return flag;
 }
 
 

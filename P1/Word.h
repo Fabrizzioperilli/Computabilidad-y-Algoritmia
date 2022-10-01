@@ -49,7 +49,7 @@ Word::Word(std::string str, Alphabet &alph) {
   for (int i = 0; i < alphabet_.Size(); i++) {
     symbol = alphabet_.getAlphabet()[0].GetSymbol()[i];  
     
-    for (int j = 0; j < str.length(); j++) {
+    for (size_t j = 0; j < str.length(); j++) {
       sub_string = str.substr(j, symbol.length());
       if (alphabet_.Search(sub_string)) 
         word_.push_back(sub_string);
@@ -72,7 +72,7 @@ std::string Word::WordInverse() {
   // for (size_t i = word_.length(); i > 0; i--)
   //     aux += word_[i - 1];
 
-  // return aux;
+  return "0";
 }
 
 
