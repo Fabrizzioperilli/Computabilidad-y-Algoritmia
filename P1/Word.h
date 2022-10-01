@@ -14,7 +14,7 @@
 // Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #pragma once
-#include "../include/Alphabet.h"
+#include "Alphabet.h"
 
 const std::string STR_EMPTY = "&";
 class Word

@@ -17,10 +17,9 @@
 #include <fstream>
 #include <vector>
 #include <string.h>
-#include <sstream>
-#include "../include/Symbol.h"
-#include "../include/Alphabet.h"
-#include "../include/Word.h"
+#include "Symbol.h"
+#include "Alphabet.h"
+#include "Word.h"
 
 void help();
 void read(char *, char *, int);

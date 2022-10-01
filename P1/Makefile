@@ -1,23 +1,31 @@
-CXX		  := g++
-CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb
+# Universidad de la Laguna
+# Escuela Superior de Ingeniería y Tecnología
+# Grado en Ingeniería Informática
+# Asignatura: Computabilidad y Algoritmia
+# Curso: 2º
+# Practica 1: Simbolos, alfabetos y cadena
+# Autor: Fabrizzio Daniell Perilli Martin
+# Correo: alu0101138589@ull.edu.es
+# Fecha: 5/10/2022
+# Archivo Makefile: programa cliente.
+#             ...
+# Referencias:
+# Historial de revisiones:
+# Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
 
-BIN		:= bin
-SRC		:= src
-INCLUDE	:= include
-LIB		:= lib
 
-LIBRARIES	:=
-EXECUTABLE	:= p01_strings
+FILES= p01_strings.cc
+CXXFLAGS= -Wall -std=c++17 -ggdb
 
 
-all: $(BIN)/$(EXECUTABLE)
+all: practica
 
-run: clean all
-	clear
-	./$(BIN)/$(EXECUTABLE)
+Inicio:
+	@echo $(C) 
 
-$(BIN)/$(EXECUTABLE): $(SRC)/*.cc
-	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
+practica: $(F) Inicio
+	g++ $(CXXFLAGS) $(FILES) -o p01_strings
 
 clean:
-	-rm $(BIN)/*
+	rm -rf p01_strings 
+	rm -rf *.o

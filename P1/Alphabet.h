@@ -12,8 +12,9 @@
 // Referencias:
 // Historial de revisiones:
 // Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+
 #pragma once
-#include "../include/Symbol.h"
+#include "Symbol.h"
 
 class Alphabet
 {
