@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <iostream>
 #include <string.h>
 #include <vector>
 
@@ -27,44 +28,10 @@ private:
   Symbol(std::string);
   ~Symbol();
 
-  inline std::string GetSymbol();
+  std::string GetSymbol();
   void SetSymbol(std::string);
   
  
   int SymbolSize();
   void Write();
 };
-
-
-Symbol::Symbol() {}
-
-
-Symbol::Symbol(std::string str) { 
-    symbol_ = str; 
-}
-
-
-Symbol::~Symbol() {}
-
-
-std::string Symbol::GetSymbol() { 
-    return symbol_; 
-}
-
-
-void Symbol::SetSymbol(std::string str) { 
-    symbol_ = str; 
-}
-
-
-int Symbol::SymbolSize() { 
-    return symbol_.size(); 
-}
-
-
-void Symbol::Write() {
-    std::cout << symbol_;
-}
-
-
-

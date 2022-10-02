@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
 
   if (argc == 4) {
     int opcode = atoi(argv[3]);
-    std::cout << "Ejecucion correcta. " << std::endl;
     std::cout << "Compruebe la salida en el fichero: " << argv[2] << std::endl;
     Read(argv[1], argv[2], opcode);
   } 

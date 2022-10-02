@@ -1,6 +1,0 @@
-Longitud de la cadena
-5
-7
-3
-4
-4

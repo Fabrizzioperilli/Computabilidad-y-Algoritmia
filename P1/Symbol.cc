@@ -7,28 +7,43 @@
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
 // Fecha: 5/10/2022
-// Archivo: Alphabet.h
+// Archivo: Symbol.h
 //             ...
 // Referencias:
 // Historial de revisiones:
 // Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
 
-#pragma once
 #include "Symbol.h"
 
-class Alphabet {
- private:
-  std::vector<Symbol> alphabet_;
+Symbol::Symbol() {}
 
- public:
-  Alphabet();
-  Alphabet(std::vector<Symbol>);
-  ~Alphabet();
 
-  void AddSymbol(Symbol &);
-  bool Empty();
-  std::vector<Symbol> getAlphabet();
-  int Size();
-  bool Search(std::string);
-  void Write();
-};
+Symbol::Symbol(std::string str) { 
+    symbol_ = str; 
+}
+
+
+Symbol::~Symbol() {}
+
+
+std::string Symbol::GetSymbol() { 
+    return symbol_; 
+}
+
+
+void Symbol::SetSymbol(std::string str) { 
+    symbol_ = str; 
+}
+
+
+int Symbol::SymbolSize() { 
+    return symbol_.size(); 
+}
+
+
+void Symbol::Write() {
+    std::cout << symbol_;
+}
+
+
+
