@@ -79,14 +79,14 @@ void Read(char *file_input, char *file_output, int opcode) {
     Symbol symbol;
     for (size_t i = 0; i < split_line.size() - 1; i++)
       if (split_line[i] != STR_EMPTY) 
-        symbol.Add(split_line[i]);
+        symbol.SetSymbol(split_line[i]);
 
     Alphabet alphabet;
     alphabet.Add(symbol);
     Word word(split_line.back(), alphabet);
     word_vector.push_back(word);
 
-    if (symbol.Empty()) {
+    if (alphabet.Empty()) {
       std::cout << "El ultimo alfabeto es vacio " << std::endl;
     }
 

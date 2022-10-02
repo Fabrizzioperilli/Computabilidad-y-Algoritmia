@@ -60,7 +60,7 @@ std::vector<Symbol> Alphabet::getAlphabet() {
 
 
 int Alphabet::Size() { 
-    return alphabet_[0].SymbolSize(); 
+    return alphabet_.size(); 
 }
 
 
