@@ -27,7 +27,7 @@ class Alphabet {
 
   void Add(Symbol &);
   bool Empty();
-  std::vector<Symbol> getAlphabet();
+  inline std::vector<Symbol> getAlphabet();
   int Size();
   bool Search(std::string);
   void Write();
@@ -68,7 +68,7 @@ bool Alphabet::Search(std::string str) {
     for (size_t i = 0; i < alphabet_.size(); i++)
         if (alphabet_[i].GetSymbol() == str)
             return true;  
-            
+
     return false; 
 }
 
