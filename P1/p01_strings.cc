@@ -76,29 +76,32 @@ void Read(char *file_input, char *file_output, int opcode) {
     getline(namefile_input, line);
     split_line = Split(line, ' ');
 
-    Symbol symbol;
-    for (size_t i = 0; i < split_line.size() - 1; i++)
-      if (split_line[i] != STR_EMPTY) 
-        symbol.Add(split_line[i]);
-
+    
     Alphabet alphabet;
-    alphabet.Add(symbol);
+
+    for (size_t i = 0; i < split_line.size() - 1; i++)
+      if (split_line[i] != STR_EMPTY) {
+        Symbol symbol;
+        symbol.SetSymbol(split_line[i]);
+        alphabet.Add(symbol);
+      }
+
     Word word(split_line.back(), alphabet);
     word_vector.push_back(word);
 
-    if (symbol.Empty()) {
+    if (alphabet.Empty()) {
       std::cout << "El ultimo alfabeto es vacio " << std::endl;
     }
 
     // std::cout << "Simbolos: ";
     // symbol.Write();
 
-    // std::cout << "\nAlfabeto:  ";
-    // alphabet.Write();
+    std::cout << "\nAlfabeto:  ";
+    alphabet.Write();
 
-    // std::cout << "\nCadena: ";
-    // word.Write();
-    // std::cout << std::endl;
+    std::cout << "\nCadena: ";
+    word.Write();
+    std::cout << std::endl;
   }
   namefile_input.close();
   Write(namefile_output, word_vector, opcode);

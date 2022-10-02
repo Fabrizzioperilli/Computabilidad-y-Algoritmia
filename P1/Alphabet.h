@@ -60,16 +60,20 @@ std::vector<Symbol> Alphabet::getAlphabet() {
 
 
 int Alphabet::Size() { 
-    return alphabet_[0].SymbolSize(); 
+    return alphabet_.size(); 
 }
 
 
 bool Alphabet::Search(std::string str) { 
-    return alphabet_[0].FindSymbol(str); 
+    for (size_t i = 0; i < alphabet_.size(); i++)
+        if (alphabet_[i].GetSymbol() == str)
+            return true;  
+            
+    return false; 
 }
 
   
 void Alphabet::Write() {
   for (size_t i = 0; i < alphabet_.size(); i++) 
-      alphabet_[i].Write();
+      std::cout << alphabet_[i].GetSymbol() << " ";
 }
