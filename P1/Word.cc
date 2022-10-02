@@ -7,7 +7,8 @@
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
 // Fecha: 5/10/2022
-// Archivo: Alphabet.h
+// Archivo: Word.cc  La clase cadena contine un vector de simbolos
+//                    y tiene asociado un alfabeto
 //             ...
 // Referencias:
 // Historial de revisiones:
@@ -22,6 +23,7 @@ Word::Word(std::string str, Alphabet &alph) {
   std::string symbol;
   std::string sub_string;
 
+  //Previamente se comprueba si el alfabeto asociado a la cadena está vacio
   if (!alph.Empty()) {
     for (int i = 0; i < alphabet_.Size(); i++) {
       symbol = alphabet_.getAlphabet()[i].GetSymbol();
@@ -45,11 +47,13 @@ Word::Word(std::string str, Alphabet &alph) {
   }
 }
 
+
 Word::~Word() {}
 
 int Word::WordLength() { 
     return word_.size(); 
 }
+
 
 void Word::WordInverse(std::ostream &os) {
   for (int i = word_.size() - 1; i >= 0; i--) {
@@ -57,6 +61,7 @@ void Word::WordInverse(std::ostream &os) {
   }
   os << std::endl;
 }
+
 
 void Word::WordPrefixes(std::ostream &os) {
   os << STR_EMPTY << " ";
@@ -69,6 +74,7 @@ void Word::WordPrefixes(std::ostream &os) {
   os << std::endl;
 }
 
+
 void Word::WordSuffixes(std::ostream &os) {
   os << STR_EMPTY << " ";
   for (int i = word_.size() - 1; i >= 0; i--) {
@@ -80,6 +86,7 @@ void Word::WordSuffixes(std::ostream &os) {
   os << std::endl;
 }
 
+
 void Word::WordSubstrings(std::ostream &os) {
   os << STR_EMPTY << " ";
   for (size_t i = 0; i < word_.size(); i++)
@@ -89,6 +96,7 @@ void Word::WordSubstrings(std::ostream &os) {
     }
   os << std::endl;
 }
+
 
 void Word::Write() {
   for (size_t i = 0; i < word_.size(); i++) 

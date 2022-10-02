@@ -7,7 +7,7 @@
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
 // Fecha: 5/10/2022
-// Archivo: Symbol.h
+// Archivo: Symbol.cc   La clase simbolo almacena un string
 //             ...
 // Referencias:
 // Historial de revisiones:

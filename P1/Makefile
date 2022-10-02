@@ -7,7 +7,7 @@
 # Autor: Fabrizzio Daniell Perilli Martin
 # Correo: alu0101138589@ull.edu.es
 # Fecha: 5/10/2022
-# Archivo Makefile: programa cliente.
+# Archivo Makefile
 #             ...
 # Referencias:
 # Historial de revisiones:

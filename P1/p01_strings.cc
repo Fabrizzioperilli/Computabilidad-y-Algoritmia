@@ -127,7 +127,7 @@ void Write(std::ofstream &namefile_output, std::vector<Word> word_vector, int op
   namefile_output.close();
 }
 
-
+//La funcion Split recorta el string a partir de un delimitador
 std::vector<std::string> Split(std::string str, char pattern) {
   int pos_init = 0;
   int pos_found = 0;
@@ -140,6 +140,5 @@ std::vector<std::string> Split(std::string str, char pattern) {
     pos_init = pos_found + 1;
     results.push_back(splitted);
   }
-
   return results;
 }
