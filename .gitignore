@@ -1,0 +1,3 @@
+#Ignorar los directorios comprimidos
+*.tar.gz
+*zip
