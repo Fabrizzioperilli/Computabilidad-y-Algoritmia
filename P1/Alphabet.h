@@ -25,7 +25,7 @@ class Alphabet {
   Alphabet(std::vector<Symbol>);
   ~Alphabet();
 
-  void Add(Symbol &);
+  void AddSymbol(Symbol &);
   bool Empty();
   inline std::vector<Symbol> getAlphabet();
   int Size();
@@ -44,7 +44,7 @@ Alphabet::Alphabet(std::vector<Symbol> symbol) {
 Alphabet::~Alphabet(){}
 
 
-void Alphabet::Add(Symbol &symbol) { 
+void Alphabet::AddSymbol(Symbol &symbol) { 
     alphabet_.push_back(symbol); 
 }
 

@@ -46,17 +46,27 @@ Word::Word(std::string str, Alphabet &alph) {
   std::string symbol;
   std::string sub_string;
 
-  for (int i = 0; i < alphabet_.Size(); i++) {
-    symbol = alphabet_.getAlphabet()[i].GetSymbol();  
-    
-    for (size_t j = 0; j < str.length(); j++) {
-      sub_string = str.substr(j, symbol.length());
-      if (alphabet_.Search(sub_string)) {
-        Symbol symbol(sub_string);
+  if (!alph.Empty()) { 
+    for (int i = 0; i < alphabet_.Size(); i++) {
+      symbol = alphabet_.getAlphabet()[i].GetSymbol();  
+      
+      for (size_t j = 0; j < str.length(); j++) {
+        sub_string = str.substr(j, symbol.length());
+        if (alphabet_.Search(sub_string)) {
+          Symbol symbol(sub_string);
+          word_.push_back(symbol);
+        }
+      }
+      break;
+    }
+  }
+  else{
+      for (size_t i = 0; i < str.length(); i++) {
+        std::string str_aux;
+        Symbol symbol(str_aux.append(1, str[i]));
+        alphabet_.AddSymbol(symbol);
         word_.push_back(symbol);
       }
-    }
-    break;
   }
 }
 
