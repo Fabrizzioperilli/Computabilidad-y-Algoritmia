@@ -20,16 +20,17 @@
 
 class Symbol {
 private:
-  std::string symbol_;
+  std::vector<std::string> symbol_;
 
  public:
   Symbol();
-  Symbol(std::string);
+  Symbol(std::vector<std::string>);
   ~Symbol();
 
-  inline std::string GetSymbol();
-  void SetSymbol(std::string);
+  inline std::vector<std::string> GetSymbol();
   
+  void Add(std::string);
+  bool Empty();
   int SymbolSize();
   bool FindSymbol(std::string);
   void Write();
@@ -38,7 +39,7 @@ private:
 Symbol::Symbol() {}
 
 
-Symbol::Symbol(std::string str) { 
+Symbol::Symbol(std::vector<std::string> str) { 
     symbol_ = str; 
 }
 
@@ -46,24 +47,30 @@ Symbol::Symbol(std::string str) {
 Symbol::~Symbol() {}
 
 
-std::string Symbol::GetSymbol() { 
+std::vector<std::string> Symbol::GetSymbol() { 
     return symbol_; 
 }
 
-void Symbol::SetSymbol(std::string str) {
-  symbol_ = str;
+
+void Symbol::Add(std::string str) { 
+    symbol_.push_back(str); 
+}
+
+
+bool Symbol::Empty() { 
+    return symbol_.empty(); 
 }
 
 
 int Symbol::SymbolSize() { 
-    return symbol_.length(); 
+    return symbol_.size(); 
 }
 
 
 bool Symbol::FindSymbol(std::string str) {
 bool flag;
 for (size_t i = 0; i < symbol_.size(); i++)
-  if (symbol_ == str) {
+  if (symbol_[i] == str) {
     flag = true;
       break;
   }

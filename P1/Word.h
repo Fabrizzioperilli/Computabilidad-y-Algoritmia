@@ -21,7 +21,7 @@ const std::string STR_EMPTY = "&";
 class Word {
  private:
   Alphabet alphabet_;
-  std::vector<Symbol> word_;
+  std::vector<std::string> word_;
 
  public:
   Word();
@@ -47,12 +47,12 @@ Word::Word(std::string str, Alphabet &alph) {
   std::string sub_string;
 
   for (int i = 0; i < alphabet_.Size(); i++) {
-    symbol = alphabet_.getAlphabet()[i].GetSymbol();  
+    symbol = alphabet_.getAlphabet()[0].GetSymbol()[i];  
     
     for (size_t j = 0; j < str.length(); j++) {
       sub_string = str.substr(j, symbol.length());
-      if (alphabet_.Search(sub_string))
-        word_.push_back(Symbol(sub_string));
+      if (alphabet_.Search(sub_string)) 
+        word_.push_back(sub_string);
     }
     break;
   }
@@ -113,5 +113,5 @@ void Word::WordSubstrings(std::ostream &os) {
 
 void Word::Write() {
   for (size_t i = 0; i < word_.size(); i++) 
-    std::cout << word_[i].GetSymbol() << " ";
+    std::cout << word_[i] << " ";
 }
