@@ -118,7 +118,7 @@ void Write(std::ofstream &namefile_output, std::vector<Word> word_vector, int op
     case 2:
       namefile_output << "Inversa de la cadena" << std::endl;
       for (size_t i = 0; i < word_vector.size(); i++)
-        namefile_output << word_vector[i].WordInverse() << std::endl;
+        word_vector[i].WordInverse(namefile_output);
       break;
     case 3:
       namefile_output << "Prefijos de la cadena" << std::endl;
