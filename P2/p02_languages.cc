@@ -22,11 +22,13 @@
 #include "Alphabet.h"
 #include "Symbol.h"
 #include "Word.h"
+typedef std::vector<std::vector<std::string>> vector_alph_lg;
 
 void Help();
 void Read(char *, char *, char *, int);
-// void Write(std::ofstream &, std::vector<Word>, int);
-std::vector<std::string> Split(std::string);
+
+vector_alph_lg Split(std::string);
+int Divide(std::string);
 
 int main(int argc, char **argv)
 {
@@ -67,47 +69,97 @@ void Help()
   std::cout << "6. Potencia" << std::endl;
 }
 
-void Read(char *file_input1, char *file_input2, char *file_output, int opcode)
-{
-
+void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
   std::ifstream namefile1(file_input1);
   std::ifstream namefile2(file_input2);
   std::ofstream namefile_output(file_output);
+  
   std::string string_line_file1;
   std::string string_line_file2;
-  std::vector<std::string> splited_file1;
-  std::vector<std::string> splited_file2;
 
+  std::vector<std::string> vector_alphabet;
+  std::vector<std::string> vector_language;
+
+  vector_alph_lg vector_aux;
   while (!namefile1.eof() && !namefile2.eof())
   {
     getline(namefile1, string_line_file1);
     getline(namefile2, string_line_file2);
 
-    splited_file1 = Split(string_line_file1);
-    for (size_t i = 0; i < splited_file1.size(); i++)
-      std::cout << splited_file1[i] << " ";
-    std::cout << std::endl;
+    vector_aux = Split(string_line_file1);
+    vector_alphabet = vector_aux[0];
+    vector_language = vector_aux[1];
 
-    splited_file2 = Split(string_line_file2);
-    for (size_t i = 0; i < splited_file2.size(); i++)
-      std::cout << splited_file2[i] << " ";
-    std::cout << std::endl;
+    Alphabet alphabet;
+
+   
+    
+    
+   
   }
 }
-
 
 // La funcion Split recorta el string a partir de un delimitador
-std::vector<std::string> Split(std::string str) {
-  std::vector<std::string> result;
-  std::string aux;
-  for (size_t i = 0; i < str.size(); i++)
+vector_alph_lg Split(std::string str) {
+  vector_alph_lg vector;
+  std::vector<std::string> vector_alphabet;
+  std::vector<std::string> vector_language;
+  std::string aux_alpha;
+  std::string aux_lenguage;
+  int half = Divide(str);
+  
+  for (int i = 0; i < half; i++)
   {
     if (str[i] != ' ' && str[i] != '{' && str[i] != '}')
-      aux += str[i];
-    else if (aux != "") {
-      result.push_back(aux);
-      aux = "";
+      aux_alpha += str[i];
+    else if (aux_alpha != "")
+    {
+      vector_alphabet.push_back(aux_alpha);
+      aux_alpha = "";
     }
   }
-  return result;
+
+  for (size_t i = half; i < str.length(); i++)
+  {
+    if (str[i] != ' ' && str[i] != '{' && str[i] != '}')
+      aux_lenguage += str[i];
+    else if (aux_lenguage != "")
+    {
+      vector_language.push_back(aux_lenguage);
+      aux_lenguage = "";
+    }
+  }
+  vector.push_back(vector_alphabet);
+  vector.push_back(vector_language);
+
+  return vector;
 }
+
+
+int Divide(std::string str)
+{
+  int pos;
+  for (size_t i = 0; i < str.length(); i++)
+    if (str[i] == ' ' && str[i - 1] == '}' && str[i + 1] == '{')
+      pos = i;
+  return pos;
+}
+// std::vector<std::string> Split(std::string str)
+// {
+//   std::vector<std::string> result;
+//   std::string aux;
+//   for (size_t i = 0; i < str.size(); i++)
+//   {
+//     if (str[i] != ' ' && str[i] != '{')
+//       if (str[i] != '}')
+//         aux += str[i];
+//       else
+//         break;
+//       else if (aux != "")
+//       {
+//         result.push_back(aux);
+//         aux = "";
+//       }
+//   }
+//   return result;
+// }
