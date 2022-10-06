@@ -19,6 +19,8 @@
 #include <string.h>
 #include <vector>
 
+const std::string STR_EMPTY = "&";
+
 class Symbol {
 private:
   std::string symbol_;

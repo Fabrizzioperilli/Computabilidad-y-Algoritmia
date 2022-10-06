@@ -103,20 +103,33 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
     vector_symbols_file2 = vector_aux_file2[0];
     vector_words_file2 = vector_aux_file2[1];
 
-    Alphabet alphabet;
+    Alphabet alphabets_file1;
+    Alphabet alphabets_file2;
 
     for (size_t i = 0; i < vector_symbols_file1.size(); i++) 
-      alphabet.AddSymbol(vector_symbols_file1[i]);
+      alphabets_file1.AddSymbol(vector_symbols_file1[i]);
 
+    for (size_t i = 0; i < vector_symbols_file2.size(); i++)
+      alphabets_file2.AddSymbol(vector_symbols_file2[i]);
     
-    Language language;
+    Language languages_file1;
+    Language languages_file2;
+
     for (size_t i = 0; i < vector_words_file1.size(); i++) {
-      Word word(vector_words_file1[i], alphabet);
-      language.AddWord(word);
+      Word word(vector_words_file1[i], alphabets_file1);
+      languages_file1.AddWord(word);
     }
 
-    namefile_output << "{ " << alphabet << "} ";
-    namefile_output << "{ " << language << "}"<<std::endl;
+    for (size_t i = 0; i < vector_words_file2.size(); i++) {
+      Word word(vector_words_file2[i], alphabets_file2);
+      languages_file2.AddWord(word);
+    }
+
+    // namefile_output << "{ " << alphabets_file1 << "} ";
+    // namefile_output << "{ " << languages_file1 << "}"<<std::endl;
+
+    namefile_output << "{{ " << alphabets_file2 << "} ";
+    namefile_output << "{{ " << languages_file2 << "}"<<std::endl;
     
     
    

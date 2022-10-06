@@ -16,7 +16,7 @@
 #pragma once
 #include "Alphabet.h"
 
-const std::string STR_EMPTY = "&";
+
 
 class Word {
  private:

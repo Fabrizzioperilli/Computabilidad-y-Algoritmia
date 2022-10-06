@@ -52,7 +52,7 @@ int Alphabet::Size() {
 
 bool Alphabet::Search(std::string str) {
     for (auto i : alphabet_)
-        if (i.GetSymbol() == str)
+        if (i.GetSymbol() == str || str == STR_EMPTY)
             return true;
     return false;
 }
