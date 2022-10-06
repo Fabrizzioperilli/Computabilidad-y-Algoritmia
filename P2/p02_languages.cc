@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     std::cout << "Ejecute ./p02_languages --help para mas informacion" << std::endl;
     return -1;
   }
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 void Help()
@@ -125,11 +125,28 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
       languages_file2.AddWord(word);
     }
 
-    // namefile_output << "{ " << alphabets_file1 << "} ";
-    // namefile_output << "{ " << languages_file1 << "}"<<std::endl;
-
-    namefile_output << "{{ " << alphabets_file2 << "} ";
-    namefile_output << "{{ " << languages_file2 << "}"<<std::endl;
+    //Operaciones con lenguajes
+    Language language_result;
+    switch(opcode) {
+      case 1:
+        language_result = languages_file1.Concatenate(languages_file2);
+        namefile_output << "{ "<<language_result << " }"<<std::endl;
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+      case 6:
+        break;
+      default:
+      std::cout << "Error en el opcode, consulte con --help" << std::endl;
+      exit(EXIT_FAILURE);
+      break;
+    }
     
     
    
@@ -181,22 +198,3 @@ int Divide(std::string str)
       pos = i;
   return pos;
 }
-// std::vector<std::string> Split(std::string str)
-// {
-//   std::vector<std::string> result;
-//   std::string aux;
-//   for (size_t i = 0; i < str.size(); i++)
-//   {
-//     if (str[i] != ' ' && str[i] != '{')
-//       if (str[i] != '}')
-//         aux += str[i];
-//       else
-//         break;
-//       else if (aux != "")
-//       {
-//         result.push_back(aux);
-//         aux = "";
-//       }
-//   }
-//   return result;
-// }

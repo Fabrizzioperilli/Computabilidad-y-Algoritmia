@@ -1,4 +1,4 @@
-{{ e f g } {{ e efg fe gf }
-{{ a b } {{ }
-{{ 0 1 } {{ & }
-{{ 0 1 } {{ 0 00 01 1 10 11 }
+{ abce abcefg abcfe abcgf ae aefg afe agf bbcce bbccefg bbccfe bbccgf cabe cabefg cabfe cabgf  }
+{  }
+{  }
+{ &0 &00 &01 &1 &10 &11  }

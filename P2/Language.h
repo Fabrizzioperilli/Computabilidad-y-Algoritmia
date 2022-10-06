@@ -28,9 +28,12 @@ class Language {
   Language(Word&);
   ~Language();
 
+  std::set<Word> getLanguage();
   void AddWord(Word&);
   std::ostream& Write(std::ostream&);
   friend std::ostream& operator<<(std::ostream&, Language&);
+  //Funcion que concatene dos lenguajes y devuelva el resultado
+  Language Concatenate(Language&);
 };
 
 
@@ -57,4 +60,17 @@ std::ostream& operator<<(std::ostream& os, Language& language) {
   return language.Write(os);
 }
 
+Language Language::Concatenate(Language& language) {
+  Language result;
+  for (auto i : language_) 
+    for (auto j : language.getLanguage()) {
+      Word word;
+      word = i + j;
+      result.AddWord(word);
+    }
+  return result;
+}
 
+std::set<Word> Language::getLanguage() {
+  return language_;
+}

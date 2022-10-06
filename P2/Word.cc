@@ -119,3 +119,15 @@ std::ostream& operator<<(std::ostream &os, Word &w) {
   return w.Write(os);
 }
 
+Word Word::operator+(const Word &w) {
+  Word word;
+  word.word_ = word_;
+  for (size_t i = 0; i < w.word_.size(); i++) {
+    word.word_.push_back(w.word_[i]);
+  }
+  return word;
+}
+
+void Word::setWord(std::vector<Symbol> word) {
+  word_ = word;
+}

@@ -29,6 +29,7 @@ class Word {
   ~Word();
 
   std::vector<Symbol> getWord();
+  void setWord(std::vector<Symbol>);
 
   int WordLength();
   void WordInverse(std::ostream &);
@@ -39,4 +40,5 @@ class Word {
   std::ostream& Write(std::ostream &os);
   bool operator<(const Word&) const;
   friend std::ostream& operator<<(std::ostream&, Word&);
+  Word operator+(const Word&);
 };
