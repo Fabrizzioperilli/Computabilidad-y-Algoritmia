@@ -46,4 +46,8 @@ void Symbol::Write() {
 }
 
 
+bool Symbol::operator<(const Symbol &s) const {
+    return symbol_ < s.symbol_;
+}
+
 

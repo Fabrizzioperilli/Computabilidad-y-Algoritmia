@@ -34,4 +34,6 @@ private:
  
   int SymbolSize();
   void Write();
+
+  bool operator<(const Symbol &s) const;
 };

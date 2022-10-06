@@ -15,20 +15,23 @@
 
 #pragma once
 #include "Symbol.h"
+#include <set>
 
 class Alphabet {
  private:
-  std::vector<Symbol> alphabet_;
-
+  std::set<Symbol> alphabet_;
  public:
   Alphabet();
-  Alphabet(std::vector<Symbol>);
+  Alphabet(std::set<Symbol>);
   ~Alphabet();
 
   void AddSymbol(Symbol &);
   bool Empty();
-  std::vector<Symbol> getAlphabet();
+  std::set<Symbol> getAlphabet();
   int Size();
   bool Search(std::string);
   void Write();
+ 
+ 
+
 };

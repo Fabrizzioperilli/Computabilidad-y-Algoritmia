@@ -18,7 +18,7 @@
 Alphabet::Alphabet() {}
 
 
-Alphabet::Alphabet(std::vector<Symbol> symbol) { 
+Alphabet::Alphabet(std::set<Symbol> symbol) { 
     alphabet_ = symbol; 
 }
 
@@ -27,7 +27,7 @@ Alphabet::~Alphabet() {}
 
 
 void Alphabet::AddSymbol(Symbol &symbol) { 
-    alphabet_.push_back(symbol); 
+    alphabet_.insert(symbol); 
 }
 
 
@@ -36,7 +36,7 @@ bool Alphabet::Empty() {
 }
 
 
-std::vector<Symbol> Alphabet::getAlphabet() { 
+std::set<Symbol> Alphabet::getAlphabet() { 
     return alphabet_; 
 }
 
@@ -47,14 +47,15 @@ int Alphabet::Size() {
 
 
 bool Alphabet::Search(std::string str) {
-  for (size_t i = 0; i < alphabet_.size(); i++)
-    if (alphabet_[i].GetSymbol() == str) 
-        return true;
-
-  return false;
+    for (auto i : alphabet_)
+        if (i.GetSymbol() == str)
+            return true;
+    return false;
 }
+
 
 void Alphabet::Write() {
-  for (size_t i = 0; i < alphabet_.size(); i++)
-    std::cout << alphabet_[i].GetSymbol() << " ";
+    for (auto i : alphabet_)
+        std::cout << i.GetSymbol() << " ";
 }
+

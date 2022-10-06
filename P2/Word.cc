@@ -25,9 +25,9 @@ Word::Word(std::string str, Alphabet &alph) {
 
   //Previamente se comprueba si el alfabeto asociado a la cadena está vacio
   if (!alph.Empty()) {
-    for (int i = 0; i < alphabet_.Size(); i++) {
-      symbol = alphabet_.getAlphabet()[i].GetSymbol();
-
+    for (auto i : alphabet_.getAlphabet()) {
+      symbol = i.GetSymbol();
+    
       for (size_t j = 0; j < str.length(); j++) {
         sub_string = str.substr(j, symbol.length());
         if (alphabet_.Search(sub_string)) {
