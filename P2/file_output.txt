@@ -1,5 +1,5 @@
-{ a abc bbcc cab }
-{ a aa aaa }
-{ }
-{  }
-{ 0 00 01 1 10 11 }
+{ a b c } { a abc bbcc cab }
+{ a } { a aa aaa }
+{ a b } { }
+{ 0 1 } {  }
+{ 0 1 } { 0 00 01 1 10 11 }

@@ -115,7 +115,7 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
       language.AddWord(word);
     }
 
-    // namefile_output << "{" << alphabet << "}" << std::endl;
+    namefile_output << "{ " << alphabet << "} ";
     namefile_output << "{ " << language << "}"<<std::endl;
     
     

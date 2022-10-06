@@ -32,7 +32,8 @@ class Alphabet {
   std::set<Symbol> getAlphabet();
   int Size();
   bool Search(std::string);
-  void Write();
+  std::ostream& Write(std::ostream&);
+  friend std::ostream& operator<<(std::ostream&, Alphabet&);
    
  
 

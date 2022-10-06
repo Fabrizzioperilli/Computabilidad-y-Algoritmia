@@ -36,5 +36,5 @@ private:
 
   std::ostream& Write(std::ostream &os);
   bool operator<(const Symbol&) const;
-  friend std::ostream& operator<<(std::ostream&, const Symbol&);
+  friend std::ostream& operator<<(std::ostream&, Symbol&);
 };

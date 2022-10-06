@@ -58,8 +58,13 @@ bool Alphabet::Search(std::string str) {
 }
 
 
-void Alphabet::Write() {
+std::ostream& Alphabet::Write(std::ostream& os) {
     for (auto i : alphabet_)
-        std::cout << i.GetSymbol() << " ";
+        os << i << " ";
+    return os;
+}
+
+std::ostream& operator<<(std::ostream& os, Alphabet& alphabet) {
+    return alphabet.Write(os);
 }
 
