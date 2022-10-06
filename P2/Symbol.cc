@@ -57,3 +57,7 @@ std::ostream& operator<<(std::ostream &os, Symbol &s) {
 bool Symbol::operator==(const Symbol &s) const {
     return symbol_ == s.symbol_;
 }
+
+bool Symbol::operator!=(const Symbol &s) const {
+    return symbol_ != s.symbol_;
+}

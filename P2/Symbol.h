@@ -40,4 +40,5 @@ private:
   bool operator<(const Symbol&) const;
   friend std::ostream& operator<<(std::ostream&, Symbol&);
   bool operator==(const Symbol&) const;
+  bool operator!=(const Symbol&) const;
 };

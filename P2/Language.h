@@ -32,10 +32,14 @@ class Language {
   void AddWord(Word&);
   std::ostream& Write(std::ostream&);
   friend std::ostream& operator<<(std::ostream&, Language&);
-  //Funcion que concatene dos lenguajes y devuelva el resultado
+  
   Language Concatenate(Language&);
   Language Union(Language&);
   Language Intersection(Language&);
+  Language Difference(Language&);
+  Language Inverse();
+  Language Power(int);
+
 };
 
 
@@ -93,5 +97,38 @@ Language Language::Intersection(Language& language) {
       if (i == j)
         result.AddWord(i);
     }
+  return result;
+}
+
+Language Language::Difference(Language& language) {
+  Language result;
+  for (auto i : language_) 
+    for (auto j : language.getLanguage()) {
+      if (i != j)
+        result.AddWord(i);
+    }
+  return result;
+}
+
+Language Language::Inverse() {
+  Language result;
+  for (auto i : language_) {
+    Word word = i.WordInverse();
+    result.AddWord(word);
+  }
+  return result;
+}
+
+
+
+Language Language::Power(int n = 1) {
+  Language result;
+  for (auto i : language_) {
+    Word word = i;
+    for (int j = 1; j < n; j++) {
+      word = word + i;
+    }
+    result.AddWord(word);
+  }
   return result;
 }

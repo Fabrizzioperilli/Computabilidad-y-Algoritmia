@@ -40,7 +40,6 @@ int main(int argc, char **argv)
   if (argc == kNumberParam)
   {
     int opcode = atoi(argv[4]);
-    std::cout << "Ejecucion correcta. " << std::endl;
     std::cout << "Compruebe la salida en el fichero: " << argv[3] << std::endl;
     Read(argv[1], argv[2], argv[3], opcode);
   }
@@ -87,7 +86,13 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
 
   vector_alph_lg vector_aux_file1;
   vector_alph_lg vector_aux_file2;
-  
+
+  int n;
+  if (opcode == 6){
+    std::cout << "Para realizar la operacion de potencia introduzca el valor de n: ";
+    std::cin >> n;
+  }
+
 
   while (!namefile1.eof() && !namefile2.eof())
   {
@@ -140,10 +145,16 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
         namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 4:
+        language_result = languages_file1.Difference(languages_file2);
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 5:
+        language_result = languages_file1.Inverse();
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 6:
+        language_result = languages_file1.Power(n);
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       default:
       std::cout << "Error en el opcode, consulte con --help" << std::endl;

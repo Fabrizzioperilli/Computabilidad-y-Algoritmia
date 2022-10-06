@@ -32,7 +32,7 @@ class Word {
   void setWord(std::vector<Symbol>);
 
   int WordLength();
-  void WordInverse(std::ostream &);
+  Word WordInverse();
   void WordPrefixes(std::ostream &);
   void WordSuffixes(std::ostream &);
   void WordSubstrings(std::ostream &);
@@ -42,4 +42,5 @@ class Word {
   friend std::ostream& operator<<(std::ostream&, Word&);
   Word operator+(const Word&);
   bool operator==(const Word&) const;
+  bool operator!=(const Word&) const;
 };

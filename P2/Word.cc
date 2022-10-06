@@ -57,11 +57,11 @@ int Word::WordLength() {
 }
 
 
-void Word::WordInverse(std::ostream &os) {
-  for (int i = word_.size() - 1; i >= 0; i--) {
-    os << word_[i].GetSymbol();
-  }
-  os << std::endl;
+Word Word::WordInverse() {
+  Word word;
+  for (int i = word_.size() - 1; i >= 0; i--)
+    word.word_.push_back(word_[i]);
+  return word;
 }
 
 
@@ -134,4 +134,8 @@ void Word::setWord(std::vector<Symbol> word) {
 
 bool Word::operator==(const Word &w) const {
   return word_ == w.word_;
+}
+
+bool Word::operator!=(const Word &w) const {
+  return word_ != w.word_;
 }
