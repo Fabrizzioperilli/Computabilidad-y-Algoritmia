@@ -30,6 +30,10 @@ void Alphabet::AddSymbol(Symbol &symbol) {
     alphabet_.insert(symbol); 
 }
 
+void Alphabet::AddSymbol(std::string str) {
+    Symbol symbol(str);
+    alphabet_.insert(symbol);
+}
 
 bool Alphabet::Empty() { 
     return alphabet_.empty(); 

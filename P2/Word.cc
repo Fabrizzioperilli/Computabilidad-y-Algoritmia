@@ -18,6 +18,8 @@
 
 Word::Word() {}
 
+
+
 Word::Word(std::string str, Alphabet &alph) {
   alphabet_ = alph;
   std::string symbol;
@@ -98,7 +100,22 @@ void Word::WordSubstrings(std::ostream &os) {
 }
 
 
-void Word::Write() {
+std::ostream& Word::Write(std::ostream &os) {
   for (size_t i = 0; i < word_.size(); i++) 
-      word_[i].Write();
+    os << word_[i].GetSymbol();
+  return os;
 }
+
+bool Word::operator<(const Word &w) const {
+    return word_ < w.word_;
+}
+
+
+std::vector<Symbol> Word::getWord() {
+  return word_;
+}
+
+std::ostream& operator<<(std::ostream &os, Word &w) {
+  return w.Write(os);
+}
+

@@ -28,11 +28,15 @@ class Word {
   Word(std::string, Alphabet &);
   ~Word();
 
+  std::vector<Symbol> getWord();
+
   int WordLength();
   void WordInverse(std::ostream &);
   void WordPrefixes(std::ostream &);
   void WordSuffixes(std::ostream &);
   void WordSubstrings(std::ostream &);
 
-  void Write();
+  std::ostream& Write(std::ostream &os);
+  bool operator<(const Word&) const;
+  friend std::ostream& operator<<(std::ostream&, Word&);
 };

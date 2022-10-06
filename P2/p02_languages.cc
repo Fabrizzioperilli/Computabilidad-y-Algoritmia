@@ -22,6 +22,8 @@
 #include "Alphabet.h"
 #include "Symbol.h"
 #include "Word.h"
+#include "Language.h"
+
 typedef std::vector<std::vector<std::string>> vector_alph_lg;
 
 void Help();
@@ -77,22 +79,44 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
   std::string string_line_file1;
   std::string string_line_file2;
 
-  std::vector<std::string> vector_alphabet;
-  std::vector<std::string> vector_language;
+  std::vector<std::string> vector_symbols_file1;
+  std::vector<std::string> vector_words_file1;
 
-  vector_alph_lg vector_aux;
+  std::vector<std::string> vector_symbols_file2;
+  std::vector<std::string> vector_words_file2;
+
+  vector_alph_lg vector_aux_file1;
+  vector_alph_lg vector_aux_file2;
+  
+
   while (!namefile1.eof() && !namefile2.eof())
   {
     getline(namefile1, string_line_file1);
     getline(namefile2, string_line_file2);
 
-    vector_aux = Split(string_line_file1);
-    vector_alphabet = vector_aux[0];
-    vector_language = vector_aux[1];
+    vector_aux_file1 = Split(string_line_file1);
+    vector_aux_file2 = Split(string_line_file2);
+    
+    vector_symbols_file1 = vector_aux_file1[0];
+    vector_words_file1 = vector_aux_file1[1];
+
+    vector_symbols_file2 = vector_aux_file2[0];
+    vector_words_file2 = vector_aux_file2[1];
 
     Alphabet alphabet;
 
-   
+    for (size_t i = 0; i < vector_symbols_file1.size(); i++) 
+      alphabet.AddSymbol(vector_symbols_file1[i]);
+
+    
+    Language language;
+    for (size_t i = 0; i < vector_words_file1.size(); i++) {
+      Word word(vector_words_file1[i], alphabet);
+      language.AddWord(word);
+    }
+
+    // namefile_output << "{" << alphabet << "}" << std::endl;
+    namefile_output << "{ " << language << "}"<<std::endl;
     
     
    

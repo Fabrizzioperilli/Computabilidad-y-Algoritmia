@@ -41,13 +41,15 @@ int Symbol::SymbolSize() {
 }
 
 
-void Symbol::Write() {
-    std::cout << symbol_;
+std::ostream& Symbol::Write(std::ostream &os) {
+    os << symbol_;
+    return os;
 }
-
 
 bool Symbol::operator<(const Symbol &s) const {
     return symbol_ < s.symbol_;
 }
 
-
+std::ostream& operator<<(std::ostream &os, Symbol &s) {
+    return s.Write(os);
+}

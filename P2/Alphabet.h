@@ -26,12 +26,14 @@ class Alphabet {
   ~Alphabet();
 
   void AddSymbol(Symbol &);
+  void AddSymbol(std::string str);
+  
   bool Empty();
   std::set<Symbol> getAlphabet();
   int Size();
   bool Search(std::string);
   void Write();
- 
+   
  
 
 };
