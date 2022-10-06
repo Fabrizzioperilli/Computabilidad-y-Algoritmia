@@ -34,6 +34,8 @@ class Language {
   friend std::ostream& operator<<(std::ostream&, Language&);
   //Funcion que concatene dos lenguajes y devuelva el resultado
   Language Concatenate(Language&);
+  Language Union(Language&);
+  Language Intersection(Language&);
 };
 
 
@@ -71,6 +73,25 @@ Language Language::Concatenate(Language& language) {
   return result;
 }
 
+Language Language::Union(Language& language) {
+  Language result;
+  for (auto i : language_) 
+    result.AddWord(i);
+  for (auto i : language.getLanguage()) 
+    result.AddWord(i);
+  return result;
+}
+
 std::set<Word> Language::getLanguage() {
   return language_;
+}
+
+Language Language::Intersection(Language& language) {
+  Language result;
+  for (auto i : language_) 
+    for (auto j : language.getLanguage()) {
+      if (i == j)
+        result.AddWord(i);
+    }
+  return result;
 }

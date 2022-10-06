@@ -131,3 +131,7 @@ Word Word::operator+(const Word &w) {
 void Word::setWord(std::vector<Symbol> word) {
   word_ = word;
 }
+
+bool Word::operator==(const Word &w) const {
+  return word_ == w.word_;
+}

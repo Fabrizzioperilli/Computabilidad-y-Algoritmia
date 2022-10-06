@@ -41,4 +41,5 @@ class Word {
   bool operator<(const Word&) const;
   friend std::ostream& operator<<(std::ostream&, Word&);
   Word operator+(const Word&);
+  bool operator==(const Word&) const;
 };

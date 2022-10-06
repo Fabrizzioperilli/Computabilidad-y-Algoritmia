@@ -53,3 +53,7 @@ bool Symbol::operator<(const Symbol &s) const {
 std::ostream& operator<<(std::ostream &os, Symbol &s) {
     return s.Write(os);
 }
+
+bool Symbol::operator==(const Symbol &s) const {
+    return symbol_ == s.symbol_;
+}

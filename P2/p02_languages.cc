@@ -125,16 +125,19 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
       languages_file2.AddWord(word);
     }
 
-    //Operaciones con lenguajes
     Language language_result;
     switch(opcode) {
       case 1:
         language_result = languages_file1.Concatenate(languages_file2);
-        namefile_output << "{ "<<language_result << " }"<<std::endl;
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 2:
+        language_result = languages_file1.Union(languages_file2);
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 3:
+        language_result = languages_file1.Intersection(languages_file2);
+        namefile_output << "{ "<< language_result << "}" << std::endl;
         break;
       case 4:
         break;
