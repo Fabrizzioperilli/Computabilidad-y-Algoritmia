@@ -33,6 +33,7 @@ class Word {
 
   int WordLength();
   Word WordInverse();
+  Word WordConcatenate(Word&);
   void WordPrefixes(std::ostream &);
   void WordSuffixes(std::ostream &);
   void WordSubstrings(std::ostream &);
@@ -40,7 +41,7 @@ class Word {
   std::ostream& Write(std::ostream &os);
   bool operator<(const Word&) const;
   friend std::ostream& operator<<(std::ostream&, Word&);
-  Word operator+(const Word&);
+  Word operator+(Word&);
   bool operator==(const Word&) const;
   bool operator!=(const Word&) const;
 };

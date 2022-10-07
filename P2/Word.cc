@@ -119,7 +119,7 @@ std::ostream& operator<<(std::ostream &os, Word &w) {
   return w.Write(os);
 }
 
-Word Word::operator+(const Word &w) {
+Word Word::WordConcatenate(Word &w) {
   Word word;
   word.word_ = word_;
   for (size_t i = 0; i < w.word_.size(); i++) {
@@ -138,4 +138,8 @@ bool Word::operator==(const Word &w) const {
 
 bool Word::operator!=(const Word &w) const {
   return word_ != w.word_;
+}
+
+Word Word::operator+(Word& word) {
+  return WordConcatenate(word);
 }
