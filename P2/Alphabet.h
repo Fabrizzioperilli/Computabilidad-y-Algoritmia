@@ -29,11 +29,12 @@ class Alphabet {
   void AddSymbol(std::string str);
   
   bool Empty();
-  std::set<Symbol> getAlphabet();
+  std::set<Symbol> getAlphabet() const;
   int Size();
   bool Search(std::string);
   std::ostream& Write(std::ostream&);
   friend std::ostream& operator<<(std::ostream&, Alphabet&);
+  Alphabet Union(const Alphabet&);
    
  
 

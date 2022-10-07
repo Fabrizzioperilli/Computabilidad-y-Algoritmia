@@ -20,16 +20,17 @@
 class Language {
   private: 
   std::set<Word> language_;
-  // Alphabet alphabet_;
+  Alphabet alphabet_;
   
   public:
   Language();
-  // Language(Word&, Alphabet&);
-  Language(Word&);
+  Language(Word&, Alphabet&);
   ~Language();
 
   std::set<Word> getLanguage();
+  Alphabet getAlphabet();
   void AddWord(Word&);
+  void SetAlphabet(Alphabet&);
   std::ostream& Write(std::ostream&);
   friend std::ostream& operator<<(std::ostream&, Language&);
   
@@ -46,9 +47,19 @@ class Language {
 Language::Language() {}
 
 
-Language::Language(Word& word) {
+Language::Language(Word& word, Alphabet& alphabet) {
   language_.insert(word);
+  alphabet_ = alphabet;
 }
+  
+Alphabet Language::getAlphabet() {
+  return alphabet_;
+}
+
+void Language::SetAlphabet(Alphabet& alphabet) {
+  alphabet_ = alphabet;
+}
+
 
 Language::~Language() {}
 
@@ -66,8 +77,12 @@ std::ostream& operator<<(std::ostream& os, Language& language) {
   return language.Write(os);
 }
 
-Language Language::Concatenate(Language& language) {
+Language Language::Concatenate(Language& language) {  
   Language result;
+  
+  Alphabet alpha = alphabet_.Union(language.getAlphabet());
+  result.SetAlphabet(alpha);
+
   for (auto i : language_) 
     for (auto j : language.getLanguage()) {
       Word word;

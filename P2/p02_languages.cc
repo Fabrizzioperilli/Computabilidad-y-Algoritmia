@@ -130,11 +130,16 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
       languages_file2.AddWord(word);
     }
 
+      languages_file1.SetAlphabet(alphabets_file1);
+      languages_file2.SetAlphabet(alphabets_file2);
+
     Language language_result;
+    Alphabet alphabet_result;
     switch(opcode) {
       case 1:
         language_result = languages_file1.Concatenate(languages_file2);
-        namefile_output << "{ "<< language_result << "}" << std::endl;
+        alphabet_result = language_result.getAlphabet();
+        namefile_output << "{ "<< alphabet_result << "} { " << language_result << "}" << std::endl;
         break;
       case 2:
         language_result = languages_file1.Union(languages_file2);
@@ -150,7 +155,8 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
         break;
       case 5:
         language_result = languages_file1.Inverse();
-        namefile_output << "{ "<< language_result << "}" << std::endl;
+        alphabet_result = languages_file1.getAlphabet();
+        namefile_output << "{ "<< alphabet_result << "} { " << language_result << "}" << std::endl;
         break;
       case 6:
         language_result = languages_file1.Power(n);

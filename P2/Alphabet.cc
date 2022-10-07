@@ -40,7 +40,7 @@ bool Alphabet::Empty() {
 }
 
 
-std::set<Symbol> Alphabet::getAlphabet() { 
+std::set<Symbol> Alphabet::getAlphabet() const{ 
     return alphabet_; 
 }
 
@@ -66,5 +66,14 @@ std::ostream& Alphabet::Write(std::ostream& os) {
 
 std::ostream& operator<<(std::ostream& os, Alphabet& alphabet) {
     return alphabet.Write(os);
+}
+
+Alphabet Alphabet::Union(const Alphabet& alphabet){
+    Alphabet new_alphabet;
+    for (auto i : alphabet_)
+        new_alphabet.AddSymbol(i);
+    for (auto i : alphabet.getAlphabet())
+        new_alphabet.AddSymbol(i);
+    return new_alphabet;
 }
 
