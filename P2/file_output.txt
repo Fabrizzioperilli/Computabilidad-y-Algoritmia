@@ -1,4 +1,4 @@
-{ a b c e f g } { abce abcefg abcfe abcgf ae aefg afe agf bbcce bbccefg bbccfe bbccgf cabe cabefg cabfe cabgf }
+{ a b c } { a abc bbcc cab }
+{ a } { }
 { a b } { }
-{ 0 1 a b } { }
-{ 0 1 } { 00 000 0000 0001 001 0010 0011 01 010 011 10 100 101 11 110 111 }
+{ 0 1 } { 0 00 1 }

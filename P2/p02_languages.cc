@@ -143,15 +143,18 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
         break;
       case 2:
         language_result = languages_file1.Union(languages_file2);
-        namefile_output << "{ "<< language_result << "}" << std::endl;
+        alphabet_result = language_result.getAlphabet();
+        namefile_output << "{ "<< alphabet_result << "} { " << language_result << "}" << std::endl;
         break;
       case 3:
         language_result = languages_file1.Intersection(languages_file2);
-        namefile_output << "{ "<< language_result << "}" << std::endl;
+        alphabet_result = language_result.getAlphabet();
+        namefile_output << "{ "<< alphabet_result << "} { " << language_result << "}" << std::endl;
         break;
       case 4:
         language_result = languages_file1.Difference(languages_file2);
-        namefile_output << "{ "<< language_result << "}" << std::endl;
+        alphabet_result = language_result.getAlphabet();
+        namefile_output << "{ "<< alphabet_result << "} { " << language_result << "}" << std::endl;
         break;
       case 5:
         language_result = languages_file1.Inverse();

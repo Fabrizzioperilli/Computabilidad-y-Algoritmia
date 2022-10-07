@@ -94,6 +94,9 @@ Language Language::Concatenate(Language& language) {
 
 Language Language::Union(Language& language) {
   Language result;
+  Alphabet alpha = alphabet_.Union(language.getAlphabet());
+  result.SetAlphabet(alpha);
+  
   for (auto i : language_) 
     result.AddWord(i);
   for (auto i : language.getLanguage()) 
@@ -107,6 +110,7 @@ std::set<Word> Language::getLanguage() {
 
 Language Language::Intersection(Language& language) {
   Language result;
+  result.SetAlphabet(alphabet_);
   for (auto i : language_) 
     for (auto j : language.getLanguage()) {
       if (i == j)
@@ -117,6 +121,7 @@ Language Language::Intersection(Language& language) {
 
 Language Language::Difference(Language& language) {
   Language result;
+  result.SetAlphabet(alphabet_);
   for (auto i : language_) 
     for (auto j : language.getLanguage()) {
       if (i != j)
