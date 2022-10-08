@@ -1,0 +1,5 @@
+Prefijos de la cadena
+& a ab abb abba abbab 
+& ab abab ababcd 
+& 6 67 679 6793 67938 679383 6793836 
+& h ho hol hola 
