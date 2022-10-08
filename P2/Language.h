@@ -27,8 +27,8 @@ public:
   Language(Word &, Alphabet &);
   ~Language();
 
-  std::set<Word> getLanguage();
-  Alphabet getAlphabet();
+  std::set<Word> GetLanguage();
+  Alphabet GetAlphabet();
   void SetAlphabet(Alphabet &);
 
   void AddWord(Word &);

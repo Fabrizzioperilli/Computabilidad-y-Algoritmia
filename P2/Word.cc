@@ -25,7 +25,7 @@ Word::Word(std::string str, Alphabet &alph) {
 
   // Previamente se comprueba si el alfabeto asociado a la cadena está vacio
   if (!alph.Empty()) {
-    for (auto i : alphabet_.getAlphabet()) {
+    for (auto i : alphabet_.GetAlphabet()) {
       symbol = i.GetSymbol();
 
       for (size_t j = 0; j < str.length(); j++) {
@@ -51,12 +51,12 @@ Word::Word(std::string str, Alphabet &alph) {
 Word::~Word() {}
 
 
-std::vector<Symbol> Word::getWord() { 
+std::vector<Symbol> Word::GetWord() { 
   return word_; 
 }
 
 
-void Word::setWord(std::vector<Symbol> word) { 
+void Word::SetWord(std::vector<Symbol> word) { 
   word_ = word; 
 }
 

@@ -27,12 +27,12 @@ Language::Language(Word &word, Alphabet &alphabet) {
 Language::~Language() {}
 
 
-std::set<Word> Language::getLanguage() { 
+std::set<Word> Language::GetLanguage() { 
   return language_; 
 }
 
 
-Alphabet Language::getAlphabet() { 
+Alphabet Language::GetAlphabet() { 
   return alphabet_; 
 }
 
@@ -56,11 +56,11 @@ std::ostream &Language::Write(std::ostream &os) {
 
 Language Language::Concatenate(Language &language) {
   Language result;
-  Alphabet alpha = alphabet_.Union(language.getAlphabet());
+  Alphabet alpha = alphabet_.Union(language.GetAlphabet());
   result.SetAlphabet(alpha);
 
   for (auto i : language_)
-    for (auto j : language.getLanguage()) {
+    for (auto j : language.GetLanguage()) {
       Word word;
       word = i + j;
       result.AddWord(word);
@@ -71,12 +71,12 @@ Language Language::Concatenate(Language &language) {
 
 Language Language::Union(Language &language) {
   Language result;
-  Alphabet alpha = alphabet_.Union(language.getAlphabet());
+  Alphabet alpha = alphabet_.Union(language.GetAlphabet());
   result.SetAlphabet(alpha);
 
   for (auto i : language_)
     result.AddWord(i);
-  for (auto i : language.getLanguage())
+  for (auto i : language.GetLanguage())
     result.AddWord(i);
   return result;
 }
@@ -87,7 +87,7 @@ Language Language::Intersection(Language &language) {
   result.SetAlphabet(alphabet_);
   
   for (auto i : language_)
-    for (auto j : language.getLanguage()) {
+    for (auto j : language.GetLanguage()) {
       if (i == j)
         result.AddWord(i);
     }
@@ -100,7 +100,7 @@ Language Language::Difference(Language &language) {
   result.SetAlphabet(alphabet_);
 
   for (auto i : language_)
-    for (auto j : language.getLanguage()) {
+    for (auto j : language.GetLanguage()) {
       if (i != j)
         result.AddWord(i);
     }

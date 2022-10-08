@@ -26,7 +26,7 @@ Alphabet::Alphabet(std::set<Symbol> symbol) {
 Alphabet::~Alphabet() {}
 
 
-std::set<Symbol> Alphabet::getAlphabet() const{ 
+std::set<Symbol> Alphabet::GetAlphabet() const{ 
     return alphabet_; 
 }
 
@@ -69,7 +69,7 @@ Alphabet Alphabet::Union(const Alphabet& alphabet){
     Alphabet new_alphabet;
     for (auto i : alphabet_)
         new_alphabet.AddSymbol(i);
-    for (auto i : alphabet.getAlphabet())
+    for (auto i : alphabet.GetAlphabet())
         new_alphabet.AddSymbol(i);
     return new_alphabet;
 }

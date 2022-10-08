@@ -26,8 +26,8 @@ public:
   Word(std::string, Alphabet &);
   ~Word();
 
-  std::vector<Symbol> getWord();
-  void setWord(std::vector<Symbol>);
+  std::vector<Symbol> GetWord();
+  void SetWord(std::vector<Symbol>);
 
   int WordLength();
   Word WordInverse();

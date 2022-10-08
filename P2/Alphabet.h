@@ -26,7 +26,7 @@ public:
   Alphabet(std::set<Symbol>);
   ~Alphabet();
 
-  std::set<Symbol> getAlphabet() const;
+  std::set<Symbol> GetAlphabet() const;
 
   void AddSymbol(Symbol &);
   void AddSymbol(std::string str);

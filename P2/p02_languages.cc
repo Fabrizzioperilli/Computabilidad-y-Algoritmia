@@ -132,32 +132,32 @@ void Read(char *file_input1, char *file_input2, char *file_output, int opcode) {
     switch (opcode) {
     case 1:
       language_result = languages_file1.Concatenate(languages_file2);
-      alphabet_result = language_result.getAlphabet();
+      alphabet_result = language_result.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     case 2:
       language_result = languages_file1.Union(languages_file2);
-      alphabet_result = language_result.getAlphabet();
+      alphabet_result = language_result.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     case 3:
       language_result = languages_file1.Intersection(languages_file2);
-      alphabet_result = language_result.getAlphabet();
+      alphabet_result = language_result.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     case 4:
       language_result = languages_file1.Difference(languages_file2);
-      alphabet_result = language_result.getAlphabet();
+      alphabet_result = language_result.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     case 5:
       language_result = languages_file1.Inverse();
-      alphabet_result = languages_file1.getAlphabet();
+      alphabet_result = languages_file1.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     case 6:
       language_result = languages_file1.Power(n);
-      alphabet_result = languages_file1.getAlphabet();
+      alphabet_result = languages_file1.GetAlphabet();
       namefile_output << "{ " << alphabet_result << "} { " << language_result << "}" << std::endl;
       break;
     default:
