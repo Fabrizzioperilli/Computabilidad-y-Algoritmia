@@ -3,15 +3,15 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 2: Operaciones con lenguajes
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Symbol.h  Cabecera de la clase simbolo
+// Fecha: 11/10/2022
+// Archivo: Symbol.h  Fichero cabecera de la clase Simbolo
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #pragma once
 
@@ -25,20 +25,18 @@ class Symbol {
 private:
   std::string symbol_;
 
- public:
+public:
   Symbol();
   Symbol(std::string);
   ~Symbol();
 
   std::string GetSymbol();
   void SetSymbol(std::string);
-  
- 
   int SymbolSize();
+  std::ostream &Write(std::ostream &os);
 
-  std::ostream& Write(std::ostream &os);
-  bool operator<(const Symbol&) const;
-  friend std::ostream& operator<<(std::ostream&, Symbol&);
-  bool operator==(const Symbol&) const;
-  bool operator!=(const Symbol&) const;
+  bool operator<(const Symbol &) const;
+  friend std::ostream &operator<<(std::ostream &, Symbol &);
+  bool operator==(const Symbol &) const;
+  bool operator!=(const Symbol &) const;
 };

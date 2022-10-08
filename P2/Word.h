@@ -3,27 +3,25 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 2: Operaciones con lenguajes
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Word.h  Cabecera de la clase cadena
+// Fecha: 11/10/2022
+// Archivo: Word.h  Fichero cabecera de la clase Cadena
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #pragma once
 #include "Alphabet.h"
 
-
-
 class Word {
- private:
+private:
   Alphabet alphabet_;
   std::vector<Symbol> word_;
 
- public:
+public:
   Word();
   Word(std::string, Alphabet &);
   ~Word();
@@ -33,15 +31,15 @@ class Word {
 
   int WordLength();
   Word WordInverse();
-  Word WordConcatenate(Word&);
+  Word WordConcatenate(Word &);
   void WordPrefixes(std::ostream &);
   void WordSuffixes(std::ostream &);
   void WordSubstrings(std::ostream &);
+  std::ostream &Write(std::ostream &os);
 
-  std::ostream& Write(std::ostream &os);
-  bool operator<(const Word&) const;
-  friend std::ostream& operator<<(std::ostream&, Word&);
-  Word operator+(Word&);
-  bool operator==(const Word&) const;
-  bool operator!=(const Word&) const;
+  bool operator<(const Word &) const;
+  friend std::ostream &operator<<(std::ostream &, Word &);
+  Word operator+(Word &);
+  bool operator==(const Word &) const;
+  bool operator!=(const Word &) const;
 };

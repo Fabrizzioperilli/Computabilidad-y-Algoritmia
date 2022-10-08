@@ -3,21 +3,19 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 2: Operaciones con lenguajes
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Word.cc  La clase cadena contine un vector de simbolos
-//                    y tiene asociado un alfabeto
+// Fecha: 11/10/2022
+// Archivo: Word.cc  Implementacion de la clase Cadena
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include "Word.h"
 
 Word::Word() {}
-
 
 
 Word::Word(std::string str, Alphabet &alph) {
@@ -25,11 +23,11 @@ Word::Word(std::string str, Alphabet &alph) {
   std::string symbol;
   std::string sub_string;
 
-  //Previamente se comprueba si el alfabeto asociado a la cadena está vacio
+  // Previamente se comprueba si el alfabeto asociado a la cadena está vacio
   if (!alph.Empty()) {
     for (auto i : alphabet_.getAlphabet()) {
       symbol = i.GetSymbol();
-    
+
       for (size_t j = 0; j < str.length(); j++) {
         sub_string = str.substr(j, symbol.length());
         if (alphabet_.Search(sub_string)) {
@@ -52,8 +50,19 @@ Word::Word(std::string str, Alphabet &alph) {
 
 Word::~Word() {}
 
-int Word::WordLength() { 
-    return word_.size(); 
+
+std::vector<Symbol> Word::getWord() { 
+  return word_; 
+}
+
+
+void Word::setWord(std::vector<Symbol> word) { 
+  word_ = word; 
+}
+
+
+int Word::WordLength() {
+   return word_.size(); 
 }
 
 
@@ -61,6 +70,15 @@ Word Word::WordInverse() {
   Word word;
   for (int i = word_.size() - 1; i >= 0; i--)
     word.word_.push_back(word_[i]);
+  return word;
+}
+
+
+Word Word::WordConcatenate(Word &w) {
+  Word word;
+  word.word_ = word_;
+  for (size_t i = 0; i < w.word_.size(); i++) 
+    word.word_.push_back(w.word_[i]);
   return word;
 }
 
@@ -93,53 +111,41 @@ void Word::WordSubstrings(std::ostream &os) {
   os << STR_EMPTY << " ";
   for (size_t i = 0; i < word_.size(); i++)
     for (size_t j = i; j < word_.size(); j++) {
-      for (size_t k = i; k <= j; k++) os << word_[k].GetSymbol();
+      for (size_t k = i; k <= j; k++)
+        os << word_[k].GetSymbol();
       os << " ";
     }
   os << std::endl;
 }
 
 
-std::ostream& Word::Write(std::ostream &os) {
-  for (size_t i = 0; i < word_.size(); i++) 
+std::ostream &Word::Write(std::ostream &os) {
+  for (size_t i = 0; i < word_.size(); i++)
     os << word_[i].GetSymbol();
   return os;
 }
 
-bool Word::operator<(const Word &w) const {
-    return word_ < w.word_;
+
+bool Word::operator<(const Word &w) const { 
+  return word_ < w.word_; 
 }
 
 
-std::vector<Symbol> Word::getWord() {
-  return word_;
+std::ostream &operator<<(std::ostream &os, Word &w) { 
+  return w.Write(os); 
 }
 
-std::ostream& operator<<(std::ostream &os, Word &w) {
-  return w.Write(os);
+
+bool Word::operator==(const Word &w) const { 
+  return word_ == w.word_; 
 }
 
-Word Word::WordConcatenate(Word &w) {
-  Word word;
-  word.word_ = word_;
-  for (size_t i = 0; i < w.word_.size(); i++) {
-    word.word_.push_back(w.word_[i]);
-  }
-  return word;
+
+bool Word::operator!=(const Word &w) const { 
+  return word_ != w.word_; 
 }
 
-void Word::setWord(std::vector<Symbol> word) {
-  word_ = word;
-}
 
-bool Word::operator==(const Word &w) const {
-  return word_ == w.word_;
-}
-
-bool Word::operator!=(const Word &w) const {
-  return word_ != w.word_;
-}
-
-Word Word::operator+(Word& word) {
-  return WordConcatenate(word);
+Word Word::operator+(Word &word) { 
+  return WordConcatenate(word); 
 }
