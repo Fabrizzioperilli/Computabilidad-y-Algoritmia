@@ -1,4 +1,4 @@
-{ a b c e f g } { a abc bbcc cab e efg fe gf }
-{ a b } { a aa aaa }
-{ 0 1 a b } { & }
-{ 0 1 } { 0 00 01 1 10 11 }
+{ a b c } { aaaaa abcabcabcabcabc bbccbbccbbccbbccbbcc cabcabcabcabcab }
+{ a } { aaaaa aaaaaaaaaa aaaaaaaaaaaaaaa }
+{ a b } { }
+{ 0 1 } { &&&&& }
