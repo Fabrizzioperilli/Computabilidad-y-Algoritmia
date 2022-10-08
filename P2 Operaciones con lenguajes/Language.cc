@@ -59,11 +59,18 @@ Language Language::Concatenate(Language &language) {
   Alphabet alpha = alphabet_.Union(language.GetAlphabet());
   result.SetAlphabet(alpha);
 
+  Word word_empty(STR_EMPTY, alphabet_);
   for (auto i : language_)
     for (auto j : language.GetLanguage()) {
       Word word;
-      word = i + j;
-      result.AddWord(word);
+      if (i == word_empty) 
+        result.AddWord(j);
+      else if (j == word_empty)
+        result.AddWord(i);
+      else {
+        word = i + j;
+        result.AddWord(word);
+      }
     }
   return result;
 }
