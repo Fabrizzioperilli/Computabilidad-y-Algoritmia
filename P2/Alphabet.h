@@ -3,39 +3,38 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 2: Operaciones con lenguajes
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Alphabet.h  Cabecera de la clase alfabeto
+// Fecha: 11/10/2022
+// Archivo: Alphabet.h  Fichero cabecera de la clase Alfabeto
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #pragma once
 #include "Symbol.h"
 #include <set>
 
 class Alphabet {
- private:
+private:
   std::set<Symbol> alphabet_;
- public:
+
+public:
   Alphabet();
   Alphabet(std::set<Symbol>);
   ~Alphabet();
 
+  std::set<Symbol> getAlphabet() const;
+
   void AddSymbol(Symbol &);
   void AddSymbol(std::string str);
-  
   bool Empty();
-  std::set<Symbol> getAlphabet() const;
   int Size();
   bool Search(std::string);
-  std::ostream& Write(std::ostream&);
-  friend std::ostream& operator<<(std::ostream&, Alphabet&);
-  Alphabet Union(const Alphabet&);
-   
- 
+  std::ostream &Write(std::ostream &);
+  Alphabet Union(const Alphabet &);
 
+  friend std::ostream &operator<<(std::ostream &, Alphabet &);
 };

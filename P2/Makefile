@@ -3,15 +3,15 @@
 # Grado en Ingeniería Informática
 # Asignatura: Computabilidad y Algoritmia
 # Curso: 2º
-# Practica 1: Simbolos, alfabetos y cadena
+# Practica 2: Operaciones con lenguajes
 # Autor: Fabrizzio Daniell Perilli Martin
 # Correo: alu0101138589@ull.edu.es
-# Fecha: 5/10/2022
+# Fecha: 11/10/2022
 # Archivo Makefile
 #             ...
 # Referencias:
 # Historial de revisiones:
-# Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+# Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 
 FILES= *.cc

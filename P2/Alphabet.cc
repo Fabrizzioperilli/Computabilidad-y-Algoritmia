@@ -3,15 +3,15 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 2: Operaciones con lenguajes
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Alphabet.cc    La clase alfabeto almacena un vector de Simbolos
+// Fecha: 11/10/2022
+// Archivo: Alphabet.cc Implementacion de la clase Alfabeto
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include "Alphabet.h"
 
@@ -26,6 +26,11 @@ Alphabet::Alphabet(std::set<Symbol> symbol) {
 Alphabet::~Alphabet() {}
 
 
+std::set<Symbol> Alphabet::getAlphabet() const{ 
+    return alphabet_; 
+}
+
+
 void Alphabet::AddSymbol(Symbol &symbol) { 
     alphabet_.insert(symbol); 
 }
@@ -37,11 +42,6 @@ void Alphabet::AddSymbol(std::string str) {
 
 bool Alphabet::Empty() { 
     return alphabet_.empty(); 
-}
-
-
-std::set<Symbol> Alphabet::getAlphabet() const{ 
-    return alphabet_; 
 }
 
 
@@ -64,9 +64,6 @@ std::ostream& Alphabet::Write(std::ostream& os) {
     return os;
 }
 
-std::ostream& operator<<(std::ostream& os, Alphabet& alphabet) {
-    return alphabet.Write(os);
-}
 
 Alphabet Alphabet::Union(const Alphabet& alphabet){
     Alphabet new_alphabet;
@@ -77,3 +74,7 @@ Alphabet Alphabet::Union(const Alphabet& alphabet){
     return new_alphabet;
 }
 
+
+std::ostream& operator<<(std::ostream& os, Alphabet& alphabet) {
+    return alphabet.Write(os);
+}
