@@ -3,4 +3,3 @@
 #### El siguiente repositorio contiene diferentes prácticas de programación utilizando como herramienta el lenguaje C++ para aplicar los conceptos teóricos de computabilidad
 
 ###### Autor: Fabrizzio Daniell Perilli Martin
-###### Escuela Superior de Ingeniería y Tecnología. Univerdad de la Laguna 
