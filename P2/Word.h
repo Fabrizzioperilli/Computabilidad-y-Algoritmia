@@ -15,7 +15,9 @@
 
 #pragma once
 #include "Alphabet.h"
+// #include "Language.h"
 
+class Language;
 class Word {
 private:
   Alphabet alphabet_;
@@ -28,13 +30,16 @@ public:
 
   std::vector<Symbol> GetWord();
   void SetWord(std::vector<Symbol>);
+  Alphabet GetAlphabet();
+  void SetAlphabet(Alphabet &);
 
+  void AddSymbol(Symbol &);
   int WordLength();
   Word WordInverse();
   Word WordConcatenate(Word &);
-  void WordPrefixes(std::ostream &);
-  void WordSuffixes(std::ostream &);
-  void WordSubstrings(std::ostream &);
+  Language WordPrefixes();
+  Language WordSuffixes();
+  Language WordSubstrings();
   std::ostream &Write(std::ostream &os);
 
   bool operator<(const Word &) const;

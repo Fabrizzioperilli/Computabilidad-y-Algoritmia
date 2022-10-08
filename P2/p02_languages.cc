@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
     int opcode = atoi(argv[4]);
     std::cout << "Compruebe la salida en el fichero: " << argv[3] << std::endl;
     Read(argv[1], argv[2], argv[3], opcode);
-
+    
   } else if ((argc == 2) && (argv[1] == kOptionHelp)) {
     Help();
     return -1;

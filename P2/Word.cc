@@ -14,6 +14,7 @@
 // Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include "Word.h"
+#include "Language.h"
 
 Word::Word() {}
 
@@ -61,8 +62,23 @@ void Word::SetWord(std::vector<Symbol> word) {
 }
 
 
-int Word::WordLength() {
-   return word_.size(); 
+Alphabet Word::GetAlphabet() { 
+  return alphabet_; 
+}
+
+
+void Word::SetAlphabet(Alphabet &alph) { 
+  alphabet_ = alph; 
+}
+
+
+void Word::AddSymbol(Symbol &symbol) { 
+  word_.push_back(symbol); 
+}
+
+
+int Word::WordLength() { 
+  return word_.size(); 
 }
 
 
@@ -77,45 +93,67 @@ Word Word::WordInverse() {
 Word Word::WordConcatenate(Word &w) {
   Word word;
   word.word_ = word_;
-  for (size_t i = 0; i < w.word_.size(); i++) 
+  for (size_t i = 0; i < w.word_.size(); i++)
     word.word_.push_back(w.word_[i]);
   return word;
 }
 
 
-void Word::WordPrefixes(std::ostream &os) {
-  os << STR_EMPTY << " ";
+Language Word::WordPrefixes() {
+  Language language;
+  Word word_empty;
+  Symbol symbol(STR_EMPTY);
+
+  word_empty.AddSymbol(symbol);
+  language.AddWord(word_empty);
+
   for (size_t i = 0; i < word_.size(); i++) {
+    Word word;
     for (size_t j = 0; j <= i; j++) {
-      os << word_[j].GetSymbol();
+      word.AddSymbol(word_[j]);
     }
-    os << " ";
+    language.AddWord(word);
   }
-  os << std::endl;
+  return language;
 }
 
 
-void Word::WordSuffixes(std::ostream &os) {
-  os << STR_EMPTY << " ";
+Language Word::WordSuffixes() {
+  Language language;
+  Word word_empty;
+  Symbol symbol(STR_EMPTY);
+
+  word_empty.AddSymbol(symbol);
+  language.AddWord(word_empty);
+
   for (int i = word_.size() - 1; i >= 0; i--) {
+    Word word;
     for (size_t j = i; j < word_.size(); j++) {
-      os << word_[j].GetSymbol();
+      word.AddSymbol(word_[j]);
     }
-    os << " ";
+    language.AddWord(word);
   }
-  os << std::endl;
+  return language;
 }
 
 
-void Word::WordSubstrings(std::ostream &os) {
-  os << STR_EMPTY << " ";
-  for (size_t i = 0; i < word_.size(); i++)
-    for (size_t j = i; j < word_.size(); j++) {
+Language Word::WordSubstrings() {
+  Language language;
+  Word word_empty;
+  Symbol symbol(STR_EMPTY);
+
+  word_empty.AddSymbol(symbol);
+  language.AddWord(word_empty);
+
+  for (size_t i = 0; i < word_.size(); i++) {
+    Word word;
+    for (size_t j = i; j < word_.size(); j++)
       for (size_t k = i; k <= j; k++)
-        os << word_[k].GetSymbol();
-      os << " ";
-    }
-  os << std::endl;
+        word.AddSymbol(word_[j]);
+
+    language.AddWord(word);
+  }
+  return language;
 }
 
 
