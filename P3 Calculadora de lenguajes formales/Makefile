@@ -3,15 +3,15 @@
 # Grado en Ingeniería Informática
 # Asignatura: Computabilidad y Algoritmia
 # Curso: 2º
-# Practica 2: Operaciones con lenguajes
+# Practica 3: Calculadora de lengaujes formales
 # Autor: Fabrizzio Daniell Perilli Martin
 # Correo: alu0101138589@ull.edu.es
-# Fecha: 11/10/2022
+# Fecha: 18/10/2022
 # Archivo Makefile
 #             ...
 # Referencias:
 # Historial de revisiones:
-# Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
+# Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 
 FILES= *.cc
@@ -24,8 +24,8 @@ Inicio:
 	@echo $(C) 
 
 practica: $(F) Inicio
-	g++ $(CXXFLAGS) $(FILES) -o p02_languages
+	g++ $(CXXFLAGS) $(FILES) -o p03_calculator
 
 clean:
-	rm -rf p02_languages 
+	rm -rf p03_calculator 
 	rm -rf *.o

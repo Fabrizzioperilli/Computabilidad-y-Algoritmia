@@ -3,15 +3,15 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 2: Operaciones con lenguajes
+// Practica 3: Calculadora de  lenguajes formales
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 11/10/2022
-// Archivo: Word.cc  Implementacion de la clase Cadena
+// Fecha: 18/10/2022
+// Archivo: Word.cc Implementación de la clase Word (Cadena)
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 7/10/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include "Word.h"
 #include "Language.h"

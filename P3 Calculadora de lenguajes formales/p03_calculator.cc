@@ -3,15 +3,15 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 3: Calculadora de  lenguajes formales
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo p02_languages.cc: programa cliente.
+// Fecha: 18/10/2022
+// Archivo: p03_calculator.cc Programa cliente
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include <string.h>
 #include <fstream>

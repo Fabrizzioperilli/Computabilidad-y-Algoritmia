@@ -1,5 +1,0 @@
-{ a b c } { aaaaa abcabcabcabcabc bbccbbccbbccbbccbbcc cabcabcabcabcab }
-{ a } { aaaaa aaaaaaaaaa aaaaaaaaaaaaaaa }
-{ a b } { }
-{ 0 1 } { & }
-{ 0 1 } { 00000 0000000000 0101010101 1010101010 11111 1111111111 }

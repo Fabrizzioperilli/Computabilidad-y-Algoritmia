@@ -3,15 +3,15 @@
 // Grado en Ingeniería Informática
 // Asignatura: Computabilidad y Algoritmia
 // Curso: 2º
-// Practica 1: Simbolos, alfabetos y cadena
+// Practica 3: Calculadora de  lenguajes formales
 // Autor: Fabrizzio Daniell Perilli Martin
 // Correo: alu0101138589@ull.edu.es
-// Fecha: 5/10/2022
-// Archivo: Language.h    Cabecera de la clase lenguaje
+// Fecha: 18/10/2022
+// Archivo: Language.h  Fichero cabecera de la clase Language
 //             ...
 // Referencias:
 // Historial de revisiones:
-// Fecha: 28/09/2022 - Versión: 1.0 - Descripción: Creación del código.
+// Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #pragma once
 #include "Word.h"
