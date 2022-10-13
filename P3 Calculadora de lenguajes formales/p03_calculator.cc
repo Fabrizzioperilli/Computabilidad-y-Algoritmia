@@ -23,26 +23,28 @@
 #include "Symbol.h"
 #include "Word.h"
 
-typedef std::vector<std::vector<std::string>> vector_alph_lg;
-
 void Help();
 void Read(char *);
-vector_alph_lg Split(std::string);
-int Divide(std::string);
+std::vector<std::string> Split(std::string);
+int Position(std::string str);
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
   const std::string kOptionHelp = "--help";
   const int kNumberParam = 2;
 
-  if ((argc == kNumberParam) && (argv[1] != kOptionHelp)) {
+  if ((argc == kNumberParam) && (argv[1] != kOptionHelp))
+  {
     std::cout << "Lectura del fichero: " << argv[1] << std::endl;
     Read(argv[1]);
-    
-  } else if ((argc == kNumberParam) && (argv[1] == kOptionHelp)) {
+  }
+  else if ((argc == kNumberParam) && (argv[1] == kOptionHelp))
+  {
     Help();
     return -1;
-
-  } else {
+  }
+  else
+  {
     std::cout << "Error al ejecutar." << std::endl;
     std::cout << "Ejecute ./p02_languages --help para mas informacion" << std::endl;
     return -1;
@@ -50,8 +52,8 @@ int main(int argc, char **argv) {
   return EXIT_SUCCESS;
 }
 
-
-void Help() {
+void Help()
+{
   std::cout << "Modo de funcionamiento: " << std::endl;
   std::cout << "./p03_calculadora FicheroEntrada.txt " << std::endl;
   std::cout << "---Operaciones con lenguajes---" << std::endl;
@@ -63,51 +65,57 @@ void Help() {
   std::cout << " * Potencia" << std::endl;
 }
 
-
-void Read(char *file_input) {
+void Read(char *file_input)
+{
+  std::string line;
   std::ifstream namefile(file_input);
-  std::cout << "Read" << std::endl;
+  std::vector<std::string> vector_word;
+  std::vector<std::vector<std::string>> vector_vector;
+
+
+  while (!namefile.eof())
+  {
+    getline(namefile, line);
+    vector_word = Split(line);
+    vector_vector.push_back(vector_word);
+  }
+  std::vector<std::string> aux;
+  
+  for (size_t i = 0; i < vector_vector.size(); i++) {
+    for (size_t j = 0; j < vector_vector[i].size(); j++)
+      std::cout << vector_vector[i][j];
+    
+  }
+    
+  namefile.close();
 }
 
-
 // La funcion Split recorta las cadenas las almacena en un vector de vectores
-vector_alph_lg Split(std::string str) {
-  vector_alph_lg vector;
-  std::vector<std::string> vector_alphabet;
-  std::vector<std::string> vector_language;
-  std::string aux_alpha;
-  std::string aux_lenguage;
-  int half = Divide(str);
-
-  for (int i = 0; i < half; i++) {
-    if (str[i] != ' ' && str[i] != '{' && str[i] != '}')
-      aux_alpha += str[i];
-    else if (aux_alpha != "") {
-      vector_alphabet.push_back(aux_alpha);
-      aux_alpha = "";
+std::vector<std::string> Split(std::string str)
+{
+  std::vector<std::string> vector;
+  std::string aux_string;
+  int ini = Position(str);
+  
+    for (size_t i = ini; i < str.length(); i++)
+    {
+      if (str[i] != ' ' && str[i] != '{' && str[i] != '}' && str[i] != ',')
+        aux_string += str[i];
+      else if (aux_string != "")
+      {
+        vector.push_back(aux_string);
+        aux_string = "";
+      }
     }
-  }
-
-  for (size_t i = half; i < str.length(); i++) {
-    if (str[i] != ' ' && str[i] != '{' && str[i] != '}')
-      aux_lenguage += str[i];
-    else if (aux_lenguage != "") {
-      vector_language.push_back(aux_lenguage);
-      aux_lenguage = "";
-    }
-  }
-  vector.push_back(vector_alphabet);
-  vector.push_back(vector_language);
-
   return vector;
 }
 
-
-//Retorna la posicion donde se encuentra el espacio entre alfabeto y lenguaje
-int Divide(std::string str) {
+int Position(std::string str)
+{
   int pos;
   for (size_t i = 0; i < str.length(); i++)
-    if (str[i] == ' ' && str[i - 1] == '}' && str[i + 1] == '{')
+    if (str[i - 1] == '=' && str[i] == ' ')
       pos = i;
+  
   return pos;
 }
