@@ -20,12 +20,20 @@ Language::Language() {}
 
 Language::Language(Word &word, Alphabet &alphabet) {
   language_.insert(word);
-  alphabet_ = alphabet;
+  if (!alphabet.Empty())
+    alphabet_ = alphabet;
+  else 
+    alphabet_ = word.GetAlphabet();
 }
 
 Language::Language(std::set<Word> language, Alphabet& alpha) {
   language_ = language;
+  if (!alpha.Empty())
   alphabet_ = alpha;
+  else
+  for (auto i : language_)
+    for (auto j : i.GetWord())
+      alphabet_.AddSymbol(j.GetSymbol());
 }
 
 

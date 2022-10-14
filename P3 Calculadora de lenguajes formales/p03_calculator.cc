@@ -25,8 +25,8 @@
 
 void Help();
 void Read(char *);
-std::vector<std::string> Split(std::string);
-int Position(std::string str);
+void Split(std::string, int);
+void check(std::string);
 
 int main(int argc, char **argv)
 {
@@ -72,50 +72,72 @@ void Read(char *file_input)
   std::vector<std::string> vector_word;
   std::vector<std::vector<std::string>> vector_vector;
 
-
   while (!namefile.eof())
   {
     getline(namefile, line);
-    vector_word = Split(line);
-    vector_vector.push_back(vector_word);
+    check(line);
   }
-  std::vector<std::string> aux;
-  
-  for (size_t i = 0; i < vector_vector.size(); i++) {
-    for (size_t j = 0; j < vector_vector[i].size(); j++)
-      std::cout << vector_vector[i][j];
-    
-  }
-    
   namefile.close();
 }
 
 // La funcion Split recorta las cadenas las almacena en un vector de vectores
-std::vector<std::string> Split(std::string str)
+void Split(std::string str, int pos_ini)
 {
   std::vector<std::string> vector;
   std::string aux_string;
-  int ini = Position(str);
-  
-    for (size_t i = ini; i < str.length(); i++)
+
+  for (size_t i = pos_ini; i < str.length(); i++)
+  {
+    if (str[i] != ' ' && str[i] != '{' && str[i] != '}' && str[i] != ',')
+      aux_string += str[i];
+    else if (aux_string != "")
     {
-      if (str[i] != ' ' && str[i] != '{' && str[i] != '}' && str[i] != ',')
-        aux_string += str[i];
-      else if (aux_string != "")
-      {
-        vector.push_back(aux_string);
-        aux_string = "";
-      }
+      vector.push_back(aux_string);
+      aux_string = "";
     }
-  return vector;
+  }
+
+  Alphabet alphabet;
+  std::set<Word> aux;
+  std::vector<Language> vector_language;
+  for (size_t i = 0; i < vector.size(); i++)
+  {
+    Word word(vector[i], alphabet);
+    aux.insert(word);
+  }
+
+  Language language(aux, alphabet);
+  vector_language.push_back(language);
+  Language lang_aux;
+  Alphabet aux_alpha;
+  for (size_t i = 0; i < vector_language.size(); i++)
+  {
+    lang_aux = vector_language[i];
+    aux_alpha = lang_aux.GetAlphabet();
+
+    std::cout << "Alfabeto: " << aux_alpha << std::endl;
+    std::cout << "Lenguaje: " << lang_aux << std::endl;
+  }
+
+  std::cout << std::endl;
 }
 
-int Position(std::string str)
+void check(std::string line)
 {
-  int pos;
-  for (size_t i = 0; i < str.length(); i++)
-    if (str[i - 1] == '=' && str[i] == ' ')
-      pos = i;
-  
-  return pos;
+  bool flag = false;
+  int pos = 0;
+  for (size_t i = 0; i < line.length(); i++)
+    if (line[i - 1] == ' ' && line[i] == '=' && line[i + 1] == ' ')
+    {
+      flag = true;
+      pos = i + 1;
+    }
+
+  if (flag)
+  {
+    std::cout << "Definicion del lengauje. Posicion donde empieza: " << pos << std::endl;
+    Split(line, pos);
+  }
+  else
+    std::cout << "Operacion" << std::endl;
 }
