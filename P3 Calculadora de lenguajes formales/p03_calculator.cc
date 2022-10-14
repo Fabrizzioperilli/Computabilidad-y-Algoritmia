@@ -26,7 +26,8 @@
 void Help();
 void Read(char *);
 void Split(std::string, int);
-void check(std::string);
+Language CheckLanguage(std::string);
+std::string Operation(std::string);
 
 int main(int argc, char **argv)
 {
@@ -69,75 +70,82 @@ void Read(char *file_input)
 {
   std::string line;
   std::ifstream namefile(file_input);
-  std::vector<std::string> vector_word;
-  std::vector<std::vector<std::string>> vector_vector;
+  Language language;
+  std::vector<Language> vector_language;
+  std::string operation;
+  std::vector<std::string> vector_operation;
 
   while (!namefile.eof())
   {
     getline(namefile, line);
-    check(line);
+    Language language = CheckLanguage(line);
+    operation = Operation(line);
+    
+    if (!language.Empty())
+      vector_language.push_back(language);
+
+    if (!operation.empty())
+      vector_operation.push_back(operation);
   }
+
+  for (size_t i = 0; i < vector_language.size(); i++)
+  {
+    std::cout << "Lenguaje " << i + 1 << ": " << vector_language[i] << std::endl;
+  }
+
+  for (size_t i = 0; i < vector_operation.size(); i++)
+  {
+    std::cout << "Operacion " << i + 1 << ": " << vector_operation[i] << std::endl;
+  }
+
   namefile.close();
 }
 
-// La funcion Split recorta las cadenas las almacena en un vector de vectores
-void Split(std::string str, int pos_ini)
+Language CheckLanguage(std::string line)
 {
-  std::vector<std::string> vector;
-  std::string aux_string;
-
-  for (size_t i = pos_ini; i < str.length(); i++)
-  {
-    if (str[i] != ' ' && str[i] != '{' && str[i] != '}' && str[i] != ',')
-      aux_string += str[i];
-    else if (aux_string != "")
-    {
-      vector.push_back(aux_string);
-      aux_string = "";
-    }
-  }
-
   Alphabet alphabet;
   std::set<Word> aux;
-  std::vector<Language> vector_language;
-  for (size_t i = 0; i < vector.size(); i++)
-  {
-    Word word(vector[i], alphabet);
-    aux.insert(word);
-  }
-
-  Language language(aux, alphabet);
-  vector_language.push_back(language);
-  Language lang_aux;
-  Alphabet aux_alpha;
-  for (size_t i = 0; i < vector_language.size(); i++)
-  {
-    lang_aux = vector_language[i];
-    aux_alpha = lang_aux.GetAlphabet();
-
-    std::cout << "Alfabeto: " << aux_alpha << std::endl;
-    std::cout << "Lenguaje: " << lang_aux << std::endl;
-  }
-
-  std::cout << std::endl;
-}
-
-void check(std::string line)
-{
-  bool flag = false;
-  int pos = 0;
+  int pos_ini = 0;
   for (size_t i = 0; i < line.length(); i++)
     if (line[i - 1] == ' ' && line[i] == '=' && line[i + 1] == ' ')
     {
-      flag = true;
-      pos = i + 1;
-    }
+      pos_ini = i + 2;
+      std::vector<std::string> vector;
+      std::string aux_string;
 
-  if (flag)
+      for (size_t i = pos_ini; i < line.length(); i++)
+      {
+        if (line[i] != ' ' && line[i] != '{' && line[i] != '}' && line[i] != ',')
+          aux_string += line[i];
+        else if (aux_string != "")
+        {
+          vector.push_back(aux_string);
+          aux_string = "";
+        }
+      }
+      for (size_t i = 0; i < vector.size(); i++)
+      {
+        Word word(vector[i], alphabet);
+        aux.insert(word);
+      }
+    }
+  Language language(aux, alphabet);
+  return language;
+}
+
+std::string Operation(std::string line)
+{
+  std::string operation;
+  bool flag = false;
+  for (size_t i = 0; i < line.length(); i++)
   {
-    std::cout << "Definicion del lengauje. Posicion donde empieza: " << pos << std::endl;
-    Split(line, pos);
+    if (line[i - 1] != ' ' && line[i] != '=' && line[i + 1] != ' ')
+      flag = true;
+    else
+      flag = false;
   }
-  else
-    std::cout << "Operacion" << std::endl;
+  if (!flag)
+    operation = line;
+
+  return operation;
 }

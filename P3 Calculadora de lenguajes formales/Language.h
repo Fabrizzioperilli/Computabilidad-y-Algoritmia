@@ -33,6 +33,7 @@ public:
   void SetAlphabet(Alphabet &);
   void SetLanguage(std::set<Word>);
 
+  bool Empty();
   void AddWord(Word &);
   std::ostream &Write(std::ostream &);
   Language Concatenate(Language &);

@@ -60,6 +60,11 @@ void Language::SetLanguage(std::set<Word> language) {
 }
 
 
+bool Language::Empty() { 
+  return language_.empty();  
+}
+
+
 void Language::AddWord(Word &word) { 
   language_.insert(word); 
 }
