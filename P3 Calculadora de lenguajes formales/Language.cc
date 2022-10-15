@@ -50,6 +50,11 @@ Alphabet Language::GetAlphabet() {
 }
 
 
+std::string Language::GetName() { 
+  return name_; 
+}
+
+
 void Language::SetAlphabet(Alphabet &alphabet) { 
   alphabet_ = alphabet; 
 }
@@ -57,6 +62,11 @@ void Language::SetAlphabet(Alphabet &alphabet) {
 
 void Language::SetLanguage(std::set<Word> language) {
   language_ = language;
+}
+
+
+void Language::SetName(std::string name) {
+  name_ = name;
 }
 
 

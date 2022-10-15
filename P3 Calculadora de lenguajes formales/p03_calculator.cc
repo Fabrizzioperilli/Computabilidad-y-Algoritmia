@@ -92,7 +92,14 @@ void Read(char *file_input)
       vector_operation.push_back(operation);
   }
 
+for (size_t i = 0; i < vector_operation.size(); i++) {
+    for (size_t j = 0; j < vector_operation[i].size(); j++)
+      std::cout << vector_operation[i][j] << " ";
+    std::cout << std::endl;
+}
 
+    // for (size_t i = 0; i < vector_language.size(); i++)
+    //   std::cout << vector_language[i].GetName() << std::endl;
 
   Rpn rpn;
   vector_result = rpn.Calculate(vector_language, vector_operation);
@@ -108,6 +115,7 @@ void Read(char *file_input)
 
 Language CheckLanguage(std::string line)
 {
+  std::string name_language;
   Alphabet alphabet;
   std::set<Word> aux;
   int pos_ini = 0;
@@ -117,6 +125,10 @@ Language CheckLanguage(std::string line)
       pos_ini = i + 2;
       std::vector<std::string> vector;
       std::string aux_string;
+      
+      //Almacena el nombre del lenguaje 
+      for (size_t j = 0; j < i - 1; j++)
+        name_language += line[j];
 
       for (size_t i = pos_ini; i < line.length(); i++)
       {
@@ -136,7 +148,9 @@ Language CheckLanguage(std::string line)
         aux.insert(word);
       }
     }
+  
   Language language(aux, alphabet);
+  language.SetName(name_language);
   return language;
 }
 
@@ -158,11 +172,11 @@ std::vector<std::string> Operation(std::string line)
     
     else if (line[i] == 'L' && line[i+3] != '=')
     {
-      operation += line[i + 1];
+      operation += line[i];
+      operation += line[i+1];
       vector.push_back(operation);
       operation = "";
     }
-  }
-  
+}
   return vector;
 }

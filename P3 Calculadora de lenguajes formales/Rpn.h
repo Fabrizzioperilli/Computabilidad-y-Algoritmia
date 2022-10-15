@@ -34,6 +34,7 @@ public:
 };
 
 Rpn::Rpn() {}
+
 Rpn::~Rpn() {}
 
 std::vector<Language> Rpn::Calculate(std::vector<Language> languages, std::vector<std::vector<std::string>> operations)
@@ -42,32 +43,23 @@ std::vector<Language> Rpn::Calculate(std::vector<Language> languages, std::vecto
   Language result_language;
   std::vector<Language> vector_result;
 
-  for (size_t i = 0; i < operations.size(); i++)
+  for (auto i : operations)
   {
-    aux = operations[i];
-    for (size_t j = 0; j < aux.size(); j++)
+    for (auto j : i)
     {
-      // Si la cadena es cualquier numero, se busca el lenguaje en el vector de lenguajes
-      if (isdigit(aux[j][0]))
-        stack_.push(languages[std::stoi(aux[j]) - 1]);
+      if (j == "+" || j == "|" || j == "^" || j == "-" || j == "*" || j == "!")
+        Operate(j);
       else
-        Operate(aux[j]);
+      {
+        for (auto k : languages)
+          if (k.GetName() == j)
+            stack_.push(k);
+      }
     }
-    vector_result.push_back(stack_.top());
+    result_language = stack_.top();
     stack_.pop();
+    vector_result.push_back(result_language);
   }
-
-  // //imprimir el vector de lenguajes
-  // for (size_t i = 0; i < languages.size(); i++)
-  //   std::cout << "Lenguaje " << i + 1 << ": " << languages[i]<< std::endl;
-  // //imprimer el vector de operaciones
-  // for (size_t i = 0; i < operations.size(); i++)
-  // {
-  //   aux = operations[i];
-  //   for (size_t j = 0; j < aux.size(); j++)
-  //     std::cout << aux[j] << "";
-  //   std::cout << std::endl;
-  // }
 
   return vector_result;
 }

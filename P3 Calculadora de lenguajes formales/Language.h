@@ -21,6 +21,7 @@ class Language {
 private:
   std::set<Word> language_;
   Alphabet alphabet_;
+  std::string name_;
 
 public:
   Language();
@@ -30,8 +31,10 @@ public:
 
   std::set<Word> GetLanguage();
   Alphabet GetAlphabet();
+  std::string GetName();
   void SetAlphabet(Alphabet &);
   void SetLanguage(std::set<Word>);
+  void SetName(std::string);
 
   bool Empty();
   void AddWord(Word &);
