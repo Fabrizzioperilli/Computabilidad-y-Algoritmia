@@ -97,8 +97,7 @@ void Rpn::Operate(std::string operation)
     aux3 = aux - aux2;
     break;
   case '!':
-    aux3 = aux;
-    !aux3;
+    aux3 = !aux;
     break;
   default:
     std::cout << "Operacion no valida" << std::endl;
