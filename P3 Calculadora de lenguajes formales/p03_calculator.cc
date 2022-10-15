@@ -22,12 +22,14 @@
 #include "Language.h"
 #include "Symbol.h"
 #include "Word.h"
+#include "Rpn.h"
 
 void Help();
 void Read(char *);
 void Split(std::string, int);
 Language CheckLanguage(std::string);
-std::string Operation(std::string);
+std::vector<std::string> Operation(std::string);
+void Calculate(std::vector<Language>, std::vector<std::vector<std::string>>);
 
 int main(int argc, char **argv)
 {
@@ -66,14 +68,16 @@ void Help()
   std::cout << " * Potencia" << std::endl;
 }
 
+
 void Read(char *file_input)
 {
   std::string line;
   std::ifstream namefile(file_input);
   Language language;
   std::vector<Language> vector_language;
-  std::string operation;
-  std::vector<std::string> vector_operation;
+  std::vector<std::string> operation;
+  std::vector<std::vector<std::string>> vector_operation;
+  std::vector<Language> vector_result;
 
   while (!namefile.eof())
   {
@@ -88,18 +92,17 @@ void Read(char *file_input)
       vector_operation.push_back(operation);
   }
 
-  for (size_t i = 0; i < vector_language.size(); i++)
-  {
-    std::cout << "Lenguaje " << i + 1 << ": " << vector_language[i] << std::endl;
-  }
-
-  for (size_t i = 0; i < vector_operation.size(); i++)
-  {
-    std::cout << "Operacion " << i + 1 << ": " << vector_operation[i] << std::endl;
-  }
+  Rpn rpn;
+  vector_result = rpn.Calculate(vector_language, vector_operation);
+  std::cout << "\n---Lenguaje resultado: " << std::endl;
+  for (size_t i = 0; i < vector_result.size(); i++)
+    std::cout << "Operacion: " << i + 1 << ": " << vector_result[i] << std::endl;
+  
+  
 
   namefile.close();
 }
+
 
 Language CheckLanguage(std::string line)
 {
@@ -117,6 +120,8 @@ Language CheckLanguage(std::string line)
       {
         if (line[i] != ' ' && line[i] != '{' && line[i] != '}' && line[i] != ',')
           aux_string += line[i];
+        else if (line[i] == ' ' && line[i -1] == '{' && line[i + 1] == '}') 
+          aux_string += line[i];
         else if (aux_string != "")
         {
           vector.push_back(aux_string);
@@ -133,19 +138,29 @@ Language CheckLanguage(std::string line)
   return language;
 }
 
-std::string Operation(std::string line)
+
+std::vector<std::string> Operation(std::string line)
 {
+  std::vector<std::string> vector;
   std::string operation;
-  bool flag = false;
   for (size_t i = 0; i < line.length(); i++)
   {
-    if (line[i - 1] != ' ' && line[i] != '=' && line[i + 1] != ' ')
-      flag = true;
-    else
-      flag = false;
+    //Separar los operadores y los operandos en posiciones diferentes del vector
+    if (line[i] == '+' || line[i] == '|' || line[i] == '^' || line[i] == '-' || line[i] == '!' || line[i] == '*')
+    {
+      
+      operation += line[i];
+      vector.push_back(operation);
+      operation = "";
+    }
+    
+    else if (line[i] == 'L' && line[i+3] != '=')
+    {
+      operation += line[i + 1];
+      vector.push_back(operation);
+      operation = "";
+    }
   }
-  if (!flag)
-    operation = line;
-
-  return operation;
+  
+  return vector;
 }
