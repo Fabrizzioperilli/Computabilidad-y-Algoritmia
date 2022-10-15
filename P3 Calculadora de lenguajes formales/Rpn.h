@@ -21,11 +21,14 @@
 #include <string>
 #include <iostream>
 
+bool isNumber(std::string);
+
 class Rpn
 {
 private:
   std::stack<Language> stack_;
   void Operate(std::string);
+  int n_;
 
 public:
   Rpn();
@@ -36,6 +39,15 @@ public:
 Rpn::Rpn() {}
 
 Rpn::~Rpn() {}
+
+bool isNumber(std::string str)
+{
+  for (int i = 0; i < str.length(); i++)
+    if (isdigit(str[i]) == false)
+      return false;
+  return true;
+}
+
 
 std::vector<Language> Rpn::Calculate(std::vector<Language> languages, std::vector<std::vector<std::string>> operations)
 {
@@ -49,13 +61,19 @@ std::vector<Language> Rpn::Calculate(std::vector<Language> languages, std::vecto
     {
       if (j == "+" || j == "|" || j == "^" || j == "-" || j == "*" || j == "!")
         Operate(j);
+      //si j es un numero se lo asignamos a n_
+      else if (isNumber(j)) { 
+        n_ = std::stoi(j);
+      }
       else
       {
-        for (auto k : languages)
+        for (auto k : languages) 
           if (k.GetName() == j)
             stack_.push(k);
+          
+        }
       }
-    }
+    
     result_language = stack_.top();
     stack_.pop();
     vector_result.push_back(result_language);
@@ -92,6 +110,9 @@ void Rpn::Operate(std::string operation)
     break;
   case '!':
     stack_.push(!aux[0]);
+    break;
+  case '*':
+    stack_.push(aux[0] * n_);
     break;
   default:
     std::cout << "Operacion no valida" << std::endl;

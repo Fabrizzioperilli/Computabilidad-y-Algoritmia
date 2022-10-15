@@ -83,11 +83,11 @@ void Read(char *file_input)
   {
     getline(namefile, line);
     Language language = CheckLanguage(line);
-    operation = Operation(line);
     
     if (!language.Empty())
       vector_language.push_back(language);
 
+    operation = Operation(line);
     if (!operation.empty())
       vector_operation.push_back(operation);
   }
@@ -97,6 +97,10 @@ for (size_t i = 0; i < vector_operation.size(); i++) {
       std::cout << vector_operation[i][j] << " ";
     std::cout << std::endl;
 }
+// //imprime el vector de lenguaje
+// for (auto i : vector_language) 
+//   std::cout << i << std::endl;
+
 
     // for (size_t i = 0; i < vector_language.size(); i++)
     //   std::cout << vector_language[i].GetName() << std::endl;
@@ -134,6 +138,7 @@ Language CheckLanguage(std::string line)
       {
         if (line[i] != ' ' && line[i] != '{' && line[i] != '}' && line[i] != ',')
           aux_string += line[i];
+        //Caso para la cadena vacia
         else if (line[i] == ' ' && line[i -1] == '{' && line[i + 1] == '}') 
           aux_string += line[i];
         else if (aux_string != "")
@@ -159,25 +164,27 @@ std::vector<std::string> Operation(std::string line)
 {
   std::vector<std::string> vector;
   std::string operation;
-  for (size_t i = 0; i < line.length(); i++)
-  {
-    //Separar los operadores y los operandos en posiciones diferentes del vector
-    if (line[i] == '+' || line[i] == '|' || line[i] == '^' || line[i] == '-' || line[i] == '!' || line[i] == '*')
-    {
+    if (line.back() != '}') {
+      for (size_t i = 0; i < line.length(); i++)
+      {
+        if (line[i] == '+' || line[i] == '|' || line[i] == '^' || line[i] == '-' || line[i] == '!' || line[i] == '*') {
+          operation += line[i];
+          vector.push_back(operation);
+          operation = "";
+        }
+        else if (line[i] != ' ') {
+          operation += line[i];
+        }
+        else if (isdigit(line[i])){
+          operation += line[i];
+        }
+        else if (operation != "")
+        {
+          vector.push_back(operation);
+          operation = "";
+        }
+      }
+    }
       
-      operation += line[i];
-      vector.push_back(operation);
-      operation = "";
-    }
-    
-    else if (line[i] == 'L' && line[i+3] != '=')
-    {
-      operation += line[i];
-      operation += line[i+1];
-      vector.push_back(operation);
-      operation = "";
-    }
-
-}
   return vector;
 }
