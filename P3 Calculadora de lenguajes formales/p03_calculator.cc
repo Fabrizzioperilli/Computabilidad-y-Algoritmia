@@ -177,6 +177,7 @@ std::vector<std::string> Operation(std::string line)
       vector.push_back(operation);
       operation = "";
     }
+
 }
   return vector;
 }
