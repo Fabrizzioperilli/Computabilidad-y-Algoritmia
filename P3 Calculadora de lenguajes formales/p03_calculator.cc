@@ -92,6 +92,8 @@ void Read(char *file_input)
       vector_operation.push_back(operation);
   }
 
+
+
   Rpn rpn;
   vector_result = rpn.Calculate(vector_language, vector_operation);
   std::cout << "\n---Lenguaje resultado: " << std::endl;

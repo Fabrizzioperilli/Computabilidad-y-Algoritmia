@@ -5,4 +5,4 @@ L4 = { }
 L5 = {a, aab, aba}
 L1 L2 | L3 +
 L2 L3 ^ L1 L2 ^ +
-L1 L5 !
+L5 !

@@ -49,59 +49,60 @@ std::vector<Language> Rpn::Calculate(std::vector<Language> languages, std::vecto
     {
       // Si la cadena es cualquier numero, se busca el lenguaje en el vector de lenguajes
       if (isdigit(aux[j][0]))
-      {
         stack_.push(languages[std::stoi(aux[j]) - 1]);
-        // std::cout << "Lenguaje " << aux[j] << " : " << languages[std::stoi(aux[j]) - 1] << std::endl;
-      }
       else
-      {
         Operate(aux[j]);
-        // std::cout << "Operacion " << aux[j] << std::endl;
-      }
     }
-  
     vector_result.push_back(stack_.top());
     stack_.pop();
   }
-  
 
-    return vector_result;
+  // //imprimir el vector de lenguajes
+  // for (size_t i = 0; i < languages.size(); i++)
+  //   std::cout << "Lenguaje " << i + 1 << ": " << languages[i]<< std::endl;
+  // //imprimer el vector de operaciones
+  // for (size_t i = 0; i < operations.size(); i++)
+  // {
+  //   aux = operations[i];
+  //   for (size_t j = 0; j < aux.size(); j++)
+  //     std::cout << aux[j] << "";
+  //   std::cout << std::endl;
+  // }
+
+  return vector_result;
 }
 
 void Rpn::Operate(std::string operation)
 {
-  Language aux;
-  Language aux2;
-  Language aux3;
-
-  // Sacamos los dos lenguajes de la pila
-  aux = stack_.top();
-  stack_.pop();
-  aux2 = stack_.top();
-  stack_.pop();
+  std::vector<Language> aux;
+  for (size_t i = 0; i < 2; i++)
+    if (!stack_.empty())
+    {
+      aux.push_back(stack_.top());
+      stack_.pop();
+    }
 
   char op = operation[0];
 
   switch (op)
   {
   case '+':
-    aux3 = aux + aux2;
+    stack_.push(aux[0] + aux[1]);
     break;
   case '|':
-    aux3 = aux | aux2;
+    stack_.push(aux[0] | aux[1]);
     break;
   case '^':
-    aux3 = aux ^ aux2;
+    stack_.push(aux[0] ^ aux[1]);
     break;
   case '-':
-    aux3 = aux - aux2;
+    stack_.push(aux[0] - aux[1]);
     break;
   case '!':
-    aux3 = !aux;
+    stack_.push(!aux[0]);
     break;
   default:
     std::cout << "Operacion no valida" << std::endl;
     break;
   }
-    stack_.push(aux3);
 }
