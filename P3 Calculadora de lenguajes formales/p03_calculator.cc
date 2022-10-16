@@ -76,7 +76,7 @@ void Read(char *file_input) {
     getline(namefile, line);
     Language language = CheckLanguage(line);
 
-    if (!language.Empty())
+    if (!language.GetName().empty())
       vector_language.push_back(language);
 
     operation = Operation(line);
@@ -124,8 +124,11 @@ Language CheckLanguage(std::string line) {
         if (line[i] != ' ' && line[i] != '{' && line[i] != '}' && line[i] != ',')
           aux_string += line[i];
         // Caso para la cadena vacia
-        else if (line[i] == ' ' && line[i - 1] == '{' && line[i + 1] == '}')
-          aux_string += line[i];
+        else if (line[i] == '{' && line[i + 1] == '}') {
+          Language language(aux, alphabet);
+          language.SetName(name_language);
+          return  language;
+        }
         else if (aux_string != "") {
           vector.push_back(aux_string);
           aux_string = "";
