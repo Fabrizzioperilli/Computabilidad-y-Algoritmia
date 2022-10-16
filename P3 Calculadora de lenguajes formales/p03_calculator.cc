@@ -36,6 +36,7 @@ int main(int argc, char **argv) {
 
   if ((argc == kNumberParam) && (argv[1] != kOptionHelp)) {
     std::cout << "Lectura del fichero: " << argv[1] << std::endl;
+    std::cout << "\n--Calculadora de Lenguajes formales-- " << std::endl;
     Read(argv[1]);
   } else if ((argc == kNumberParam) && (argv[1] == kOptionHelp)) {
     Help();
@@ -83,10 +84,20 @@ void Read(char *file_input) {
       vector_operation.push_back(operation);
   }
 
+  std::cout << "Lenguajes:" << std::endl;
+  for (size_t i = 0; i < vector_language.size(); i++)
+    std::cout << vector_language[i].GetName() << " = " << "{ "<< vector_language[i] << "}"<<std::endl;
+
+  std::cout << "\nOperaciones:" << std::endl;
+  for (size_t i = 0; i < vector_operation.size(); i++) {
+    for (size_t j = 0; j < vector_operation[i].size(); j++)
+      std::cout << vector_operation[i][j] << " ";
+  std::cout << std::endl;
+  }
+    
   Rpn rpn;
   vector_result = rpn.Calculate(vector_language, vector_operation);
-  std::cout << "\n--Calculadora de Lenguajes formales-- " << std::endl;
-  std::cout << "Resultados: " << std::endl;
+  std::cout << "\nResultados: " << std::endl;
   for (size_t i = 0; i < vector_result.size(); i++)
     std::cout << "Operacion: " << i + 1 << ": { " << vector_result[i] << "}" <<std::endl;
 
