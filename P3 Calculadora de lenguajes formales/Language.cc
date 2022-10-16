@@ -22,18 +22,19 @@ Language::Language(Word &word, Alphabet &alphabet) {
   language_.insert(word);
   if (!alphabet.Empty())
     alphabet_ = alphabet;
-  else 
+  else
     alphabet_ = word.GetAlphabet();
 }
 
-Language::Language(std::set<Word> language, Alphabet& alpha) {
+
+Language::Language(std::set<Word> language, Alphabet &alpha) {
   language_ = language;
   if (!alpha.Empty())
-  alphabet_ = alpha;
+    alphabet_ = alpha;
   else
-  for (auto i : language_)
-    for (auto j : i.GetWord())
-      alphabet_.AddSymbol(j.GetSymbol());
+    for (auto i : language_)
+      for (auto j : i.GetWord())
+        alphabet_.AddSymbol(j.GetSymbol());
 }
 
 
@@ -60,18 +61,18 @@ void Language::SetAlphabet(Alphabet &alphabet) {
 }
 
 
-void Language::SetLanguage(std::set<Word> language) {
-  language_ = language;
+void Language::SetLanguage(std::set<Word> language) { 
+  language_ = language; 
 }
 
 
-void Language::SetName(std::string name) {
-  name_ = name;
+void Language::SetName(std::string name) { 
+  name_ = name; 
 }
 
 
 bool Language::Empty() { 
-  return language_.empty();  
+  return language_.empty(); 
 }
 
 
@@ -96,7 +97,7 @@ Language Language::Concatenate(Language &language) {
   for (auto i : language_)
     for (auto j : language.GetLanguage()) {
       Word word;
-      if (i == word_empty) 
+      if (i == word_empty)
         result.AddWord(j);
       else if (j == word_empty)
         result.AddWord(i);
@@ -125,12 +126,12 @@ Language Language::Union(Language &language) {
 Language Language::Intersection(Language &language) {
   Language result;
   result.SetAlphabet(alphabet_);
-  
+
   for (auto i : language_)
-    for (auto j : language.GetLanguage()) {
+    for (auto j : language.GetLanguage()) 
       if (i == j)
         result.AddWord(i);
-    }
+    
   return result;
 }
 
@@ -140,10 +141,10 @@ Language Language::Difference(Language &language) {
   result.SetAlphabet(alphabet_);
 
   for (auto i : language_)
-    for (auto j : language.GetLanguage()) {
+    for (auto j : language.GetLanguage()) 
       if (i != j)
         result.AddWord(i);
-    }
+    
   return result;
 }
 
@@ -167,37 +168,36 @@ Language Language::Power(int n = 1) {
 
   for (auto i : language_) {
     Word word = i;
-    if ( i != word_empty) {
-      for (int j = 1; j < n; j++) 
+    if (i != word_empty) {
+      for (int j = 1; j < n; j++)
         word = word + i;
-    result.AddWord(word);
-    }
-    else 
+      result.AddWord(word);
+    } else
       result.AddWord(word_empty);
   }
   return result;
 }
 
 
-Language Language::operator+(Language& second_language) {
+Language Language::operator+(Language &second_language) {
   Language first_language(language_, alphabet_);
   return first_language.Concatenate(second_language);
 }
 
 
-Language Language::operator|(Language& second_language) {
+Language Language::operator|(Language &second_language) {
   Language first_language(language_, alphabet_);
   return first_language.Union(second_language);
 }
 
 
-Language Language::operator^(Language& second_language) {
+Language Language::operator^(Language &second_language) {
   Language first_language(language_, alphabet_);
   return first_language.Intersection(second_language);
 }
 
 
-Language Language::operator-(Language& second_language) {
+Language Language::operator-(Language &second_language) {
   Language first_language(language_, alphabet_);
   return first_language.Difference(second_language);
 }
@@ -212,7 +212,6 @@ Language Language::operator*(int n) {
 Language Language::operator!() {
   Language language(language_, alphabet_);
   return language.Inverse();
-
 }
 
 

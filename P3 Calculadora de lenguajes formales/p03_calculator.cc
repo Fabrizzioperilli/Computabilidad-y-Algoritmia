@@ -92,19 +92,6 @@ void Read(char *file_input)
       vector_operation.push_back(operation);
   }
 
-for (size_t i = 0; i < vector_operation.size(); i++) {
-    for (size_t j = 0; j < vector_operation[i].size(); j++)
-      std::cout << vector_operation[i][j] << " ";
-    std::cout << std::endl;
-}
-// //imprime el vector de lenguaje
-// for (auto i : vector_language) 
-//   std::cout << i << std::endl;
-
-
-    // for (size_t i = 0; i < vector_language.size(); i++)
-    //   std::cout << vector_language[i].GetName() << std::endl;
-
   Rpn rpn;
   vector_result = rpn.Calculate(vector_language, vector_operation);
   std::cout << "\n---Lenguaje resultado: " << std::endl;

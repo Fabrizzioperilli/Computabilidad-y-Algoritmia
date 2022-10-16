@@ -15,7 +15,6 @@
 
 #pragma once
 #include "Alphabet.h"
-// #include "Language.h"
 
 class Language;
 class Word {
@@ -44,7 +43,7 @@ public:
 
   bool operator<(const Word &) const;
   friend std::ostream &operator<<(std::ostream &, Word &);
-  Word operator+(Word &);
   bool operator==(const Word &) const;
   bool operator!=(const Word &) const;
+  Word operator+(Word &);
 };

@@ -26,7 +26,7 @@ private:
 public:
   Language();
   Language(Word &, Alphabet &);
-  Language(std::set<Word>, Alphabet&);
+  Language(std::set<Word>, Alphabet &);
   ~Language();
 
   std::set<Word> GetLanguage();
@@ -46,11 +46,11 @@ public:
   Language Inverse();
   Language Power(int);
 
-  Language operator+(Language&);
-  Language operator|(Language&) ;
-  Language operator^(Language&) ;
-  Language operator-(Language&) ;
-  Language operator*(int) ;
-  Language operator!() ;
+  Language operator+(Language &);
+  Language operator|(Language &);
+  Language operator^(Language &);
+  Language operator-(Language &);
+  Language operator*(int);
+  Language operator!();
   friend std::ostream &operator<<(std::ostream &, Language &);
 };

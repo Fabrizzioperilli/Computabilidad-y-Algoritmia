@@ -109,9 +109,8 @@ Language Word::WordPrefixes() {
 
   for (size_t i = 0; i < word_.size(); i++) {
     Word word;
-    for (size_t j = 0; j <= i; j++) {
+    for (size_t j = 0; j <= i; j++) 
       word.AddSymbol(word_[j]);
-    }
     language.AddWord(word);
   }
   return language;
@@ -128,9 +127,8 @@ Language Word::WordSuffixes() {
 
   for (int i = word_.size() - 1; i >= 0; i--) {
     Word word;
-    for (size_t j = i; j < word_.size(); j++) {
+    for (size_t j = i; j < word_.size(); j++)
       word.AddSymbol(word_[j]);
-    }
     language.AddWord(word);
   }
   return language;
