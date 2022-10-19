@@ -1,0 +1,2 @@
+[line 26] INT:  factorial = 1
+[line 38] INT:  limit
