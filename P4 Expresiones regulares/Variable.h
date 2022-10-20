@@ -51,7 +51,7 @@ Variable::Variable(std::string var, int n_line, unsigned type_var)
     varname_int_ = var.substr(var.find("int"), (var.find(";") - var.find("int")));
     break;
   case 2:
-    varname_int_ = var.substr(var.find("double"), (var.find(";") - var.find("double")));
+    varname_double_ = var.substr(var.find("double"), (var.find(";") - var.find("double")));
     break;
   default:
     break;
@@ -70,8 +70,8 @@ std::ostream &Variable::Write(std::ostream &os)
   os << "[line " << number_line_ << "] ";
   if (type_ == 1)
     os << "INT: " << varname_int_.erase(varname_int_.find("int"), 3);
-  else
-    os << "DOUBLE: " << varname_double_.erase(varname_double_.find("double"), 3);
+  else if (type_ == 2)
+    os << "DOUBLE: " << varname_double_.erase(varname_double_.find("double"), 6);
   return os;
 }
 

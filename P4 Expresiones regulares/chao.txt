@@ -1,2 +1,7 @@
+VARIABLES: 
 [line 26] INT:  factorial = 1
-[line 38] INT:  limit
+[line 43] INT:  limit
+STATENMENTS: 
+[line 27] LOOP: for
+[line 37] LOOP: While
+[line 45] LOOP: for
