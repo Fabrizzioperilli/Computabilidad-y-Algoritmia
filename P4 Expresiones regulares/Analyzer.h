@@ -20,10 +20,12 @@
 #include "Loop.h"
 #pragma once
 
+//Revisar expresiones regulares
 const std::regex regex_int("(\\s*(int)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
 const std::regex regex_double("(\\s*(double)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
 const std::regex regex_for("(\\s*(for)\\s*\\(.+\\))");
 const std::regex regex_while("\\s*(while)\\s*\\(.+\\)");
+const std::regex regex_main("\\s*\\w+\\s*?(main)\\s*\\(.*\\)");
 
 class Analyzer
 {
@@ -34,6 +36,7 @@ private:
   std::vector<Variable> vector_double_;
   std::vector<Loop> vector_for_;
   std::vector<Loop> vector_while_;
+  bool main_ = false;
 public:
   Analyzer();
   Analyzer(std::string);
@@ -104,27 +107,34 @@ void Analyzer::Check()
         vector_for_.push_back(loop_while);
     }
 
+    if (regex_match(line, regex_main))
+      main_ = true;
+
   }
 }
 
 
 std::ostream &Analyzer::Write(std::ostream &os)
 {
-  os << "VARIABLES: " << std::endl;
+  os << "PROGRAM: " << namefile_input_ <<  std::endl;
+  os << "DESCRIPTION: " << std::endl;
+
+  os << "\nVARIABLES: " << std::endl;
   for (size_t i = 0; i < vector_int_.size(); i++)
     os << vector_int_[i] << std::endl;
   
   for (size_t i = 0; i < vector_double_.size(); i++)
     os << vector_double_[i] << std::endl;
   
-  os << "STATENMENTS: " << std::endl;
+  os << "\nSTATENMENTS: " << std::endl;
   for (size_t i = 0; i < vector_for_.size(); i++)
     os << vector_for_[i] << std::endl;
   
   for (size_t i = 0; i < vector_while_.size(); i++)
     os << vector_while_[i] << std::endl;
   
-
+  os << "\nMAIN: " << std::endl;
+  main_ ? (os << "True") : (os << "False") << std::endl;
   return os;
 }
 

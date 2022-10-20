@@ -34,11 +34,6 @@ int Factorial(int number)
 
 int main()
 {
-    while (/* condition */)
-    {
-        /* code */
-    }
-    
     std ::cout << " Introduzca el numero de factoriales  a calcular : ";
     int limit;
     std ::cin >> limit;
