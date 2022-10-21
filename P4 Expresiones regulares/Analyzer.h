@@ -20,12 +20,11 @@
 #include "Loop.h"
 #pragma once
 
-//Revisar expresiones regulares
 const std::regex regex_int("(\\s*(int)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
 const std::regex regex_double("(\\s*(double)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
-const std::regex regex_for("(\\s*(for)\\s*\\(.+\\))");
-const std::regex regex_while("\\s*(while)\\s*\\(.+\\)");
-const std::regex regex_main("\\s*\\w+\\s*?(main)\\s*\\(.*\\)");
+const std::regex regex_for("(\\s*(for)\\s*\\(.*\\;.*\\;.*\\))\\s*(\\{){0,1}");
+const std::regex regex_while("\\s*(while)\\s*\\(.+\\)\\s*(\\{){0,1}");
+const std::regex regex_main("\\s*(void|int|double|float|char)\\s*(main)\\s*\\(.*\\)\\s*(\\{){0,1}");
 
 class Analyzer
 {

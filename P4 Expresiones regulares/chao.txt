@@ -8,6 +8,7 @@ VARIABLES:
 STATENMENTS: 
 [line 27] LOOP: for
 [line 40] LOOP: for
+[line 41] LOOP: for
 
 MAIN: 
 True
