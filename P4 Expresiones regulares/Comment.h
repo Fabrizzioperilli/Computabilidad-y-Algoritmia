@@ -21,9 +21,75 @@ private:
   int number_line_ini_;
   int number_line_end_;
   std::string comment_;
+
 public:
   Comment();
   ~Comment();
+  Comment(std::string, int);
+  Comment(std::string, int, int);
   
+  std::string GetComment();
+  void SetComment(std::string);
+  void AddLine(std::string);
+  void SetNumberLineIni(int);
+  void SetNumberLineEnd(int);
+
+  std::ostream &Write(std::ostream &);
+  friend std::ostream &operator<<(std::ostream &, Comment &);
 
 };
+
+Comment::Comment() {}
+
+Comment::~Comment() {}
+
+Comment::Comment(std::string str, int n_line)
+{
+  number_line_ini_ = n_line;
+  comment_ = str;
+}
+
+
+Comment::Comment(std::string str, int n_line_ini, int n_line_end)
+{
+  number_line_ini_ = n_line_ini;
+  number_line_end_ = n_line_end;
+  comment_ = str;
+}
+
+
+std::ostream &Comment::Write(std::ostream &os)
+{
+  os << "[line " << number_line_ini_ << "] " << comment_;
+  return os;
+}
+
+std::ostream &operator<<(std::ostream &os, Comment &comment)
+{
+  return comment.Write(os);
+}
+
+void Comment::SetComment(std::string str)
+{
+  comment_ = str;
+}
+
+void Comment::AddLine(std::string str)
+{
+  comment_ += "\n" + str;
+}
+
+void Comment::SetNumberLineIni(int n_line)
+{
+  number_line_ini_ = n_line;
+}
+
+void Comment::SetNumberLineEnd(int n_line)
+{
+  number_line_end_ = n_line;
+}
+
+std::string Comment::GetComment()
+{
+  return comment_;
+}
