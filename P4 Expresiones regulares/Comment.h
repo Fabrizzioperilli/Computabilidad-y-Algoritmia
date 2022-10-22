@@ -19,7 +19,7 @@ class Comment
 {
 private:
   int number_line_ini_;
-  int number_line_end_;
+  int number_line_end_ = 0;
   std::string comment_;
 
 public:
@@ -27,7 +27,7 @@ public:
   ~Comment();
   Comment(std::string, int);
   Comment(std::string, int, int);
-  
+
   std::string GetComment();
   void SetComment(std::string);
   void AddLine(std::string);
@@ -36,7 +36,6 @@ public:
 
   std::ostream &Write(std::ostream &);
   friend std::ostream &operator<<(std::ostream &, Comment &);
-
 };
 
 Comment::Comment() {}
@@ -49,7 +48,6 @@ Comment::Comment(std::string str, int n_line)
   comment_ = str;
 }
 
-
 Comment::Comment(std::string str, int n_line_ini, int n_line_end)
 {
   number_line_ini_ = n_line_ini;
@@ -57,10 +55,13 @@ Comment::Comment(std::string str, int n_line_ini, int n_line_end)
   comment_ = str;
 }
 
-
 std::ostream &Comment::Write(std::ostream &os)
 {
-  os << "[line " << number_line_ini_ << "] " << comment_;
+  
+  if (number_line_end_ == 0)
+    os << "[line " << number_line_ini_ << "] " << comment_;
+  else
+    os << "[line " << number_line_ini_ << "-" << number_line_end_ << "] " << comment_;
   return os;
 }
 
