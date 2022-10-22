@@ -21,5 +21,9 @@ private:
   int number_line_ini_;
   int number_line_end_;
   std::string comment_;
+public:
+  Comment();
+  ~Comment();
+  
 
 };

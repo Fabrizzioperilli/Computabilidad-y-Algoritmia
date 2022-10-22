@@ -1,20 +1,13 @@
-PROGRAM: Inputs/p01_strings.cc
+PROGRAM: Inputs/input.cc
 DESCRIPTION: 
 
 VARIABLES: 
-[line 37] INT:  opcode = atoi(argv[3])
-[line 133] INT:  pos_init = 0
-[line 134] INT:  pos_found = 0
+[line 26] INT:  factorial = 1
+[line 38] INT:  limit
 
 STATENMENTS: 
-[line 75] LOOP: While
-[line 80] LOOP: for
-[line 99] LOOP: for
-[line 104] LOOP: for
-[line 109] LOOP: for
-[line 114] LOOP: for
-[line 119] LOOP: for
-[line 138] LOOP: While
+[line 27] LOOP: for
+[line 40] LOOP: for
 
 MAIN: 
 True

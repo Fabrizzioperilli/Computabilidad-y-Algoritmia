@@ -25,6 +25,7 @@ const std::regex regex_double("(\\s*(const|static|unsigned)\\s+)?\\s*(double)\\s
 const std::regex regex_for("(\\s*(for)\\s*\\(.*\\;.*\\;.*\\))\\s*(\\{)?");
 const std::regex regex_while("\\s*(while)\\s*\\(.+\\)\\s*(\\{)?");
 const std::regex regex_main("\\s*(void|int|double|float|char)\\s*(main)\\s*\\(.*\\)\\s*(\\{)?");
+
 class Analyzer
 {
 private:
@@ -51,22 +52,27 @@ public:
 
 Analyzer::Analyzer() {}
 
+
 Analyzer::~Analyzer() {}
+
 
 Analyzer::Analyzer(std::string input)
 {
   namefile_input_ = input;
 }
 
+
 void Analyzer::SetNameFile(std::string name)
 {
   namefile_input_ = name;
 }
 
+
 std::string Analyzer::GetNameFile()
 {
   return namefile_input_;
 }
+
 
 void Analyzer::Check()
 {

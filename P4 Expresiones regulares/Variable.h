@@ -22,6 +22,7 @@ private:
   std::string varname_double_;
   unsigned type_;
   int number_line_;
+  bool initialized_ = false;
 
 public:
   Variable();
@@ -31,6 +32,7 @@ public:
 
   std::ostream &Write(std::ostream &);
   friend std::ostream &operator<<(std::ostream &, Variable &);
+  bool Initialized(std::string);
 };
 
 
@@ -44,6 +46,9 @@ Variable::Variable(std::string var, int n_line, unsigned type_var)
 {
   number_line_ = n_line;
   type_ = type_var;
+  
+  if (Initialized(var))
+    initialized_ = true;
 
   switch (type_)
   {
@@ -66,10 +71,10 @@ int Variable::GetNumberLine() {
 
 std::ostream &Variable::Write(std::ostream &os)
 {
-
   os << "[line " << number_line_ << "] ";
-  if (type_ == 1)
+  if (type_ == 1) 
     os << "INT: " << varname_int_.erase(varname_int_.find("int"), 3);
+
   else if (type_ == 2)
     os << "DOUBLE: " << varname_double_.erase(varname_double_.find("double"), 6);
   return os;
@@ -79,4 +84,12 @@ std::ostream &Variable::Write(std::ostream &os)
 std::ostream &operator<<(std::ostream &os, Variable &var)
 {
   return var.Write(os);
+}
+
+
+bool Variable::Initialized(std::string str) {
+  for (size_t i = 0; i < str.length(); i++)
+    if (str[i] == '=')
+      return true;
+  return false;
 }
