@@ -29,7 +29,8 @@ void Write(std::ofstream &, std::vector<Word>, int);
 std::vector<std::string> Split(std::string, char);
 
 
-int main (int argc, char *argv[]) {
+int main (int argc, char *argv[]) 
+{
   const std::string kOptionHelp = "--help";
 
   if (argc == 4) {

@@ -54,7 +54,7 @@ std::ostream &Loop::Write(std::ostream &os)
   if (type_ == 1)
     os << "for";
   else if (type_ == 2)
-    os << "While";
+    os << "while";
   return os;
 }
 

@@ -20,12 +20,11 @@
 #include "Loop.h"
 #pragma once
 
-const std::regex regex_int("(\\s*(int)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
-const std::regex regex_double("(\\s*(double)\\s+(\\w+)\\s*(\\=\\s*\\d+)?\\s*\\;.*)");
-const std::regex regex_for("(\\s*(for)\\s*\\(.*\\;.*\\;.*\\))\\s*(\\{){0,1}");
-const std::regex regex_while("\\s*(while)\\s*\\(.+\\)\\s*(\\{){0,1}");
-const std::regex regex_main("\\s*(void|int|double|float|char)\\s*(main)\\s*\\(.*\\)\\s*(\\{){0,1}");
-
+const std::regex regex_int("(\\s*(const|static|unsigned)\\s+)?\\s*(int)\\s+(\\*)*(([a-zA-Z_][a-zA-Z0-9_]*))\\s*(\\=\\s*.+)?\\s*\\;");
+const std::regex regex_double("(\\s*(const|static|unsigned)\\s+)?\\s*(double)\\s+(\\*)*(([a-zA-Z_][a-zA-Z0-9_]*))\\s*(\\=\\s*.+)?\\s*\\;");
+const std::regex regex_for("(\\s*(for)\\s*\\(.*\\;.*\\;.*\\))\\s*(\\{)?");
+const std::regex regex_while("\\s*(while)\\s*\\(.+\\)\\s*(\\{)?");
+const std::regex regex_main("\\s*(void|int|double|float|char)\\s*(main)\\s*\\(.*\\)\\s*(\\{)?");
 class Analyzer
 {
 private:
@@ -134,6 +133,7 @@ std::ostream &Analyzer::Write(std::ostream &os)
   
   os << "\nMAIN: " << std::endl;
   main_ ? (os << "True") : (os << "False") << std::endl;
+  
   return os;
 }
 
