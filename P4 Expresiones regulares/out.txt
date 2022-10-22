@@ -1,30 +1,28 @@
-PROGRAM: Inputs/Cell.cc
+PROGRAM: Inputs/input.cc
 DESCRIPTION: 
 /**
- * @details Universidad de La Laguna Escuela Superior de Ingenierıa y Tecnologıa
- *  Grado en Ingenierıa Informatica
- *  Asignatura: Algoritmos y Estructuras de Datos Avanzados
- *  Curso: 2º
- *  Practica 1: El juego de la vida
- * @author Fabrizzio Daniell Perilli Martin
- *   Correo: alu0101138589@ull.edu.es
- * @date Fecha entrega: 7/03/2021
- * @file Archivo: Cell.cc
- */
+* Universidad de La Laguna
+* Escuela Superior de Ingenieria y Tecnologia
+* Informatica Basica
+*
+* @author F. de Sande
+* @date 23. nov .2020
+* @brief Ejercicios Informatica Basica
+* Version 1: Funcion factorial
+*
+* @see https :// github .com/IB -2022 -2023/ IB -class -code - examples /
+*/
 
 VARIABLES: 
-[line 104] INT:  nNeighbors = 0
+[line 26] INT:  factorial = 1
+[line 38] INT:  limit
 
 STATENMENTS: 
-[line 105] LOOP: for
-[line 106] LOOP: for
+[line 27] LOOP: for
+[line 40] LOOP: for
 
 MAIN: 
-False
+True
 
 COMMENTS: 
-[line 132] ///gdggjgio
-[line 128-131] /*fjsdjfijfiorgjoigr
-gijsrgiojrsgiosg
-goisrgjsog
-*/
+[line 17] // Returns the factorial of the argument
