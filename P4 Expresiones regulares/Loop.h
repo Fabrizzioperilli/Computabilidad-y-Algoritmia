@@ -30,35 +30,3 @@ public:
   std::ostream &Write(std::ostream &);
   friend std::ostream &operator<<(std::ostream &, Loop &);
 };
-
-Loop::Loop() {}
-
-
-Loop::Loop(std::string str, int n_line, int type) {
-  type_ = type;
-  number_line_ = n_line;
-
-  if (type_ == 1)
-    loop_for = str;
-  else if (type_ == 2)
-    loop_while = str;
-}
-
-
-Loop::~Loop() {}
-
-
-std::ostream &Loop::Write(std::ostream &os) {
-
-  os << "[line " << number_line_ << "] LOOP: ";
-  if (type_ == 1)
-    os << "for";
-  else if (type_ == 2)
-    os << "while";
-  return os;
-}
-
-
-std::ostream &operator<<(std::ostream &os, Loop &loop) {
-  return loop.Write(os);
-}
