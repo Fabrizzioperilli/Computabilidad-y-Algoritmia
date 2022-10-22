@@ -15,8 +15,7 @@
 
 #include <iostream>
 
-class Comment
-{
+class Comment {
 private:
   int number_line_ini_;
   int number_line_end_ = 0;
@@ -30,9 +29,9 @@ public:
 
   std::string GetComment();
   void SetComment(std::string);
-  void AddLine(std::string);
   void SetNumberLineIni(int);
   void SetNumberLineEnd(int);
+  void AddLine(std::string);
 
   std::ostream &Write(std::ostream &);
   friend std::ostream &operator<<(std::ostream &, Comment &);
@@ -42,55 +41,54 @@ Comment::Comment() {}
 
 Comment::~Comment() {}
 
-Comment::Comment(std::string str, int n_line)
-{
+
+Comment::Comment(std::string str, int n_line) {
   number_line_ini_ = n_line;
   comment_ = str;
 }
 
-Comment::Comment(std::string str, int n_line_ini, int n_line_end)
-{
+
+Comment::Comment(std::string str, int n_line_ini, int n_line_end) {
   number_line_ini_ = n_line_ini;
   number_line_end_ = n_line_end;
   comment_ = str;
 }
 
-std::ostream &Comment::Write(std::ostream &os)
-{
-  
+std::string Comment::GetComment() { 
+  return comment_; 
+}
+
+
+void Comment::SetComment(std::string str) { 
+  comment_ = str; 
+}
+
+
+void Comment::SetNumberLineIni(int n_line) { 
+  number_line_ini_ = n_line; 
+}
+
+
+void Comment::SetNumberLineEnd(int n_line) { 
+  number_line_end_ = n_line; 
+}
+
+
+void Comment::AddLine(std::string str) { 
+  comment_ += "\n" + str; 
+}
+
+
+std::ostream &Comment::Write(std::ostream &os) {
   if (number_line_end_ == 0)
     os << "[line " << number_line_ini_ << "] " << comment_;
   else
-    os << "[line " << number_line_ini_ << "-" << number_line_end_ << "] " << comment_;
+    os << "[line " << number_line_ini_ << "-" << number_line_end_ << "] "
+       << comment_;
   return os;
 }
 
-std::ostream &operator<<(std::ostream &os, Comment &comment)
-{
+
+std::ostream &operator<<(std::ostream &os, Comment &comment) {
   return comment.Write(os);
-}
-
-void Comment::SetComment(std::string str)
-{
-  comment_ = str;
-}
-
-void Comment::AddLine(std::string str)
-{
-  comment_ += "\n" + str;
-}
-
-void Comment::SetNumberLineIni(int n_line)
-{
-  number_line_ini_ = n_line;
-}
-
-void Comment::SetNumberLineEnd(int n_line)
-{
-  number_line_end_ = n_line;
-}
-
-std::string Comment::GetComment()
-{
-  return comment_;
 }

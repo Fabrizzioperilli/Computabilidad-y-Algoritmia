@@ -15,8 +15,7 @@
 
 #include <iostream>
 
-class Loop
-{
+class Loop {
 private:
   std::string loop_for;
   std::string loop_while;
@@ -34,8 +33,8 @@ public:
 
 Loop::Loop() {}
 
-Loop::Loop(std::string str, int n_line, int type)
-{
+
+Loop::Loop(std::string str, int n_line, int type) {
   type_ = type;
   number_line_ = n_line;
 
@@ -45,10 +44,11 @@ Loop::Loop(std::string str, int n_line, int type)
     loop_while = str;
 }
 
+
 Loop::~Loop() {}
 
-std::ostream &Loop::Write(std::ostream &os)
-{
+
+std::ostream &Loop::Write(std::ostream &os) {
 
   os << "[line " << number_line_ << "] LOOP: ";
   if (type_ == 1)
@@ -58,6 +58,7 @@ std::ostream &Loop::Write(std::ostream &os)
   return os;
 }
 
-std::ostream& operator<<(std::ostream& os, Loop& loop) {
+
+std::ostream &operator<<(std::ostream &os, Loop &loop) {
   return loop.Write(os);
 }

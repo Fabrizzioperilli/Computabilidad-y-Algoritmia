@@ -129,7 +129,6 @@ void Analyzer::Check()
       if (count_lines_ == 1)
         description_ = true;
 
-      std::cout << "caza" << std::endl;
       Comment comment(line, count_lines_);
 
       while (!regex_match(line, regex_comment_block_end))
