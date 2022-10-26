@@ -8,4 +8,3 @@ Se utiliza principalmente el lenguaje de programación C++ aplicando el paradigm
 
 - Autor: Fabrizzio Daniell Perilli Martin
 - Email: alu0101138589@ull.edu.es
-- Ingeniería Informática Universidad de la Laguna
