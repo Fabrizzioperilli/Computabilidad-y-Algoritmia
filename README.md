@@ -5,6 +5,9 @@ El siguiente repositorio contiene diferentes ejercicios donde se ilustran concep
 Se utiliza principalmente el lenguaje de programación C++ aplicando el paradigma de programación imperativo orientado a objetos (OOP). 
 
 ---
+
 Autor: Fabrizzio Daniell Perilli Martin
+
 Email: alu0101138589@ull.edu.es
+
 Ingeniería Informática Universidad de la Laguna
