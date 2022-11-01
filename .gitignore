@@ -1,5 +1,5 @@
 #Ignorar los directorios comprimidos y los ocultos
 *.tar.gz
 *.zip
-*tgz
+*.tgz
 *.rar
