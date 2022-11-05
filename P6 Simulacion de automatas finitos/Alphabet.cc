@@ -75,6 +75,14 @@ Alphabet Alphabet::Union(const Alphabet& alphabet){
 }
 
 
+bool Alphabet::CheckSymbol(Symbol& symbol) {
+    for (auto i : alphabet_)
+        if (i == symbol)
+            return true;
+    return false;
+}
+
+
 std::ostream& operator<<(std::ostream& os, Alphabet& alphabet) {
     return alphabet.Write(os);
 }

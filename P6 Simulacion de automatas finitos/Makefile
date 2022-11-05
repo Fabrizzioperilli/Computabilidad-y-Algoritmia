@@ -15,16 +15,17 @@
 
 FILES= *.cc
 CXXFLAGS= -Wall -std=c++17 -ggdb
+ARG_FA = *.fa
+ARG_TXT = *.txt
+FA_FILE = $(shell ls $(ARG_FA) | sort | head -n 1)
+TXT_FILE = $(shell ls $(ARG_TXT) | sort | head -n 1)
 
-
-all: practica
-
-Inicio:
-	@echo $(C) 
-
-practica: $(F) Inicio
+all:
 	g++ $(CXXFLAGS) $(FILES) -o p06_automata_simulator
 
 clean:
 	rm -rf p06_automata_simulator 
 	rm -rf *.o
+
+run:
+	./p06_automata_simulator $(FA_FILE) $(TXT_FILE)

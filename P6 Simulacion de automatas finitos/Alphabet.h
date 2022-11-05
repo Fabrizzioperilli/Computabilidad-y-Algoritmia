@@ -35,6 +35,7 @@ public:
   bool Search(std::string);
   std::ostream &Write(std::ostream &);
   Alphabet Union(const Alphabet &);
+  bool CheckSymbol(Symbol &);
 
   friend std::ostream &operator<<(std::ostream &, Alphabet &);
 };

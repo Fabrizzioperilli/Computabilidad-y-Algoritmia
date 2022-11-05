@@ -14,9 +14,11 @@
 // Fecha: 02/11/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include <iostream>
+#include "Automata.h"
 
 void Help();
 bool CheckExtension(std::string, std::string);
+void ReadFile(std::string, std::string);
 
 int main(int argc, char **argv)
 {
@@ -29,6 +31,8 @@ int main(int argc, char **argv)
     if (CheckExtension(argv[1], argv[2]))
     {
       std::cout << "Se ejecutó correctamente" << std::endl;
+      ReadFile(argv[1], argv[2]);
+      
     }
     else
     {
@@ -71,3 +75,31 @@ bool CheckExtension(std::string file_fa, std::string file_txt) {
         return false;
 }
 
+
+void ReadFile(std::string file_fa, std::string file_txt) {
+    std::ifstream name_file_fa;
+    std::ifstream name_file_txt;
+
+    name_file_fa.open(file_fa);
+    name_file_txt.open(file_txt);
+
+    Automata automata(file_fa);
+    
+
+
+    if (name_file_txt.is_open()) {
+        std::string line;
+        while (getline(name_file_txt, line)) {
+            
+        
+        //  if (automata.CheckWord(line))
+        //     std::cout << "La cadena " << line << " es aceptada por el automata" << std::endl;
+        //   else
+        //     std::cout << "La cadena " << line << " es rechazada por el automata" << std::endl;
+        }
+    }
+    else {
+        std::cout << "Error al abrir los ficheros" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
