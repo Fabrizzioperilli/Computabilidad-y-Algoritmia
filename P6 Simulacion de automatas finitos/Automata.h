@@ -92,12 +92,8 @@ Automata::Automata(std::string file_fa)
       state.SetId(id);
 
       name_file_fa >> acceptance;
-
-      if (acceptance == 1)
-        acceptance_states_.insert(state);
-
       name_file_fa >> n_transitions;
-
+      
       for (int j = 0; j < n_transitions; j++)
       {
         std::string aux_symbol;
@@ -115,6 +111,10 @@ Automata::Automata(std::string file_fa)
         Transition transition(symbol, next_state);
         state.AddTransition(transition);
       }
+      
+      if (acceptance)
+        acceptance_states_.insert(state);
+  
       states_.insert(state);
       i++;
     }
@@ -122,9 +122,19 @@ Automata::Automata(std::string file_fa)
     std::cout << "Alfabeto: " << alphabet_ << std::endl;
     std::cout << "n_states: " << n_states << std::endl;
     std::cout << "initial_state: " << initial_state_.GetId() << std::endl;
-
-    for (auto &&i : states_)
+    std::cout << "acceptance_states: " << std::endl;
+    for (auto &&i : acceptance_states_)
+      std::cout << i.GetId() << std::endl;
+    std::cout << "----" << std::endl;
+    
+    for (auto &&i : states_) {
       std::cout << "state: " << i.GetId() << std::endl;
+        std::cout << "num_transitions: " << i.GetTransitions().size() << std::endl;
+      for (auto &&j : i.GetTransitions()) {
+        std::cout << "transition: " << j.GetSymbol().GetSymbol() << " " << j.GetNextState() << std::endl;
+      }
+      std::cout << "----" << std::endl;
+    }
 
     name_file_fa.close();
   }

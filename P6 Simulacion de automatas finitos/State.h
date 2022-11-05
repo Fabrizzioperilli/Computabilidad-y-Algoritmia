@@ -15,20 +15,22 @@
 
 #pragma once 
 #include <set>
+#include <vector>
 class Transition;
 class State {
   private:
     int id_;
-    std::set<Transition> transitions_;  
+    std::vector<Transition> transitions_;  
   
   public:
     State();
     ~State();
   
+  
     int GetId() const;
     void SetId(int);
-    std::set<Transition> GetTransitions() const;
-    void SetTransitions(std::set<Transition>);
+    std::vector<Transition> GetTransitions() const;
+    void SetTransitions(std::vector<Transition>);
     void AddTransition(Transition&);
     void write(void);
 
@@ -37,6 +39,7 @@ class State {
 
 State::State() {}
 State::~State() {}
+
 
 int State::GetId() const {
   return id_;
@@ -47,12 +50,12 @@ void State::SetId(int id) {
   id_ = id;
 }
 
-std::set<Transition> State::GetTransitions() const {
+std::vector<Transition> State::GetTransitions() const {
   return transitions_;
 }
 
 
-void State::SetTransitions(std::set<Transition> transitions) {
+void State::SetTransitions(std::vector<Transition> transitions) {
   transitions_ = transitions;
 }
 
@@ -61,7 +64,7 @@ bool State::operator<(const State& state) const {
 }
 
 void State::AddTransition(Transition& transition) {
-  transitions_.insert(transition);
+  transitions_.push_back(transition);
 }
 
 void State::write(void) {

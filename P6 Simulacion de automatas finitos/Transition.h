@@ -27,13 +27,12 @@ class Transition {
     Transition();
     Transition(Symbol&, int);
     ~Transition();
+    Symbol GetSymbol() const;
+    void SetSymbol(Symbol&);
+    int GetNextState() const;
+    void SetNextState(int);
+    void write(void);
 
-    State get_state() const;
-    Symbol get_symbol() const;
-    std::set<State> get_next_states() const;
-    void set_state(State);
-    void set_symbol(Symbol);
-    void set_next_states(std::set<State>);
     bool operator<(const Transition&) const;
 };
 
@@ -49,3 +48,20 @@ Transition::Transition(Symbol& symbol, int next_state) {
 bool Transition::operator<(const Transition& transition) const {
   return symbol_ < transition.symbol_;
 }
+
+Symbol Transition::GetSymbol() const {
+  return symbol_;
+}
+
+void Transition::SetSymbol(Symbol& symbol) {
+  symbol_ = symbol;
+}
+
+int Transition::GetNextState() const {
+  return next_state_;
+}
+
+void Transition::SetNextState(int next_state) {
+  next_state_ = next_state;
+}
+
