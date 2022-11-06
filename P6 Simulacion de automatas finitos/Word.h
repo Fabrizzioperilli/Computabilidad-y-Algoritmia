@@ -1,17 +1,17 @@
-// Universidad de la Laguna
-// Escuela Superior de Ingeniería y Tecnología
-// Grado en Ingeniería Informática
-// Asignatura: Computabilidad y Algoritmia
-// Curso: 2º
-// Practica 3: Calculadora de  lenguajes formales
-// Autor: Fabrizzio Daniell Perilli Martin
-// Correo: alu0101138589@ull.edu.es
-// Fecha: 18/10/2022
-// Archivo: Word.h  Fichero cabecera de la clase Word (Cadena)
-//             ...
-// Referencias:
-// Historial de revisiones:
-// Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
+/**
+* @details Universidad de La Laguna Escuela Superior de Ingenierıa y Tecnologıa
+* @details Grado en Ingenierıa Informatica
+* @details Asignatura: Computabilidad y Algoritmia
+* @details Curso: 2º
+*          Practica 6: Simulacion de Automatas Finitos
+* @author Fabrizzio Daniell Perilli Martin
+*   Correo: alu0101138589@ull.edu.es
+* @date Fecha: 18/10/2022
+* @file Archivo: Word.h
+*        Clase Word
+* Referencias:
+* @version Historial de revisiones:12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
+*/
 
 #pragma once
 #include "Alphabet.h"
