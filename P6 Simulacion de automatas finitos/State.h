@@ -15,29 +15,45 @@
 
 #pragma once 
 #include <set>
-#include <vector>
-class Transition;
+
+#include "Transition.h"
 class State {
   private:
     int id_;
-    std::vector<Transition> transitions_;  
+    std::set<Transition> transitions_;  
   
   public:
     State();
     ~State();
+    State(int);
+  
   
   
     int GetId() const;
     void SetId(int);
-    std::vector<Transition> GetTransitions() const;
-    void SetTransitions(std::vector<Transition>);
+    std::set<Transition> GetTransitions() const;
+    void SetTransitions(std::set<Transition>);
     void AddTransition(Transition&);
     void write(void);
+    int IdNextState(Symbol&);
 
     bool operator<(const State&) const;
+    State& operator=(const State&);
 };
 
 State::State() {}
+
+State::State(int id) {
+  id_ = id;
+}
+
+
+State& State::operator=(const State &s) {
+  id_ = s.id_;
+  transitions_ = s.transitions_;
+  return *this;
+}
+
 State::~State() {}
 
 
@@ -50,12 +66,12 @@ void State::SetId(int id) {
   id_ = id;
 }
 
-std::vector<Transition> State::GetTransitions() const {
+std::set<Transition> State::GetTransitions() const {
   return transitions_;
 }
 
 
-void State::SetTransitions(std::vector<Transition> transitions) {
+void State::SetTransitions(std::set<Transition> transitions) {
   transitions_ = transitions;
 }
 
@@ -64,10 +80,18 @@ bool State::operator<(const State& state) const {
 }
 
 void State::AddTransition(Transition& transition) {
-  transitions_.push_back(transition);
+  transitions_.insert(transition);
 }
 
 void State::write(void) {
   std::cout << "State: " << id_ << std::endl;
 }
 
+int State::IdNextState(Symbol& symbol) {
+  for (auto transition : transitions_) {
+    if (transition.GetSymbol() == symbol) {
+      return transition.GetNextState();
+    }
+  }
+  return -1;
+}

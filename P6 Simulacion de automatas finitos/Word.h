@@ -31,6 +31,7 @@ public:
   void SetWord(std::vector<Symbol>);
   Alphabet GetAlphabet();
   void SetAlphabet(Alphabet &);
+  
 
   void AddSymbol(Symbol &);
   int WordLength();

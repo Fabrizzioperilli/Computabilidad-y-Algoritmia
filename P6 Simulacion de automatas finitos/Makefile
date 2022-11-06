@@ -29,3 +29,7 @@ clean:
 
 run:
 	./p06_automata_simulator $(FA_FILE) $(TXT_FILE)
+
+run_all:
+	g++ $(CXXFLAGS) $(FILES) -o p06_automata_simulator
+	./p06_automata_simulator $(FA_FILE) $(TXT_FILE)

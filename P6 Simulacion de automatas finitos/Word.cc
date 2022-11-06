@@ -34,6 +34,10 @@ Word::Word(std::string str, Alphabet &alph) {
           Symbol symbol(sub_string);
           word_.push_back(symbol);
         }
+        else {
+          std::cout << "Error: El símbolo " << sub_string << " no pertenece al alfabeto" << std::endl;
+          exit(EXIT_FAILURE);
+        }
       }
       break;
     }

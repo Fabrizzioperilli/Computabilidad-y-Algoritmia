@@ -77,7 +77,7 @@ Alphabet Alphabet::Union(const Alphabet& alphabet){
 
 bool Alphabet::CheckSymbol(Symbol& symbol) {
     for (auto i : alphabet_)
-        if (i == symbol)
+        if (i == symbol || symbol.GetSymbol() == STR_EMPTY)
             return true;
     return false;
 }

@@ -14,6 +14,7 @@
 // Fecha: 02/11/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include <iostream>
+#include <iomanip>
 #include "Automata.h"
 
 void Help();
@@ -29,11 +30,8 @@ int main(int argc, char **argv)
   if (argc == kNumberParam)
   {
     if (CheckExtension(argv[1], argv[2]))
-    {
-      std::cout << "Se ejecutó correctamente" << std::endl;
       ReadFile(argv[1], argv[2]);
-      
-    }
+
     else
     {
       std::cout << "Las extensiones de los ficheros no son correctas. Ejecute ./p06_automata_simulator --help para mas informacion" << std::endl;
@@ -41,9 +39,7 @@ int main(int argc, char **argv)
     }
   }
   else if (argc == 2 && argv[1] == kOptionHelp)
-  {
     Help();
-  }
   else
   {
     std::cout << "Error en los parametros. Ejecute ./p06_automata_simulator --help para mas informacion" << std::endl;
@@ -53,53 +49,55 @@ int main(int argc, char **argv)
   return 0;
 }
 
+void Help()
+{
+  std::cout << "\nModo de empleo: ./p06_automata_simulator input.fa input.txt" << std::endl;
 
-void Help() {
-    std::cout << "\nModo de empleo: ./p06_automata_simulator input.fa input.txt" << std::endl;
-
-    std::cout << "\nEl programa crea un automata a partir de la especificacion dada en el\n"
-            "fichero .fa y lee las cadenas del fichero.txt, posteriormente por consola\n"
-            "indica las cadenas aceptadas y rechazadas por el automata en cuestion." << std::endl;
-
+  std::cout << "\nEl programa crea un automata a partir de la especificacion dada en el\n"
+               "fichero .fa y lee las cadenas del fichero.txt, posteriormente por consola\n"
+               "indica las cadenas aceptadas y rechazadas por el automata en cuestion."
+            << std::endl;
 }
 
+bool CheckExtension(std::string file_fa, std::string file_txt)
+{
 
-bool CheckExtension(std::string file_fa, std::string file_txt) {
-    
-    file_fa = file_fa.substr(file_fa.find_last_of(".") + 1);
-    file_txt = file_txt.substr(file_txt.find_last_of(".") + 1);
+  file_fa = file_fa.substr(file_fa.find_last_of(".") + 1);
+  file_txt = file_txt.substr(file_txt.find_last_of(".") + 1);
 
-    if (file_fa == "fa" && file_txt == "txt")
-        return true;
-    else
-        return false;
+  if (file_fa == "fa" && file_txt == "txt")
+    return true;
+  else
+    return false;
 }
 
+void ReadFile(std::string file_fa, std::string file_txt)
+{
+  std::ifstream name_file_fa;
+  std::ifstream name_file_txt;
 
-void ReadFile(std::string file_fa, std::string file_txt) {
-    std::ifstream name_file_fa;
-    std::ifstream name_file_txt;
+  name_file_fa.open(file_fa);
+  name_file_txt.open(file_txt);
 
-    name_file_fa.open(file_fa);
-    name_file_txt.open(file_txt);
+  Automata automata(file_fa);
+  Alphabet alphabet = automata.GetAlphabet();
 
-    Automata automata(file_fa);
-    
-
-
-    if (name_file_txt.is_open()) {
-        std::string line;
-        while (getline(name_file_txt, line)) {
-            
-        
-        //  if (automata.CheckWord(line))
-        //     std::cout << "La cadena " << line << " es aceptada por el automata" << std::endl;
-        //   else
-        //     std::cout << "La cadena " << line << " es rechazada por el automata" << std::endl;
-        }
+  if (name_file_txt.is_open())
+  {
+    std::string line;
+    while (getline(name_file_txt, line))
+    {
+      Word word(line, alphabet);
+      
+      if (automata.ReadWord(word))
+        std::cout << line << " -- Accepted" << std::endl;
+      else
+        std::cout << line << " -- Rejected" << std::endl;
     }
-    else {
-        std::cout << "Error al abrir los ficheros" << std::endl;
-        exit(EXIT_FAILURE);
-    }
+  }
+  else
+  {
+    std::cout << "Error al abrir los ficheros" << std::endl;
+    exit(EXIT_FAILURE);
+  }
 }

@@ -41,11 +41,12 @@ public:
   Automata(std::string);
   ~Automata();
 
-  std::set<State> get_states() const;
-  Alphabet get_alphabet() const;
-  std::set<Transition> get_transitions() const;
-  State get_initial_state() const;
-  std::set<State> get_acceptance_states() const;
+  bool ReadWord(Word &);
+  std::set<State> GesStates() const;
+  Alphabet GetAlphabet() const;
+  std::set<Transition> GetTransitions() const;
+  State GetInitialState() const;
+  std::set<State> GetAcceptanceState() const;
 };
 
 Automata::Automata() {}
@@ -84,7 +85,7 @@ Automata::Automata(std::string file_fa)
     while (i < n_states)
     {
       int id;
-      bool acceptance;
+      int acceptance;
       int n_transitions;
 
       State state;
@@ -93,7 +94,7 @@ Automata::Automata(std::string file_fa)
 
       name_file_fa >> acceptance;
       name_file_fa >> n_transitions;
-      
+
       for (int j = 0; j < n_transitions; j++)
       {
         std::string aux_symbol;
@@ -101,6 +102,7 @@ Automata::Automata(std::string file_fa)
         name_file_fa >> aux_symbol;
 
         Symbol symbol(aux_symbol);
+
         if (!alphabet_.CheckSymbol(symbol))
         {
           std::cout << "Error: El simbolo " << aux_symbol << " no pertenece al alfabeto del automata" << std::endl;
@@ -111,26 +113,48 @@ Automata::Automata(std::string file_fa)
         Transition transition(symbol, next_state);
         state.AddTransition(transition);
       }
-      
-      if (acceptance)
+
+      if (acceptance == 1)
         acceptance_states_.insert(state);
-  
+
+      if (state.GetId() == initial_state_.GetId())
+        initial_state_ = state;
+
       states_.insert(state);
+
       i++;
     }
 
     std::cout << "Alfabeto: " << alphabet_ << std::endl;
     std::cout << "n_states: " << n_states << std::endl;
     std::cout << "initial_state: " << initial_state_.GetId() << std::endl;
+    // muestra las transiciones del estado inicial
+    std::cout << "Transiciones del estado inicial: " << std::endl;
+    std::set<Transition> transitions = initial_state_.GetTransitions();
+    for (auto it = transitions.begin(); it != transitions.end(); it++)
+    {
+      std::cout << "Simbolo: " << it->GetSymbol().GetSymbol() << " Estado: " << it->GetNextState() << std::endl;
+    }
+
     std::cout << "acceptance_states: " << std::endl;
     for (auto &&i : acceptance_states_)
       std::cout << i.GetId() << std::endl;
     std::cout << "----" << std::endl;
-    
-    for (auto &&i : states_) {
+
+    for (auto &&i : acceptance_states_)
+    {
+      std::cout << "Transiciones del estado de aceptacion: " << i.GetId() << std::endl;
+      for (auto &&i : i.GetTransitions())
+
+        std::cout << "Simbolo: " << i.GetSymbol().GetSymbol() << " Estado: " << i.GetNextState() << std::endl;
+    }
+
+    for (auto &&i : states_)
+    {
       std::cout << "state: " << i.GetId() << std::endl;
-        std::cout << "num_transitions: " << i.GetTransitions().size() << std::endl;
-      for (auto &&j : i.GetTransitions()) {
+      std::cout << "num_transitions: " << i.GetTransitions().size() << std::endl;
+      for (auto &&j : i.GetTransitions())
+      {
         std::cout << "transition: " << j.GetSymbol().GetSymbol() << " " << j.GetNextState() << std::endl;
       }
       std::cout << "----" << std::endl;
@@ -144,6 +168,43 @@ Automata::Automata(std::string file_fa)
     exit(EXIT_FAILURE);
   }
 }
+
+Alphabet Automata::GetAlphabet() const
+{
+  return alphabet_;
+}
+
+bool Automata::ReadWord(Word &word)
+{
+  State current_state = initial_state_;
+  std::set<Transition> transitions = current_state.GetTransitions();
+  std::vector<Symbol> symbols = word.GetWord();
+
+ for (auto &&i : symbols)
+  {
+    for (auto &&j : transitions)
+    {
+      if (i == j.GetSymbol())
+      {
+        current_state.SetId(j.GetNextState());
+        current_state.SetTransitions(states_.find(current_state)->GetTransitions());
+        transitions = current_state.GetTransitions();
+
+      
+        break;
+      }
+    }
+  }
+
+  for (auto &&i : acceptance_states_)
+    if (current_state.GetId() == i.GetId())
+      return true;
+  
+
+  return false;
+}
+
+
 
 std::vector<std::string> Split(std::string str, char pattern)
 {
