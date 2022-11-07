@@ -1,27 +1,23 @@
-/**
-* @details Universidad de La Laguna Escuela Superior de Ingenierıa y Tecnologıa
-* @details Grado en Ingenierıa Informatica
-* @details Asignatura: Computabilidad y Algoritmia
-* @details Curso: 2º
-*          Practica 6: Simulacion de Automatas Finitos
-* @author Fabrizzio Daniell Perilli Martin
-*   Correo: alu0101138589@ull.edu.es
-* @date Fecha: 18/10/2022
-* @file Archivo: Word.h
-*        Implementacion de clase Word
-* Referencias:
-* @version Historial de revisiones:12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
-*/
+// Universidad de la Laguna
+// Escuela Superior de Ingeniería y Tecnología
+// Grado en Ingeniería Informática
+// Asignatura: Computabilidad y Algoritmia
+// Curso: 2º
+// Practica 3: Calculadora de  lenguajes formales
+// Autor: Fabrizzio Daniell Perilli Martin
+// Correo: alu0101138589@ull.edu.es
+// Fecha: 18/10/2022
+// Archivo: Word.cc Implementación de la clase Word (Cadena)
+//             ...
+// Referencias:
+// Historial de revisiones:
+// Fecha: 12/10/2022 - Versión: 1.0 - Descripción: Creación del código.
 
 #include "Word.h"
 
-/// @brief Constructor por defecto
 Word::Word() {}
 
 
-/// @brief Constructor de la clase Word 
-/// @param str 
-/// @param alph 
 Word::Word(std::string str, Alphabet &alph) {
   alphabet_ = alph;
   std::string symbol;
@@ -56,54 +52,39 @@ Word::Word(std::string str, Alphabet &alph) {
 }
 
 
-/// @brief Destructor de la clase Word
 Word::~Word() {}
 
 
-/// @brief Getter de la clase Word
-/// @return std::vector<Symbol>
 std::vector<Symbol> Word::GetWord() { 
   return word_; 
 }
 
 
-/// @brief Setter de la clase Word
-/// @param word 
 void Word::SetWord(std::vector<Symbol> word) { 
   word_ = word; 
 }
 
 
-/// @brief Retorna el alphabeto de la cadena
-/// @return Alphabet
 Alphabet Word::GetAlphabet() { 
   return alphabet_; 
 }
 
 
-/// @brief Modifica el alfabeto de la cadena
-/// @param alph 
 void Word::SetAlphabet(Alphabet &alph) { 
   alphabet_ = alph; 
 }
 
 
-/// @brief Agraga un símbolo a la cadena
-/// @param symbol 
 void Word::AddSymbol(Symbol &symbol) { 
   word_.push_back(symbol); 
 }
 
 
-/// @brief Rwetorna el tamaño de la cadena-
-/// @return int
 int Word::WordLength() { 
   return word_.size(); 
 }
 
 
-/// @brief Calcula la inversa de la cadena
-/// @return Word
 Word Word::WordInverse() {
   Word word;
   for (int i = word_.size() - 1; i >= 0; i--)
@@ -112,9 +93,6 @@ Word Word::WordInverse() {
 }
 
 
-/// @brief Concatena dos cadenas
-/// @param w 
-/// @return Word 
 Word Word::WordConcatenate(Word &w) {
   Word word;
   word.word_ = word_;
@@ -124,9 +102,6 @@ Word Word::WordConcatenate(Word &w) {
 }
 
 
-/// @brief Imprime la cadena
-/// @param os 
-/// @return std::ostream
 std::ostream &Word::Write(std::ostream &os) {
   for (size_t i = 0; i < word_.size(); i++)
     os << word_[i].GetSymbol();
@@ -134,41 +109,26 @@ std::ostream &Word::Write(std::ostream &os) {
 }
 
 
-/// @brief Sobrecarga del operador < para comparar dos cadenas
-/// @param w 
-/// @return bool
 bool Word::operator<(const Word &w) const { 
   return word_ < w.word_; 
 }
 
 
-/// @brief Sobrecarga del operador << para imprimir una cadena
-/// @param os 
-/// @param w 
-/// @return std::ostream
 std::ostream &operator<<(std::ostream &os, Word &w) { 
   return w.Write(os); 
 }
 
-/// @brief Sobre carga del operador == para comparar dos cadenas
-/// @param w 
-/// @return bool
+
 bool Word::operator==(const Word &w) const { 
   return word_ == w.word_; 
 }
 
 
-/// @brief Sobre carga del operador != para comparar dos cadenas
-/// @param w 
-/// @return bool
 bool Word::operator!=(const Word &w) const { 
   return word_ != w.word_; 
 }
 
 
-/// @brief Sobrecarga del operador + para concatenar dos cadenas
-/// @param word 
-/// @return Word
 Word Word::operator+(Word &word) { 
   return WordConcatenate(word); 
 }

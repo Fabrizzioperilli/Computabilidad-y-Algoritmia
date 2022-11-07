@@ -89,10 +89,10 @@ void ReadFile(std::string file_fa, std::string file_txt)
     {
       Word word(line, alphabet);
       
-      if (automata.ReadWord(word))
-        std::cout << line << " -- Accepted" << std::endl;
-      else
-        std::cout << line << " -- Rejected" << std::endl;
+      // if (automata.ReadWord(word))
+      //   std::cout << line << " -- Accepted" << std::endl;
+      // else
+      //   std::cout << line << " -- Rejected" << std::endl;
     }
   }
   else
