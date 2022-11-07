@@ -35,4 +35,5 @@ class State {
 
     bool operator<(const State&) const;
     State& operator=(const State&);
+    bool operator==(const State&) const;
 };

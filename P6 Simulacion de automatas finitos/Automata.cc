@@ -21,7 +21,7 @@ Automata::Automata() {}
 
 
 /// @brief Constructor de la clase Automata
-/// @param file_fa 
+/// @param file_fa
 Automata::Automata(std::string file_fa) {
   std::ifstream name_file_fa(file_fa);
   std::string line;
@@ -75,8 +75,8 @@ Automata::Automata(std::string file_fa) {
         }
 
         name_file_fa >> next_state;
-        Transition transition(symbol, next_state);
-        state.AddTransition(transition);
+        Transition transition(state.GetId(), symbol, next_state);
+        transitions_.insert(transition);
       }
 
       if (acceptance == 1)
@@ -102,54 +102,110 @@ Automata::~Automata() {}
 
 
 /// @brief Retorna el alfabeto del automata
-/// @return 
-Alphabet Automata::GetAlphabet() const { 
-  return alphabet_; 
+/// @return Alphabet
+Alphabet Automata::GetAlphabet() const { return alphabet_; }
+
+
+/// @brief
+/// @param word
+/// @return bool
+bool Automata::ReadWord(Word &word) {
+  std::set<State> current_state;
+  current_state.insert(initial_state_);
+
+  std::vector<Symbol> symbols = word.GetWord();
+
+  for (auto &&iter_symbol : symbols) {
+    std::set<State> next_state;
+    for (auto &&iter_state : current_state)
+      for (auto &&iter_transition : transitions_)
+        if ((iter_symbol == iter_transition.GetSymbol()) && (iter_state == iter_transition.GetCurrentState()))
+          next_state.insert(GetState(iter_transition.GetNextState()));
+
+    current_state = next_state;
+  }
+  return IsAcceptanceState(current_state);
 }
 
 
-/// @brief Lee las cadenas de un fichero
-/// @param word 
-/// @return 
-bool Automata::ReadWord(Word &word) {
-  State current_state = initial_state_;
-  std::set<Transition> transitions = current_state.GetTransitions();
-  std::vector<Symbol> symbols = word.GetWord();
+/// @brief Retorna el conjunto de estados siguientes
+/// @param state
+/// @param symbol
+/// @return std::set<int>
+std::set<int> Automata::GetNextStates(int state, Symbol &symbol) {
+  std::set<int> next_states;
+  for (auto &&i : transitions_)
+    if (i.GetCurrentState() == state && i.GetSymbol() == symbol)
+      next_states.insert(i.GetNextState());
+  return next_states;
+}
 
-  for (auto &&i : symbols) {
-    for (auto &&j : transitions) {
-      if (i == j.GetSymbol()) {
-        current_state.SetId(j.GetNextState());
-        current_state.SetTransitions(
-            states_.find(current_state)->GetTransitions());
-        transitions = current_state.GetTransitions();
 
-        break;
-      }
-    }
-  }
+/// @brief Imprime los elementos del automata
+/// @param os
+/// @return std::ostream&
+std::ostream &Automata::WriteAutomata(std::ostream &os) {
+  std::cout << "Alfabeto: " << alphabet_ << std::endl;
+  std::cout << "Estados: ";
+  for (auto &&i : states_)
+    std::cout << i.GetId() << " ";
+  std::cout << std::endl;
 
+  std::cout << "Estado inicial: " << initial_state_.GetId() << std::endl;
+  std::cout << "Estados de aceptacion: ";
   for (auto &&i : acceptance_states_)
-    if (current_state.GetId() == i.GetId())
-      return true;
+    std::cout << i.GetId() << " ";
+  std::cout << std::endl;
 
+  std::cout << "Transiciones: " << std::endl;
+  for (auto i : transitions_)
+    std::cout << i << std::endl;
+  return os;
+}
+
+
+/// @brief Sobrecarga del operador <<
+/// @param os
+/// @param automata
+/// @return
+std::ostream &operator<<(std::ostream &os, Automata &automata) {
+  return automata.WriteAutomata(os);
+}
+
+
+/// @brief Metodo privado que el estado con el id pasado por parametro
+/// @param id
+/// @return State
+State Automata::GetState(int id) {
+  for (auto &&i : states_)
+    if (i.GetId() == id)
+      return i;
+  return -1;
+}
+
+
+/// @brief Compresa si el estado pasado por parametro es de aceptacion
+/// @param current_state
+/// @return bool
+bool Automata::IsAcceptanceState(std::set<State> current_state) {
+  for (auto &&i : current_state)
+    if (acceptance_states_.find(i) != acceptance_states_.end())
+      return true;
   return false;
 }
 
 
 /// @brief Corta una cadena en un vector de cadenas
-/// @param str 
-/// @param pattern 
+/// @param str
+/// @param pattern
 /// @return std::vector<std::string>
-std::vector<std::string> Split(std::string str, char pattern)
-{
+std::vector<std::string> Split(std::string str, char pattern) {
   int pos_init = 0;
   int pos_found = 0;
   std::string splitted;
   std::vector<std::string> results;
 
-  while (pos_found >= 0)
-  {
+  while (pos_found >= 0) {
     pos_found = str.find(pattern, pos_init);
     splitted = str.substr(pos_init, pos_found - pos_init);
     pos_init = pos_found + 1;

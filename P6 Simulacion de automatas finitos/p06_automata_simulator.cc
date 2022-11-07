@@ -49,6 +49,8 @@ int main(int argc, char **argv)
   return 0;
 }
 
+
+/// @brief Funcion que muestra la ayuda del programa
 void Help()
 {
   std::cout << "\nModo de empleo: ./p06_automata_simulator input.fa input.txt" << std::endl;
@@ -59,6 +61,11 @@ void Help()
             << std::endl;
 }
 
+
+/// @brief Comprueba que las extensiones de los ficheros sean correctas
+/// @param file_fa 
+/// @param file_txt 
+/// @return bool
 bool CheckExtension(std::string file_fa, std::string file_txt)
 {
 
@@ -71,6 +78,10 @@ bool CheckExtension(std::string file_fa, std::string file_txt)
     return false;
 }
 
+
+/// @brief Lee los ficheros y crea el automata
+/// @param file_fa 
+/// @param file_txt 
 void ReadFile(std::string file_fa, std::string file_txt)
 {
   std::ifstream name_file_fa;
@@ -81,7 +92,7 @@ void ReadFile(std::string file_fa, std::string file_txt)
 
   Automata automata(file_fa);
   Alphabet alphabet = automata.GetAlphabet();
-
+  
   if (name_file_txt.is_open())
   {
     std::string line;

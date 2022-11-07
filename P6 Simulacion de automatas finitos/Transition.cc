@@ -27,10 +27,11 @@ Transition::~Transition() {}
 /// @brief Constructor de la clase Transition
 /// @param symbol 
 /// @param next_state 
-Transition::Transition(Symbol &symbol, int next_state)
+Transition::Transition(int current_state, Symbol &symbol, int next_state)
 {
   symbol_ = symbol;
   next_state_ = next_state;
+  current_state_ = current_state;
 }
 
 
@@ -57,6 +58,13 @@ int Transition::GetNextState() const
   return next_state_;
 }
 
+/// @brief Retorna el estado siguiente
+/// @return int
+int Transition::GetCurrentState() const
+{
+  return current_state_;
+}
+
 
 /// @brief Modifica el estado siguiente
 /// @param next_state 
@@ -71,10 +79,20 @@ void Transition::SetNextState(int next_state)
 /// @return bool
 bool Transition::operator<(const Transition &transition) const
 {
-  if ((this->GetSymbol() == transition.GetSymbol()) && (this->GetNextState() < transition.GetNextState()))
-    return true;
-  else if (this->GetSymbol() < transition.GetSymbol())
-    return true;
-  else
-    return false;
+  bool origin_state = (current_state_ == transition.current_state_);
+  bool symbol = (symbol_ == transition.symbol_);
+  bool destiny_state = (next_state_ == transition.next_state_);
+  
+  return (!(origin_state && symbol && destiny_state));
+}
+
+
+/// @brief Sobreescritura del operador de salida
+/// @param os 
+/// @param transition 
+/// @return std::ostream
+std::ostream &operator<<(std::ostream &os, Transition &transition)
+{
+  os << "("<< transition.current_state_ << ", " << transition.symbol_ << ", " << transition.next_state_ << ")";
+  return os;
 }

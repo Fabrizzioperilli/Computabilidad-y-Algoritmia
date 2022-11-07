@@ -84,6 +84,13 @@ State& State::operator=(const State &s) {
 }
 
 
+/// @brief Compara si dos estados son iguales
+/// @param s 
+/// @return 
+bool State::operator==(const State &s) const {
+  return id_ == s.id_;
+}
+
 
 
 

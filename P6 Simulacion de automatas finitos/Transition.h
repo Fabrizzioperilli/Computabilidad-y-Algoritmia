@@ -16,22 +16,28 @@
 
 #include "Symbol.h"
 #include "State.h"
+#include <iostream>
 
 class Transition
 {
 private:
   Symbol symbol_;
   int next_state_;
+  int current_state_;
 
 public:
   Transition();
-  Transition(Symbol &, int);
+  Transition(int, Symbol &, int);
   ~Transition();
 
   Symbol GetSymbol() const;
   int GetNextState() const;
+  int GetCurrentState() const;
   void SetSymbol(Symbol &);
   void SetNextState(int);
 
   bool operator<(const Transition &) const;
+  friend std::ostream &operator<<(std::ostream &, Transition &);
+
+  void Write();
 };
