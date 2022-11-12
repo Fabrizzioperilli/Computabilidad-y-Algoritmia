@@ -15,20 +15,23 @@
 
 #pragma once
 
-#include "Symbol.h"
+#include "NonTerminalSymbol.h"
+#include "Production.h"
 #include "Alphabet.h"
 #include <set>
 
 class Grammar {
 private:
   Alphabet alphabet_;
-  std::set<Symbol> non_terminal_symbols_;
-  Symbol initial_symbol_;
-  std::set<Symbol> productions_;
+  std::set<NonTerminalSymbol> non_terminal_symbols_;
+  NonTerminalSymbol start_symbol_;
+  std::set<Production> productions_;
 public:
   Grammar();
-  Grammar(Alphabet, std::set<Symbol>, Symbol);
+  Grammar(Alphabet, std::set<NonTerminalSymbol>, NonTerminalSymbol,
+          std::set<Production>);
   ~Grammar();
+  Alphabet GetAlphabet() const;
 
   std::ostream& WriteGrammar(std::ostream&);
   friend std::ostream &operator<<(std::ostream &, Grammar &);

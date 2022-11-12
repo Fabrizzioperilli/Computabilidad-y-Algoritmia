@@ -15,35 +15,61 @@
 
 #include "Grammar.h"
 
+/// @brief Constructor por defecto de la clase Grammar.
 Grammar::Grammar() {}
 
-Grammar::Grammar(Alphabet alphabet, std::set<Symbol> non_terminal_symbols,
-                 Symbol initial_symbol) {
+
+/// @brief Constructor de la clase Grammar.
+/// @param alphabet 
+/// @param non_terminal_symbols 
+/// @param start_symbol 
+/// @param productions 
+Grammar::Grammar(Alphabet alphabet, std::set<NonTerminalSymbol> non_terminal_symbols,
+                 NonTerminalSymbol start_symbol, std::set<Production> productions) {
   alphabet_ = alphabet;
   non_terminal_symbols_ = non_terminal_symbols;
-  initial_symbol_ = initial_symbol;
+  start_symbol_ = start_symbol;
+  productions_ = productions;
 }
 
+
+/// @brief Destructor de la clase Grammar.
 Grammar::~Grammar() {}
 
 
-std::ostream &Grammar::WriteGrammar(std::ostream &os) {
+/// @brief Getter de alphabet_.
+/// @return Alphabet
+Alphabet Grammar::GetAlphabet() const { 
+  return alphabet_; 
+}
+
+
+/// @brief Imprime la gramatica.
+/// @param os 
+/// @return std::ostream&
+std::ostream& Grammar::WriteGrammar(std::ostream& os) {
   os << alphabet_.Size() << std::endl;
-  
-  for(auto symbol : alphabet_.GetAlphabet()) 
+  for (auto symbol : alphabet_.GetAlphabet()) 
     os << symbol << std::endl;
-
+  
   os << non_terminal_symbols_.size() << std::endl;
-     
-  for (auto symbol : non_terminal_symbols_) 
-    os << symbol << std::endl;
-  
-  os << initial_symbol_ << std::endl;
+  for (auto non_terminal_symbol : non_terminal_symbols_)
+    os << non_terminal_symbol.GetName() << std::endl;
 
+  os << start_symbol_ << std::endl;
+  os << productions_.size() << std::endl; 
+ 
+  for (auto production : productions_) 
+    os << production << std::endl;
+  
   return os;
 }
 
 
+/// @brief Sobrecarga del operador <<.
+/// @param os 
+/// @param grammar 
+/// @return std::ostream&
 std::ostream &operator<<(std::ostream &os, Grammar &grammar) {
   return grammar.WriteGrammar(os);
 }

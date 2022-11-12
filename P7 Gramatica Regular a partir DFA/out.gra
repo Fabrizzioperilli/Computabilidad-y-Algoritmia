@@ -1,7 +1,15 @@
 2
-0
-1
+a
+b
 2
-N
-P
+B
 S
+S
+7
+A -> & 
+A -> aB
+A -> bB
+B -> aB
+B -> bB
+S -> a@
+S -> bA

@@ -25,12 +25,13 @@
 #include "State.h"
 #include "Transition.h"
 #include "Grammar.h"
+#include "NonTerminalSymbol.h"
+#include "Production.h"
 
 
 std::vector<std::string> Split(std::string, char);
 
-class Automata
-{
+class Automata {
 private:
   std::set<State> states_;
   Alphabet alphabet_;
