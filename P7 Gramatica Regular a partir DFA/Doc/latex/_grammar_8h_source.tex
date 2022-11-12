@@ -1,0 +1,28 @@
+\hypertarget{_grammar_8h_source}{}\doxysection{Grammar.\+h}
+\mbox{\hyperlink{_grammar_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_non_terminal_symbol_8h}{NonTerminalSymbol.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_production_8h}{Production.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_alphabet_8h}{Alphabet.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_grammar}{Grammar}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_alphabet}{Alphabet}} alphabet\_;}
+\DoxyCodeLine{26   std::set<NonTerminalSymbol> non\_terminal\_symbols\_;}
+\DoxyCodeLine{27   \mbox{\hyperlink{class_non_terminal_symbol}{NonTerminalSymbol}} start\_symbol\_;}
+\DoxyCodeLine{28   std::set<Production> productions\_;}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{class_grammar_aa201250a002a7d07d398fee189a74427}{Grammar}}();}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_grammar_aa201250a002a7d07d398fee189a74427}{Grammar}}(\mbox{\hyperlink{class_alphabet}{Alphabet}}, std::set<NonTerminalSymbol>, \mbox{\hyperlink{class_non_terminal_symbol}{NonTerminalSymbol}}, std::set<Production>);}
+\DoxyCodeLine{32   \mbox{\hyperlink{class_grammar_a60e8bade0190ee9830d9c600e4216b36}{\string~Grammar}}();}
+\DoxyCodeLine{33   \mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_grammar_ae880cf12cb26eac2047be4c9b7401250}{GetAlphabet}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   std::ostream\& \mbox{\hyperlink{class_grammar_a999aa23247bc6740d4fe16449df5dd9f}{WriteGrammar}}(std::ostream\&);}
+\DoxyCodeLine{36   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_grammar_a02d36b61524c927d7c8753fd3ac87e38}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_grammar}{Grammar}} \&);}
+\DoxyCodeLine{37 \};}
+
+\end{DoxyCode}

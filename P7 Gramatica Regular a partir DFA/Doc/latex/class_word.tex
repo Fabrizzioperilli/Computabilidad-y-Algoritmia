@@ -1,0 +1,356 @@
+\hypertarget{class_word}{}\doxysection{Referencia de la Clase Word}
+\label{class_word}\index{Word@{Word}}
+
+
+{\ttfamily \#include $<$Word.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_word_a17baf7109d46beb48d5b469f3baedc48}{Word}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_word_ab493a31413308d2f06ef5395d63bb1dc}{Word}} (std\+::string, \mbox{\hyperlink{class_alphabet}{Alphabet}} \&)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_word}{Word}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_word_a1fbcaae6859604d92e94cab540cb3523}{$\sim$\+Word}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{class_word}{Word}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$ \mbox{\hyperlink{class_word_a29c0dfb47cd5a361c6bf79888485dbc9}{Get\+Word}} ()
+\begin{DoxyCompactList}\small\item\em Getter de la clase \mbox{\hyperlink{class_word}{Word}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_word_ad2042d69d8f25dc8d068db2e1a58cef1}{Set\+Word}} (std\+::vector$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$)
+\begin{DoxyCompactList}\small\item\em Setter de la clase \mbox{\hyperlink{class_word}{Word}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_word_ab6057f473f46846f416de6e9646ee892}{Get\+Alphabet}} ()
+\begin{DoxyCompactList}\small\item\em Retorna el alphabeto de la cadena. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_word_a77cbe2acfd0babd2b64b848992bdb7a4}{Set\+Alphabet}} (\mbox{\hyperlink{class_alphabet}{Alphabet}} \&)
+\begin{DoxyCompactList}\small\item\em Modifica el alfabeto de la cadena. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_word_a9b5271bd09fabe70986f3972b6964597}{Add\+Symbol}} (\mbox{\hyperlink{class_symbol}{Symbol}} \&)
+\begin{DoxyCompactList}\small\item\em Agraga un símbolo a la cadena. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_word_a9937ab7d436b7304389d3aec3ed87d13}{Word\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Rwetorna el tamaño de la cadena-\/. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_a2c5499029c204d6f2b7452659434774a}{Word\+Inverse}} ()
+\begin{DoxyCompactList}\small\item\em Calcula la inversa de la cadena. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_ae7004f1a90960e726f3273c8cd68474f}{Word\+Concatenate}} (\mbox{\hyperlink{class_word}{Word}} \&)
+\begin{DoxyCompactList}\small\item\em Concatena dos cadenas. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_word_a193a4b0c3fde6cfc8b3432d0aed55e02}{Write}} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Imprime la cadena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word_a6a1c86066718b7fcf7a2de7f5ee46185}{operator$<$}} (const \mbox{\hyperlink{class_word}{Word}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<} para comparar dos cadenas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word_a8cc28fa21f617ad428661cd33ac6d15b}{operator==}} (const \mbox{\hyperlink{class_word}{Word}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobre carga del operador == para comparar dos cadenas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word_a800b60944bff251ddd2cfa09ca270f92}{operator!=}} (const \mbox{\hyperlink{class_word}{Word}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobre carga del operador != para comparar dos cadenas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_ad3cef0551acaee08923c03cb4b0c0c25}{operator+}} (\mbox{\hyperlink{class_word}{Word}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador + para concatenar dos cadenas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_word_aded2792f7c723153faf733111232f926}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_word}{Word}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} para imprimir una cadena. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_word_a17baf7109d46beb48d5b469f3baedc48}\label{class_word_a17baf7109d46beb48d5b469f3baedc48}} 
+\index{Word@{Word}!Word@{Word}}
+\index{Word@{Word}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{Word()}{Word()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Word\+::\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_word_ab493a31413308d2f06ef5395d63bb1dc}\label{class_word_ab493a31413308d2f06ef5395d63bb1dc}} 
+\index{Word@{Word}!Word@{Word}}
+\index{Word@{Word}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{Word()}{Word()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Word\+::\+Word (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{\mbox{\hyperlink{class_alphabet}{Alphabet}} \&}]{alph }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_word}{Word}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & \\
+\hline
+{\em alph} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_word_ab493a31413308d2f06ef5395d63bb1dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_word_a1fbcaae6859604d92e94cab540cb3523}\label{class_word_a1fbcaae6859604d92e94cab540cb3523}} 
+\index{Word@{Word}!````~Word@{$\sim$Word}}
+\index{````~Word@{$\sim$Word}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{$\sim$Word()}{~Word()}}
+{\footnotesize\ttfamily Word\+::$\sim$\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{class_word}{Word}}. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_word_a9b5271bd09fabe70986f3972b6964597}\label{class_word_a9b5271bd09fabe70986f3972b6964597}} 
+\index{Word@{Word}!AddSymbol@{AddSymbol}}
+\index{AddSymbol@{AddSymbol}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{AddSymbol()}{AddSymbol()}}
+{\footnotesize\ttfamily void Word\+::\+Add\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Agraga un símbolo a la cadena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_word_ab6057f473f46846f416de6e9646ee892}\label{class_word_ab6057f473f46846f416de6e9646ee892}} 
+\index{Word@{Word}!GetAlphabet@{GetAlphabet}}
+\index{GetAlphabet@{GetAlphabet}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{GetAlphabet()}{GetAlphabet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_alphabet}{Alphabet}} Word\+::\+Get\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna el alphabeto de la cadena. 
+
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_alphabet}{Alphabet}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_a29c0dfb47cd5a361c6bf79888485dbc9}\label{class_word_a29c0dfb47cd5a361c6bf79888485dbc9}} 
+\index{Word@{Word}!GetWord@{GetWord}}
+\index{GetWord@{GetWord}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{GetWord()}{GetWord()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$ Word\+::\+Get\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter de la clase \mbox{\hyperlink{class_word}{Word}}. 
+
+\begin{DoxyReturn}{Devuelve}
+std\+::vector$<$\+Symbol$>$ 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_word_a29c0dfb47cd5a361c6bf79888485dbc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_word_a800b60944bff251ddd2cfa09ca270f92}\label{class_word_a800b60944bff251ddd2cfa09ca270f92}} 
+\index{Word@{Word}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Word\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_word}{Word}} \&}]{w }\end{DoxyParamCaption}) const}
+
+
+
+Sobre carga del operador != para comparar dos cadenas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_ad3cef0551acaee08923c03cb4b0c0c25}\label{class_word_ad3cef0551acaee08923c03cb4b0c0c25}} 
+\index{Word@{Word}!operator+@{operator+}}
+\index{operator+@{operator+}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_word}{Word}} Word\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_word}{Word}} \&}]{word }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador + para concatenar dos cadenas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em word} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_word}{Word}} 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_word_ad3cef0551acaee08923c03cb4b0c0c25_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_word_a6a1c86066718b7fcf7a2de7f5ee46185}\label{class_word_a6a1c86066718b7fcf7a2de7f5ee46185}} 
+\index{Word@{Word}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Word\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_word}{Word}} \&}]{w }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<} para comparar dos cadenas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_a8cc28fa21f617ad428661cd33ac6d15b}\label{class_word_a8cc28fa21f617ad428661cd33ac6d15b}} 
+\index{Word@{Word}!operator==@{operator==}}
+\index{operator==@{operator==}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Word\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_word}{Word}} \&}]{w }\end{DoxyParamCaption}) const}
+
+
+
+Sobre carga del operador == para comparar dos cadenas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_a77cbe2acfd0babd2b64b848992bdb7a4}\label{class_word_a77cbe2acfd0babd2b64b848992bdb7a4}} 
+\index{Word@{Word}!SetAlphabet@{SetAlphabet}}
+\index{SetAlphabet@{SetAlphabet}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{SetAlphabet()}{SetAlphabet()}}
+{\footnotesize\ttfamily void Word\+::\+Set\+Alphabet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_alphabet}{Alphabet}} \&}]{alph }\end{DoxyParamCaption})}
+
+
+
+Modifica el alfabeto de la cadena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em alph} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_word_ad2042d69d8f25dc8d068db2e1a58cef1}\label{class_word_ad2042d69d8f25dc8d068db2e1a58cef1}} 
+\index{Word@{Word}!SetWord@{SetWord}}
+\index{SetWord@{SetWord}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{SetWord()}{SetWord()}}
+{\footnotesize\ttfamily void Word\+::\+Set\+Word (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$}]{word }\end{DoxyParamCaption})}
+
+
+
+Setter de la clase \mbox{\hyperlink{class_word}{Word}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em word} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_word_ae7004f1a90960e726f3273c8cd68474f}\label{class_word_ae7004f1a90960e726f3273c8cd68474f}} 
+\index{Word@{Word}!WordConcatenate@{WordConcatenate}}
+\index{WordConcatenate@{WordConcatenate}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{WordConcatenate()}{WordConcatenate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_word}{Word}} Word\+::\+Word\+Concatenate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_word}{Word}} \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Concatena dos cadenas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_word}{Word}} ~\newline
+ 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_word_ae7004f1a90960e726f3273c8cd68474f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_word_a2c5499029c204d6f2b7452659434774a}\label{class_word_a2c5499029c204d6f2b7452659434774a}} 
+\index{Word@{Word}!WordInverse@{WordInverse}}
+\index{WordInverse@{WordInverse}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{WordInverse()}{WordInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_word}{Word}} Word\+::\+Word\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calcula la inversa de la cadena. 
+
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_word}{Word}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_a9937ab7d436b7304389d3aec3ed87d13}\label{class_word_a9937ab7d436b7304389d3aec3ed87d13}} 
+\index{Word@{Word}!WordLength@{WordLength}}
+\index{WordLength@{WordLength}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{WordLength()}{WordLength()}}
+{\footnotesize\ttfamily int Word\+::\+Word\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rwetorna el tamaño de la cadena-\/. 
+
+\begin{DoxyReturn}{Devuelve}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_word_a193a4b0c3fde6cfc8b3432d0aed55e02}\label{class_word_a193a4b0c3fde6cfc8b3432d0aed55e02}} 
+\index{Word@{Word}!Write@{Write}}
+\index{Write@{Write}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily std\+::ostream \& Word\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Imprime la cadena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_word_aded2792f7c723153faf733111232f926}\label{class_word_aded2792f7c723153faf733111232f926}} 
+\index{Word@{Word}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Word@{Word}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_word}{Word}} \&}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} para imprimir una cadena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_word_8h}{Word.\+h}}\item 
+\mbox{\hyperlink{_word_8cc}{Word.\+cc}}\end{DoxyCompactItemize}

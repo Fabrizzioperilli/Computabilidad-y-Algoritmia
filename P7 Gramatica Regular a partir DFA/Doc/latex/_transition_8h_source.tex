@@ -1,0 +1,35 @@
+\hypertarget{_transition_8h_source}{}\doxysection{Transition.\+h}
+\mbox{\hyperlink{_transition_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_symbol_8h}{Symbol.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_state_8h}{State.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_transition}{Transition}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{class_symbol}{Symbol}} symbol\_;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{int} next\_state\_;}
+\DoxyCodeLine{26   \textcolor{keywordtype}{int} current\_state\_;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{class_transition_a73b44b2338b11807f77b620a3e810f92}{Transition}}();}
+\DoxyCodeLine{30   \mbox{\hyperlink{class_transition_a73b44b2338b11807f77b620a3e810f92}{Transition}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{class_symbol}{Symbol}} \&, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_transition_ab66e8623f23c71cd4f07c69596427bab}{\string~Transition}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \mbox{\hyperlink{class_symbol}{Symbol}} \mbox{\hyperlink{class_transition_a4d57677d2dd130185c93024d213831c1}{GetSymbol}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_transition_aaeabaf1e00b870a5a9f6c83df9b7c1e1}{GetNextState}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{35   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_transition_a08242e1d5e94d2d81072be3f56131fe9}{GetCurrentState}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transition_acb11415549eb67c450d769820435099f}{SetSymbol}}(\mbox{\hyperlink{class_symbol}{Symbol}} \&);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transition_ab83b01c630e5c15e954825327a49d05b}{SetNextState}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_transition_a11290525baaf2e916c11f9f312b493f6}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_transition}{Transition}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{40   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_transition_a08da6e089b07a445a5df032c6b78929c}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_transition}{Transition}} \&);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_transition_a5e8cebbe65390ca02497f2e397f93db1}{Write}}();}
+\DoxyCodeLine{43 \};}
+
+\end{DoxyCode}

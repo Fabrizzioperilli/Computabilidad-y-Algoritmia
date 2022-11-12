@@ -1,0 +1,4 @@
+<map id="Automata::CheckWord" name="Automata::CheckWord">
+<area shape="rect" id="node1" title="Compruba si la cadena es aceptada o rechaza por el automata." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$class_word.html#a29c0dfb47cd5a361c6bf79888485dbc9" title="Getter de la clase Word." alt="" coords="208,5,321,32"/>
+</map>

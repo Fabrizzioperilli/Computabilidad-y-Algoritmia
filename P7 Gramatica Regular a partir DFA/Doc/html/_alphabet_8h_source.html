@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gramática Regular a partir de DFA: Fichero Fuente Alphabet.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gramática Regular a partir de DFA<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gramática Regular a partir de DFA</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Alphabet.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_alphabet_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_symbol_8h.html">Symbol.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_alphabet.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_alphabet.html">Alphabet</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::set&lt;Symbol&gt; alphabet_;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_function" href="class_alphabet.html#aac9f2f615174ca6c8f89331239cb765e">Alphabet</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_function" href="class_alphabet.html#aac9f2f615174ca6c8f89331239cb765e">Alphabet</a>(std::set&lt;Symbol&gt;);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_function" href="class_alphabet.html#a8a1da1bd7fdf2fd06a9768f9597a0b44">~Alphabet</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::set&lt;Symbol&gt; <a class="code hl_function" href="class_alphabet.html#ada503ab99dbbd60b1171706e21ecd988">GetAlphabet</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_alphabet.html#a98e6c425ea887d2925ca2c89b95f17ef">AddSymbol</a>(<a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_alphabet.html#a98e6c425ea887d2925ca2c89b95f17ef">AddSymbol</a>(std::string str);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_alphabet.html#aafe06af439e38bfec37ba06991adb388">Empty</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_alphabet.html#a154f45f063a75a8116e8f9022440287e">Size</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_alphabet.html#a0f307f0a4e9c0b390ab845b506790f70">Search</a>(std::string);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  std::ostream &amp;<a class="code hl_function" href="class_alphabet.html#a8152ca5fbabb6d8c362e83c5bacf1507">Write</a>(std::ostream &amp;);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="class_alphabet.html">Alphabet</a> <a class="code hl_function" href="class_alphabet.html#a3a4cfedb55f681283755d1d52590706b">Union</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_alphabet.html">Alphabet</a> &amp;);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_alphabet.html#ac82d17ceabe35fc0fca02c10ec441ae8">CheckSymbol</a>(<a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="class_alphabet.html#a60aeee615a8ad90c6a8a71c5750b7bbb">operator&lt;&lt;</a>(std::ostream &amp;, <a class="code hl_class" href="class_alphabet.html">Alphabet</a> &amp;);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="ttc" id="a_symbol_8h_html"><div class="ttname"><a href="_symbol_8h.html">Symbol.h</a></div></div>
+<div class="ttc" id="aclass_alphabet_html"><div class="ttname"><a href="class_alphabet.html">Alphabet</a></div><div class="ttdef"><b>Definition:</b> Alphabet.h:19</div></div>
+<div class="ttc" id="aclass_alphabet_html_a0f307f0a4e9c0b390ab845b506790f70"><div class="ttname"><a href="class_alphabet.html#a0f307f0a4e9c0b390ab845b506790f70">Alphabet::Search</a></div><div class="ttdeci">bool Search(std::string)</div><div class="ttdoc">Busca un string en el alfabeto.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:72</div></div>
+<div class="ttc" id="aclass_alphabet_html_a154f45f063a75a8116e8f9022440287e"><div class="ttname"><a href="class_alphabet.html#a154f45f063a75a8116e8f9022440287e">Alphabet::Size</a></div><div class="ttdeci">int Size()</div><div class="ttdoc">Retorna el tamaño del alfabeto.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:64</div></div>
+<div class="ttc" id="aclass_alphabet_html_a3a4cfedb55f681283755d1d52590706b"><div class="ttname"><a href="class_alphabet.html#a3a4cfedb55f681283755d1d52590706b">Alphabet::Union</a></div><div class="ttdeci">Alphabet Union(const Alphabet &amp;)</div><div class="ttdoc">Realiza la unión de dos alfabetos.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:93</div></div>
+<div class="ttc" id="aclass_alphabet_html_a60aeee615a8ad90c6a8a71c5750b7bbb"><div class="ttname"><a href="class_alphabet.html#a60aeee615a8ad90c6a8a71c5750b7bbb">Alphabet::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, Alphabet &amp;)</div><div class="ttdoc">Sobrecarga del operador &lt;&lt;.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:118</div></div>
+<div class="ttc" id="aclass_alphabet_html_a8152ca5fbabb6d8c362e83c5bacf1507"><div class="ttname"><a href="class_alphabet.html#a8152ca5fbabb6d8c362e83c5bacf1507">Alphabet::Write</a></div><div class="ttdeci">std::ostream &amp; Write(std::ostream &amp;)</div><div class="ttdoc">Escribir el alfabeto.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:83</div></div>
+<div class="ttc" id="aclass_alphabet_html_a8a1da1bd7fdf2fd06a9768f9597a0b44"><div class="ttname"><a href="class_alphabet.html#a8a1da1bd7fdf2fd06a9768f9597a0b44">Alphabet::~Alphabet</a></div><div class="ttdeci">~Alphabet()</div><div class="ttdoc">Destructor de la clase Alphabet.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:30</div></div>
+<div class="ttc" id="aclass_alphabet_html_a98e6c425ea887d2925ca2c89b95f17ef"><div class="ttname"><a href="class_alphabet.html#a98e6c425ea887d2925ca2c89b95f17ef">Alphabet::AddSymbol</a></div><div class="ttdeci">void AddSymbol(Symbol &amp;)</div><div class="ttdoc">Setter de la clase Alphabet.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:42</div></div>
+<div class="ttc" id="aclass_alphabet_html_aac9f2f615174ca6c8f89331239cb765e"><div class="ttname"><a href="class_alphabet.html#aac9f2f615174ca6c8f89331239cb765e">Alphabet::Alphabet</a></div><div class="ttdeci">Alphabet()</div><div class="ttdoc">Constructor por defecto.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:19</div></div>
+<div class="ttc" id="aclass_alphabet_html_aafe06af439e38bfec37ba06991adb388"><div class="ttname"><a href="class_alphabet.html#aafe06af439e38bfec37ba06991adb388">Alphabet::Empty</a></div><div class="ttdeci">bool Empty()</div><div class="ttdoc">Método que compruba si el alfabeto está vacío.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:57</div></div>
+<div class="ttc" id="aclass_alphabet_html_ac82d17ceabe35fc0fca02c10ec441ae8"><div class="ttname"><a href="class_alphabet.html#ac82d17ceabe35fc0fca02c10ec441ae8">Alphabet::CheckSymbol</a></div><div class="ttdeci">bool CheckSymbol(Symbol &amp;)</div><div class="ttdoc">Busca un símbolo en el alfabeto.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:106</div></div>
+<div class="ttc" id="aclass_alphabet_html_ada503ab99dbbd60b1171706e21ecd988"><div class="ttname"><a href="class_alphabet.html#ada503ab99dbbd60b1171706e21ecd988">Alphabet::GetAlphabet</a></div><div class="ttdeci">std::set&lt; Symbol &gt; GetAlphabet() const</div><div class="ttdoc">Getter de la clase Alphabet.</div><div class="ttdef"><b>Definition:</b> Alphabet.cc:35</div></div>
+<div class="ttc" id="aclass_symbol_html"><div class="ttname"><a href="class_symbol.html">Symbol</a></div><div class="ttdef"><b>Definition:</b> Symbol.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

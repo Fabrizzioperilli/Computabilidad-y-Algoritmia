@@ -1,0 +1,48 @@
+\hypertarget{_automata_8h_source}{}\doxysection{Automata.\+h}
+\mbox{\hyperlink{_automata_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_symbol_8h}{Symbol.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_alphabet_8h}{Alphabet.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_word_8h}{Word.h}}"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_state_8h}{State.h}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transition_8h}{Transition.h}}"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_grammar_8h}{Grammar.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_non_terminal_symbol_8h}{NonTerminalSymbol.h}}"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_production_8h}{Production.h}}"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 std::vector<std::string> \mbox{\hyperlink{_automata_8h_a649f332e4a64774acda7a6572c53d716}{Split}}(std::string, \textcolor{keywordtype}{char});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{class_automata}{Automata}} \{}
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36   std::set<State> states\_;}
+\DoxyCodeLine{37   \mbox{\hyperlink{class_alphabet}{Alphabet}} alphabet\_;}
+\DoxyCodeLine{38   std::set<Transition> transitions\_;}
+\DoxyCodeLine{39   \mbox{\hyperlink{class_state}{State}} initial\_state\_;}
+\DoxyCodeLine{40   std::set<State> acceptance\_states\_;}
+\DoxyCodeLine{41   }
+\DoxyCodeLine{42   \mbox{\hyperlink{class_state}{State}} GetState(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{43   \textcolor{keywordtype}{bool} IsAcceptanceState(std::set<State>);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46   \mbox{\hyperlink{class_automata_ae13e4a7c4d7f0291c80b252a2510ebff}{Automata}}();}
+\DoxyCodeLine{47   \mbox{\hyperlink{class_automata_ae13e4a7c4d7f0291c80b252a2510ebff}{Automata}}(std::string);}
+\DoxyCodeLine{48   \mbox{\hyperlink{class_automata_a941900afd06b6842be934afbbc4b4ecf}{\string~Automata}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50   \mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_automata_ada9b2fa859d83af93affda46a7ce80a0}{GetAlphabet}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{51   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_automata_ad90fb4a02ab75fcdb84e7822e54f548c}{CheckWord}}(\mbox{\hyperlink{class_word}{Word}} \&);}
+\DoxyCodeLine{52   std::ostream\& \mbox{\hyperlink{class_automata_a2938de28d3b12e9e70ab4e7eb140706c}{WriteAutomata}}(std::ostream\&);}
+\DoxyCodeLine{53   \mbox{\hyperlink{class_grammar}{Grammar}} \mbox{\hyperlink{class_automata_a9ec263d73f9a306532a73e009da77c4f}{ConvertToGrammar}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_automata_a49e1d4a0b7c3fb24204b0ee9412f7336}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_automata}{Automata}} \&);}
+\DoxyCodeLine{56 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,10 @@
+<map id="Automata::Automata" name="Automata::Automata">
+<area shape="rect" id="node1" title="Constructor de la clase Automata." alt="" coords="5,132,148,159"/>
+<area shape="rect" id="node2" href="$class_alphabet.html#a98e6c425ea887d2925ca2c89b95f17ef" title="Setter de la clase Alphabet." alt="" coords="203,5,351,32"/>
+<area shape="rect" id="node3" href="$class_alphabet.html#ac82d17ceabe35fc0fca02c10ec441ae8" title="Busca un símbolo en el alfabeto." alt="" coords="196,56,359,83"/>
+<area shape="rect" id="node5" href="$class_state.html#a149b6dca129bb208469478a215253aba" title="Retorna el id del estado." alt="" coords="231,107,323,133"/>
+<area shape="rect" id="node6" href="$class_state.html#a8f20076e7000e8d30987f6238ebe5e09" title="Modifica el id del estado." alt="" coords="232,157,323,184"/>
+<area shape="rect" id="node7" href="$class_symbol.html#a738aedfef7f2e64e1ce0da470e735f22" title="Setter de la clase Symbol." alt="" coords="208,208,347,235"/>
+<area shape="rect" id="node8" href="$_automata_8cc.html#a256c3fca9edd13ff5a454358af0007cd" title="Corta una cadena en un vector de cadenas." alt="" coords="253,259,301,285"/>
+<area shape="rect" id="node4" href="$class_symbol.html#a5991c98d85b3308cef72624ae9da9241" title="Getter de la clase Symbol." alt="" coords="407,56,545,83"/>
+</map>

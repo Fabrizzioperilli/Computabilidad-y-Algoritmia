@@ -1,0 +1,139 @@
+\hypertarget{class_grammar}{}\doxysection{Referencia de la Clase Grammar}
+\label{class_grammar}\index{Grammar@{Grammar}}
+
+
+{\ttfamily \#include $<$Grammar.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grammar_aa201250a002a7d07d398fee189a74427}{Grammar}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grammar_a424c5beea8338b0dea3605080f625a34}{Grammar}} (\mbox{\hyperlink{class_alphabet}{Alphabet}}, std\+::set$<$ \mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}} $>$, \mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}}, std\+::set$<$ \mbox{\hyperlink{class_production}{Production}} $>$)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grammar_a60e8bade0190ee9830d9c600e4216b36}{$\sim$\+Grammar}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_grammar_ae880cf12cb26eac2047be4c9b7401250}{Get\+Alphabet}} () const
+\begin{DoxyCompactList}\small\item\em Getter de alphabet\+\_\+. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_grammar_a999aa23247bc6740d4fe16449df5dd9f}{Write\+Grammar}} (std\+::ostream \&)
+\begin{DoxyCompactList}\small\item\em Imprime la gramatica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_grammar_a02d36b61524c927d7c8753fd3ac87e38}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_grammar}{Grammar}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_grammar_aa201250a002a7d07d398fee189a74427}\label{class_grammar_aa201250a002a7d07d398fee189a74427}} 
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{Grammar()}{Grammar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Grammar\+::\+Grammar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. 
+
+\mbox{\Hypertarget{class_grammar_a424c5beea8338b0dea3605080f625a34}\label{class_grammar_a424c5beea8338b0dea3605080f625a34}} 
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{Grammar()}{Grammar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Grammar\+::\+Grammar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_alphabet}{Alphabet}}}]{alphabet,  }\item[{std\+::set$<$ \mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}} $>$}]{non\+\_\+terminal\+\_\+symbols,  }\item[{\mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}}}]{start\+\_\+symbol,  }\item[{std\+::set$<$ \mbox{\hyperlink{class_production}{Production}} $>$}]{productions }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em alphabet} & \\
+\hline
+{\em non\+\_\+terminal\+\_\+symbols} & \\
+\hline
+{\em start\+\_\+symbol} & \\
+\hline
+{\em productions} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grammar_a60e8bade0190ee9830d9c600e4216b36}\label{class_grammar_a60e8bade0190ee9830d9c600e4216b36}} 
+\index{Grammar@{Grammar}!````~Grammar@{$\sim$Grammar}}
+\index{````~Grammar@{$\sim$Grammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{$\sim$Grammar()}{~Grammar()}}
+{\footnotesize\ttfamily Grammar\+::$\sim$\+Grammar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{class_grammar}{Grammar}}. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_grammar_ae880cf12cb26eac2047be4c9b7401250}\label{class_grammar_ae880cf12cb26eac2047be4c9b7401250}} 
+\index{Grammar@{Grammar}!GetAlphabet@{GetAlphabet}}
+\index{GetAlphabet@{GetAlphabet}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{GetAlphabet()}{GetAlphabet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_alphabet}{Alphabet}} Grammar\+::\+Get\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter de alphabet\+\_\+. 
+
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_alphabet}{Alphabet}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_grammar_a999aa23247bc6740d4fe16449df5dd9f}\label{class_grammar_a999aa23247bc6740d4fe16449df5dd9f}} 
+\index{Grammar@{Grammar}!WriteGrammar@{WriteGrammar}}
+\index{WriteGrammar@{WriteGrammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{WriteGrammar()}{WriteGrammar()}}
+{\footnotesize\ttfamily std\+::ostream \& Grammar\+::\+Write\+Grammar (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Imprime la gramatica. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_grammar_a999aa23247bc6740d4fe16449df5dd9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_grammar_a02d36b61524c927d7c8753fd3ac87e38}\label{class_grammar_a02d36b61524c927d7c8753fd3ac87e38}} 
+\index{Grammar@{Grammar}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_grammar}{Grammar}} \&}]{grammar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em grammar} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_grammar_8h}{Grammar.\+h}}\item 
+\mbox{\hyperlink{_grammar_8cc}{Grammar.\+cc}}\end{DoxyCompactItemize}

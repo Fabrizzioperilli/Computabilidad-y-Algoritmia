@@ -1,0 +1,8 @@
+<map id="State::GetId" name="State::GetId">
+<area shape="rect" id="node1" title="Retorna el id del estado." alt="" coords="471,56,563,83"/>
+<area shape="rect" id="node2" href="$class_automata.html#ab67873550db3831c61360c26af762ba6" title="Constructor de la clase Automata." alt="" coords="253,5,395,32"/>
+<area shape="rect" id="node3" href="$class_automata.html#a9ec263d73f9a306532a73e009da77c4f" title="Convierte un automata a una gramatica regular." alt="" coords="225,56,423,83"/>
+<area shape="rect" id="node6" href="$class_automata.html#a2938de28d3b12e9e70ab4e7eb140706c" title="Imprime los elementos del automata." alt="" coords="237,107,411,133"/>
+<area shape="rect" id="node4" href="$dfa2grammar_8cc.html#a497cd109747dd44d282d055ebbb4944b" title="Lee los ficheros y crea el automata." alt="" coords="104,56,177,83"/>
+<area shape="rect" id="node5" href="$dfa2grammar_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
+</map>

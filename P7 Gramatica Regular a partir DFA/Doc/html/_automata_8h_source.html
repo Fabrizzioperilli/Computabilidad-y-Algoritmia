@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gramática Regular a partir de DFA: Fichero Fuente Automata.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gramática Regular a partir de DFA<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gramática Regular a partir de DFA</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Automata.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_automata_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_symbol_8h.html">Symbol.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_alphabet_8h.html">Alphabet.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_word_8h.html">Word.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="_state_8h.html">State.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="_transition_8h.html">Transition.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="_grammar_8h.html">Grammar.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="_non_terminal_symbol_8h.html">NonTerminalSymbol.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="_production_8h.html">Production.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>std::vector&lt;std::string&gt; <a class="code hl_function" href="_automata_8h.html#a649f332e4a64774acda7a6572c53d716">Split</a>(std::string, <span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_automata.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="class_automata.html">Automata</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  std::set&lt;State&gt; states_;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_class" href="class_alphabet.html">Alphabet</a> alphabet_;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::set&lt;Transition&gt; transitions_;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="class_state.html">State</a> initial_state_;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  std::set&lt;State&gt; acceptance_states_;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_class" href="class_state.html">State</a> GetState(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">bool</span> IsAcceptanceState(std::set&lt;State&gt;);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_function" href="class_automata.html#ae13e4a7c4d7f0291c80b252a2510ebff">Automata</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_function" href="class_automata.html#ae13e4a7c4d7f0291c80b252a2510ebff">Automata</a>(std::string);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_function" href="class_automata.html#a941900afd06b6842be934afbbc4b4ecf">~Automata</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_class" href="class_alphabet.html">Alphabet</a> <a class="code hl_function" href="class_automata.html#ada9b2fa859d83af93affda46a7ce80a0">GetAlphabet</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_automata.html#ad90fb4a02ab75fcdb84e7822e54f548c">CheckWord</a>(<a class="code hl_class" href="class_word.html">Word</a> &amp;);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  std::ostream&amp; <a class="code hl_function" href="class_automata.html#a2938de28d3b12e9e70ab4e7eb140706c">WriteAutomata</a>(std::ostream&amp;);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="class_grammar.html">Grammar</a> <a class="code hl_function" href="class_automata.html#a9ec263d73f9a306532a73e009da77c4f">ConvertToGrammar</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="class_automata.html#a49e1d4a0b7c3fb24204b0ee9412f7336">operator&lt;&lt;</a>(std::ostream &amp;, <a class="code hl_class" href="class_automata.html">Automata</a> &amp;);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="ttc" id="a_alphabet_8h_html"><div class="ttname"><a href="_alphabet_8h.html">Alphabet.h</a></div></div>
+<div class="ttc" id="a_automata_8h_html_a649f332e4a64774acda7a6572c53d716"><div class="ttname"><a href="_automata_8h.html#a649f332e4a64774acda7a6572c53d716">Split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; Split(std::string, char)</div><div class="ttdoc">Corta una cadena en un vector de cadenas.</div><div class="ttdef"><b>Definition:</b> Automata.cc:218</div></div>
+<div class="ttc" id="a_grammar_8h_html"><div class="ttname"><a href="_grammar_8h.html">Grammar.h</a></div></div>
+<div class="ttc" id="a_non_terminal_symbol_8h_html"><div class="ttname"><a href="_non_terminal_symbol_8h.html">NonTerminalSymbol.h</a></div></div>
+<div class="ttc" id="a_production_8h_html"><div class="ttname"><a href="_production_8h.html">Production.h</a></div></div>
+<div class="ttc" id="a_state_8h_html"><div class="ttname"><a href="_state_8h.html">State.h</a></div></div>
+<div class="ttc" id="a_symbol_8h_html"><div class="ttname"><a href="_symbol_8h.html">Symbol.h</a></div></div>
+<div class="ttc" id="a_transition_8h_html"><div class="ttname"><a href="_transition_8h.html">Transition.h</a></div></div>
+<div class="ttc" id="a_word_8h_html"><div class="ttname"><a href="_word_8h.html">Word.h</a></div></div>
+<div class="ttc" id="aclass_alphabet_html"><div class="ttname"><a href="class_alphabet.html">Alphabet</a></div><div class="ttdef"><b>Definition:</b> Alphabet.h:19</div></div>
+<div class="ttc" id="aclass_automata_html"><div class="ttname"><a href="class_automata.html">Automata</a></div><div class="ttdef"><b>Definition:</b> Automata.h:34</div></div>
+<div class="ttc" id="aclass_automata_html_a2938de28d3b12e9e70ab4e7eb140706c"><div class="ttname"><a href="class_automata.html#a2938de28d3b12e9e70ab4e7eb140706c">Automata::WriteAutomata</a></div><div class="ttdeci">std::ostream &amp; WriteAutomata(std::ostream &amp;)</div><div class="ttdoc">Imprime los elementos del automata.</div><div class="ttdef"><b>Definition:</b> Automata.cc:130</div></div>
+<div class="ttc" id="aclass_automata_html_a49e1d4a0b7c3fb24204b0ee9412f7336"><div class="ttname"><a href="class_automata.html#a49e1d4a0b7c3fb24204b0ee9412f7336">Automata::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, Automata &amp;)</div><div class="ttdoc">Sobrecarga del operador &lt;&lt;.</div><div class="ttdef"><b>Definition:</b> Automata.cc:189</div></div>
+<div class="ttc" id="aclass_automata_html_a941900afd06b6842be934afbbc4b4ecf"><div class="ttname"><a href="class_automata.html#a941900afd06b6842be934afbbc4b4ecf">Automata::~Automata</a></div><div class="ttdeci">~Automata()</div><div class="ttdoc">Destructor de la clase Automata.</div><div class="ttdef"><b>Definition:</b> Automata.cc:96</div></div>
+<div class="ttc" id="aclass_automata_html_a9ec263d73f9a306532a73e009da77c4f"><div class="ttname"><a href="class_automata.html#a9ec263d73f9a306532a73e009da77c4f">Automata::ConvertToGrammar</a></div><div class="ttdeci">Grammar ConvertToGrammar()</div><div class="ttdoc">Convierte un automata a una gramatica regular.</div><div class="ttdef"><b>Definition:</b> Automata.cc:148</div></div>
+<div class="ttc" id="aclass_automata_html_ad90fb4a02ab75fcdb84e7822e54f548c"><div class="ttname"><a href="class_automata.html#ad90fb4a02ab75fcdb84e7822e54f548c">Automata::CheckWord</a></div><div class="ttdeci">bool CheckWord(Word &amp;)</div><div class="ttdoc">Compruba si la cadena es aceptada o rechaza por el automata.</div><div class="ttdef"><b>Definition:</b> Automata.cc:107</div></div>
+<div class="ttc" id="aclass_automata_html_ada9b2fa859d83af93affda46a7ce80a0"><div class="ttname"><a href="class_automata.html#ada9b2fa859d83af93affda46a7ce80a0">Automata::GetAlphabet</a></div><div class="ttdeci">Alphabet GetAlphabet() const</div><div class="ttdoc">Retorna el alfabeto del automata.</div><div class="ttdef"><b>Definition:</b> Automata.cc:101</div></div>
+<div class="ttc" id="aclass_automata_html_ae13e4a7c4d7f0291c80b252a2510ebff"><div class="ttname"><a href="class_automata.html#ae13e4a7c4d7f0291c80b252a2510ebff">Automata::Automata</a></div><div class="ttdeci">Automata()</div><div class="ttdoc">Constructor por defecto.</div><div class="ttdef"><b>Definition:</b> Automata.cc:19</div></div>
+<div class="ttc" id="aclass_grammar_html"><div class="ttname"><a href="class_grammar.html">Grammar</a></div><div class="ttdef"><b>Definition:</b> Grammar.h:23</div></div>
+<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> State.h:20</div></div>
+<div class="ttc" id="aclass_word_html"><div class="ttname"><a href="class_word.html">Word</a></div><div class="ttdef"><b>Definition:</b> Word.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

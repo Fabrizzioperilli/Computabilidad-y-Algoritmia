@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gramática Regular a partir de DFA: Fichero Fuente NonTerminalSymbol.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gramática Regular a partir de DFA<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gramática Regular a partir de DFA</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">NonTerminalSymbol.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_non_terminal_symbol_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_non_terminal_symbol.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_non_terminal_symbol.html">NonTerminalSymbol</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">char</span> name_;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_function" href="class_non_terminal_symbol.html#af8576eb08da4461281b1682ad943570a">NonTerminalSymbol</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_function" href="class_non_terminal_symbol.html#af8576eb08da4461281b1682ad943570a">NonTerminalSymbol</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_function" href="class_non_terminal_symbol.html#af5a22c5ca41848df163e85663b242b16">~NonTerminalSymbol</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">char</span> <a class="code hl_function" href="class_non_terminal_symbol.html#a3c7e88982c4a257391ba58068da0e31e">GetName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_non_terminal_symbol.html#a0cd518697c9c7eb9c7ea69323b311819">SetName</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  std::ostream &amp;<a class="code hl_function" href="class_non_terminal_symbol.html#afdafb557199c805d521102e4383c478b">WriteNonTerminalSymbol</a>(std::ostream &amp;);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="class_non_terminal_symbol.html#a650886a15ccc339637c31955458d824d">operator&lt;&lt;</a>(std::ostream &amp;, <a class="code hl_class" href="class_non_terminal_symbol.html">NonTerminalSymbol</a> &amp;);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_non_terminal_symbol.html#a6579155485a0b9d41efc00e6092737cf">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_non_terminal_symbol.html">NonTerminalSymbol</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_non_terminal_symbol.html#af93db62ed21386040f7128b6731c6f9c">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_non_terminal_symbol.html">NonTerminalSymbol</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="ttc" id="aclass_non_terminal_symbol_html"><div class="ttname"><a href="class_non_terminal_symbol.html">NonTerminalSymbol</a></div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.h:21</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_a0cd518697c9c7eb9c7ea69323b311819"><div class="ttname"><a href="class_non_terminal_symbol.html#a0cd518697c9c7eb9c7ea69323b311819">NonTerminalSymbol::SetName</a></div><div class="ttdeci">void SetName(char)</div><div class="ttdoc">Setter del atributo nombre.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:42</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_a3c7e88982c4a257391ba58068da0e31e"><div class="ttname"><a href="class_non_terminal_symbol.html#a3c7e88982c4a257391ba58068da0e31e">NonTerminalSymbol::GetName</a></div><div class="ttdeci">char GetName() const</div><div class="ttdoc">Getter del atributo nombre.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:35</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_a650886a15ccc339637c31955458d824d"><div class="ttname"><a href="class_non_terminal_symbol.html#a650886a15ccc339637c31955458d824d">NonTerminalSymbol::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, NonTerminalSymbol &amp;)</div><div class="ttdoc">Sobrecarga del operador &lt;&lt;.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:67</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_a6579155485a0b9d41efc00e6092737cf"><div class="ttname"><a href="class_non_terminal_symbol.html#a6579155485a0b9d41efc00e6092737cf">NonTerminalSymbol::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const NonTerminalSymbol &amp;) const</div><div class="ttdoc">Sobrecarga del operador &lt;.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:50</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_af5a22c5ca41848df163e85663b242b16"><div class="ttname"><a href="class_non_terminal_symbol.html#af5a22c5ca41848df163e85663b242b16">NonTerminalSymbol::~NonTerminalSymbol</a></div><div class="ttdeci">~NonTerminalSymbol()</div><div class="ttdoc">Desctructor de la clase.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:30</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_af8576eb08da4461281b1682ad943570a"><div class="ttname"><a href="class_non_terminal_symbol.html#af8576eb08da4461281b1682ad943570a">NonTerminalSymbol::NonTerminalSymbol</a></div><div class="ttdeci">NonTerminalSymbol()</div><div class="ttdoc">Constructor por defecto.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:19</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_af93db62ed21386040f7128b6731c6f9c"><div class="ttname"><a href="class_non_terminal_symbol.html#af93db62ed21386040f7128b6731c6f9c">NonTerminalSymbol::operator==</a></div><div class="ttdeci">bool operator==(const NonTerminalSymbol &amp;) const</div><div class="ttdoc">Sobrecarga del operador ==.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:75</div></div>
+<div class="ttc" id="aclass_non_terminal_symbol_html_afdafb557199c805d521102e4383c478b"><div class="ttname"><a href="class_non_terminal_symbol.html#afdafb557199c805d521102e4383c478b">NonTerminalSymbol::WriteNonTerminalSymbol</a></div><div class="ttdeci">std::ostream &amp; WriteNonTerminalSymbol(std::ostream &amp;)</div><div class="ttdoc">Escribe el nombre del simbolo.</div><div class="ttdef"><b>Definition:</b> NonTerminalSymbol.cc:58</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

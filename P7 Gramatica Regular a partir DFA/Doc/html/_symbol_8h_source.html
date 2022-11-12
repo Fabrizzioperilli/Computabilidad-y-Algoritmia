@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gramática Regular a partir de DFA: Fichero Fuente Symbol.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gramática Regular a partir de DFA<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gramática Regular a partir de DFA</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Symbol.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_symbol_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_symbol_8h.html#ab27b1ca446ded5e8797a83a920b7da2b">   22</a></span><span class="keyword">const</span> std::string <a class="code hl_variable" href="_symbol_8h.html#ab27b1ca446ded5e8797a83a920b7da2b">STR_EMPTY</a> = <span class="stringliteral">&quot;&amp;&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_symbol.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="class_symbol.html">Symbol</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::string symbol_;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_function" href="class_symbol.html#a9bb4fb952a2f62228b34fd5ff45ca108">Symbol</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_function" href="class_symbol.html#a9bb4fb952a2f62228b34fd5ff45ca108">Symbol</a>(std::string);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_function" href="class_symbol.html#a505360ad4bd2e0bd1e3954eca1b05723">~Symbol</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  std::string <a class="code hl_function" href="class_symbol.html#a5991c98d85b3308cef72624ae9da9241">GetSymbol</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_symbol.html#a738aedfef7f2e64e1ce0da470e735f22">SetSymbol</a>(std::string);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_symbol.html#a725c7ea6d8f307c4f8c7c025d92f8472">SymbolSize</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  std::ostream &amp;<a class="code hl_function" href="class_symbol.html#afb1141fcb553a0b657ee09506ae0f167">Write</a>(std::ostream &amp;os);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_symbol.html#a728bb21694708e1106ff84736d3e5d5f">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="class_symbol.html#aedb7f20b65e78c17b2fe615844a17989">operator&lt;&lt;</a>(std::ostream &amp;, <a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_symbol.html#a2617a5c54235c8ef7f3425931b990654">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_symbol.html#a47f39b6b3e502d511a24bf0ad0c88039">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_symbol.html">Symbol</a> &amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="ttc" id="a_symbol_8h_html_ab27b1ca446ded5e8797a83a920b7da2b"><div class="ttname"><a href="_symbol_8h.html#ab27b1ca446ded5e8797a83a920b7da2b">STR_EMPTY</a></div><div class="ttdeci">const std::string STR_EMPTY</div><div class="ttdef"><b>Definition:</b> Symbol.h:22</div></div>
+<div class="ttc" id="aclass_symbol_html"><div class="ttname"><a href="class_symbol.html">Symbol</a></div><div class="ttdef"><b>Definition:</b> Symbol.h:24</div></div>
+<div class="ttc" id="aclass_symbol_html_a2617a5c54235c8ef7f3425931b990654"><div class="ttname"><a href="class_symbol.html#a2617a5c54235c8ef7f3425931b990654">Symbol::operator==</a></div><div class="ttdeci">bool operator==(const Symbol &amp;) const</div><div class="ttdoc">Sobrecarga del operador ==.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:82</div></div>
+<div class="ttc" id="aclass_symbol_html_a47f39b6b3e502d511a24bf0ad0c88039"><div class="ttname"><a href="class_symbol.html#a47f39b6b3e502d511a24bf0ad0c88039">Symbol::operator!=</a></div><div class="ttdeci">bool operator!=(const Symbol &amp;) const</div><div class="ttdoc">Sobrecarga del operador !=.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:90</div></div>
+<div class="ttc" id="aclass_symbol_html_a505360ad4bd2e0bd1e3954eca1b05723"><div class="ttname"><a href="class_symbol.html#a505360ad4bd2e0bd1e3954eca1b05723">Symbol::~Symbol</a></div><div class="ttdeci">~Symbol()</div><div class="ttdoc">Destructor de la clase Symbol.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:30</div></div>
+<div class="ttc" id="aclass_symbol_html_a5991c98d85b3308cef72624ae9da9241"><div class="ttname"><a href="class_symbol.html#a5991c98d85b3308cef72624ae9da9241">Symbol::GetSymbol</a></div><div class="ttdeci">std::string GetSymbol()</div><div class="ttdoc">Getter de la clase Symbol.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:35</div></div>
+<div class="ttc" id="aclass_symbol_html_a725c7ea6d8f307c4f8c7c025d92f8472"><div class="ttname"><a href="class_symbol.html#a725c7ea6d8f307c4f8c7c025d92f8472">Symbol::SymbolSize</a></div><div class="ttdeci">int SymbolSize()</div><div class="ttdoc">Tamano del símbolo.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:48</div></div>
+<div class="ttc" id="aclass_symbol_html_a728bb21694708e1106ff84736d3e5d5f"><div class="ttname"><a href="class_symbol.html#a728bb21694708e1106ff84736d3e5d5f">Symbol::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Symbol &amp;) const</div><div class="ttdoc">Sobrecarga del operador &lt;.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:65</div></div>
+<div class="ttc" id="aclass_symbol_html_a738aedfef7f2e64e1ce0da470e735f22"><div class="ttname"><a href="class_symbol.html#a738aedfef7f2e64e1ce0da470e735f22">Symbol::SetSymbol</a></div><div class="ttdeci">void SetSymbol(std::string)</div><div class="ttdoc">Setter de la clase Symbol.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:41</div></div>
+<div class="ttc" id="aclass_symbol_html_a9bb4fb952a2f62228b34fd5ff45ca108"><div class="ttname"><a href="class_symbol.html#a9bb4fb952a2f62228b34fd5ff45ca108">Symbol::Symbol</a></div><div class="ttdeci">Symbol()</div><div class="ttdoc">Constructor por defecto.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:19</div></div>
+<div class="ttc" id="aclass_symbol_html_aedb7f20b65e78c17b2fe615844a17989"><div class="ttname"><a href="class_symbol.html#aedb7f20b65e78c17b2fe615844a17989">Symbol::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, Symbol &amp;)</div><div class="ttdoc">Sobrecarga del operador &lt;&lt;.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:74</div></div>
+<div class="ttc" id="aclass_symbol_html_afb1141fcb553a0b657ee09506ae0f167"><div class="ttname"><a href="class_symbol.html#afb1141fcb553a0b657ee09506ae0f167">Symbol::Write</a></div><div class="ttdeci">std::ostream &amp; Write(std::ostream &amp;os)</div><div class="ttdoc">Imprime el símbolo.</div><div class="ttdef"><b>Definition:</b> Symbol.cc:56</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

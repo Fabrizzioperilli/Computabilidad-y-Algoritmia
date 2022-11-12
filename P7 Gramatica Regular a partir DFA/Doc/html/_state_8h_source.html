@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gramática Regular a partir de DFA: Fichero Fuente State.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gramática Regular a partir de DFA<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gramática Regular a partir de DFA</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">State.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_state_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma once </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_transition.html">Transition</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_state.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_state.html">State</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> id_;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::set&lt;Transition&gt; transitions_;  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_state.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_state.html#afab438d92b90dc18d194dbd9c9c8bab3">~State</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="class_state.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_state.html#a149b6dca129bb208469478a215253aba">GetId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#a8f20076e7000e8d30987f6238ebe5e09">SetId</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::set&lt;Transition&gt; <a class="code hl_function" href="class_state.html#ac897564052296bb777af788398a9837a">GetTransitions</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#a7f7464ac2c24fbd53adafa1a7eb64673">SetTransitions</a>(std::set&lt;Transition&gt;);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_state.html#ab0016c4fa18851ece3397027278ae5a9">AddTransition</a>(<a class="code hl_class" href="class_transition.html">Transition</a>&amp;);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_state.html#aee6c1b4d837c1b726b4d86ce3d20474b">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_state.html">State</a>&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="class_state.html">State</a>&amp; <a class="code hl_function" href="class_state.html#a520af8c9479e6832b07612907b2c8108">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_state.html">State</a>&amp;);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_state.html#a7e4f9e4b6f2c96ccf3169ceb0d56252e">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_state.html">State</a>&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> State.h:20</div></div>
+<div class="ttc" id="aclass_state_html_a149b6dca129bb208469478a215253aba"><div class="ttname"><a href="class_state.html#a149b6dca129bb208469478a215253aba">State::GetId</a></div><div class="ttdeci">int GetId() const</div><div class="ttdoc">Retorna el id del estado.</div><div class="ttdef"><b>Definition:</b> State.cc:36</div></div>
+<div class="ttc" id="aclass_state_html_a520af8c9479e6832b07612907b2c8108"><div class="ttname"><a href="class_state.html#a520af8c9479e6832b07612907b2c8108">State::operator=</a></div><div class="ttdeci">State &amp; operator=(const State &amp;)</div><div class="ttdoc">Sobre carga del operador =.</div><div class="ttdef"><b>Definition:</b> State.cc:80</div></div>
+<div class="ttc" id="aclass_state_html_a7e4f9e4b6f2c96ccf3169ceb0d56252e"><div class="ttname"><a href="class_state.html#a7e4f9e4b6f2c96ccf3169ceb0d56252e">State::operator==</a></div><div class="ttdeci">bool operator==(const State &amp;) const</div><div class="ttdoc">Compara si dos estados son iguales.</div><div class="ttdef"><b>Definition:</b> State.cc:90</div></div>
+<div class="ttc" id="aclass_state_html_a7f7464ac2c24fbd53adafa1a7eb64673"><div class="ttname"><a href="class_state.html#a7f7464ac2c24fbd53adafa1a7eb64673">State::SetTransitions</a></div><div class="ttdeci">void SetTransitions(std::set&lt; Transition &gt;)</div><div class="ttdoc">Modifica las transiciones del estado.</div><div class="ttdef"><b>Definition:</b> State.cc:57</div></div>
+<div class="ttc" id="aclass_state_html_a8f20076e7000e8d30987f6238ebe5e09"><div class="ttname"><a href="class_state.html#a8f20076e7000e8d30987f6238ebe5e09">State::SetId</a></div><div class="ttdeci">void SetId(int)</div><div class="ttdoc">Modifica el id del estado.</div><div class="ttdef"><b>Definition:</b> State.cc:43</div></div>
+<div class="ttc" id="aclass_state_html_ab0016c4fa18851ece3397027278ae5a9"><div class="ttname"><a href="class_state.html#ab0016c4fa18851ece3397027278ae5a9">State::AddTransition</a></div><div class="ttdeci">void AddTransition(Transition &amp;)</div><div class="ttdoc">Añade una transición al estado.</div><div class="ttdef"><b>Definition:</b> State.cc:64</div></div>
+<div class="ttc" id="aclass_state_html_ab91bb1dd5aa6260ab2a456581daf9ec2"><div class="ttname"><a href="class_state.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State::State</a></div><div class="ttdeci">State()</div><div class="ttdoc">Constructor por defecto.</div><div class="ttdef"><b>Definition:</b> State.cc:21</div></div>
+<div class="ttc" id="aclass_state_html_ac897564052296bb777af788398a9837a"><div class="ttname"><a href="class_state.html#ac897564052296bb777af788398a9837a">State::GetTransitions</a></div><div class="ttdeci">std::set&lt; Transition &gt; GetTransitions() const</div><div class="ttdoc">Retorna las transiciones del estado.</div><div class="ttdef"><b>Definition:</b> State.cc:50</div></div>
+<div class="ttc" id="aclass_state_html_aee6c1b4d837c1b726b4d86ce3d20474b"><div class="ttname"><a href="class_state.html#aee6c1b4d837c1b726b4d86ce3d20474b">State::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const State &amp;) const</div><div class="ttdoc">Sobrecarga del operador &lt;.</div><div class="ttdef"><b>Definition:</b> State.cc:72</div></div>
+<div class="ttc" id="aclass_state_html_afab438d92b90dc18d194dbd9c9c8bab3"><div class="ttname"><a href="class_state.html#afab438d92b90dc18d194dbd9c9c8bab3">State::~State</a></div><div class="ttdeci">~State()</div><div class="ttdoc">Destructor de la clase State.</div><div class="ttdef"><b>Definition:</b> State.cc:31</div></div>
+<div class="ttc" id="aclass_transition_html"><div class="ttname"><a href="class_transition.html">Transition</a></div><div class="ttdef"><b>Definition:</b> Transition.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

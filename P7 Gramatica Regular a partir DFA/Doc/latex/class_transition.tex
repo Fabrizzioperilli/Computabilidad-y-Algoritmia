@@ -1,0 +1,202 @@
+\hypertarget{class_transition}{}\doxysection{Referencia de la Clase Transition}
+\label{class_transition}\index{Transition@{Transition}}
+
+
+{\ttfamily \#include $<$Transition.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transition_a73b44b2338b11807f77b620a3e810f92}{Transition}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transition_a5e9908e426ea035392ba72d460c92daa}{Transition}} (int, \mbox{\hyperlink{class_symbol}{Symbol}} \&, int)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_transition}{Transition}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_transition_ab66e8623f23c71cd4f07c69596427bab}{$\sim$\+Transition}} ()
+\begin{DoxyCompactList}\small\item\em Descructor de la clase \mbox{\hyperlink{class_transition}{Transition}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_symbol}{Symbol}} \mbox{\hyperlink{class_transition_a4d57677d2dd130185c93024d213831c1}{Get\+Symbol}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el símbolo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_transition_aaeabaf1e00b870a5a9f6c83df9b7c1e1}{Get\+Next\+State}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el estado siguiente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_transition_a08242e1d5e94d2d81072be3f56131fe9}{Get\+Current\+State}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el estado siguiente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transition_acb11415549eb67c450d769820435099f}{Set\+Symbol}} (\mbox{\hyperlink{class_symbol}{Symbol}} \&)
+\begin{DoxyCompactList}\small\item\em Modiica el símbolo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transition_ab83b01c630e5c15e954825327a49d05b}{Set\+Next\+State}} (int)
+\begin{DoxyCompactList}\small\item\em Modifica el estado siguiente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_transition_a11290525baaf2e916c11f9f312b493f6}{operator$<$}} (const \mbox{\hyperlink{class_transition}{Transition}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobreescritura del operador \texorpdfstring{$<$}{<}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transition_a5e8cebbe65390ca02497f2e397f93db1}{Write}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_transition_a08da6e089b07a445a5df032c6b78929c}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_transition}{Transition}} \&)
+\begin{DoxyCompactList}\small\item\em Sobreescritura del operador de salida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_transition_a73b44b2338b11807f77b620a3e810f92}\label{class_transition_a73b44b2338b11807f77b620a3e810f92}} 
+\index{Transition@{Transition}!Transition@{Transition}}
+\index{Transition@{Transition}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{Transition()}{Transition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transition\+::\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_transition_a5e9908e426ea035392ba72d460c92daa}\label{class_transition_a5e9908e426ea035392ba72d460c92daa}} 
+\index{Transition@{Transition}!Transition@{Transition}}
+\index{Transition@{Transition}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{Transition()}{Transition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transition\+::\+Transition (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+state,  }\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{symbol,  }\item[{int}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_transition}{Transition}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & \\
+\hline
+{\em next\+\_\+state} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_transition_ab66e8623f23c71cd4f07c69596427bab}\label{class_transition_ab66e8623f23c71cd4f07c69596427bab}} 
+\index{Transition@{Transition}!````~Transition@{$\sim$Transition}}
+\index{````~Transition@{$\sim$Transition}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{$\sim$Transition()}{~Transition()}}
+{\footnotesize\ttfamily Transition\+::$\sim$\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Descructor de la clase \mbox{\hyperlink{class_transition}{Transition}}. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_transition_a08242e1d5e94d2d81072be3f56131fe9}\label{class_transition_a08242e1d5e94d2d81072be3f56131fe9}} 
+\index{Transition@{Transition}!GetCurrentState@{GetCurrentState}}
+\index{GetCurrentState@{GetCurrentState}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{GetCurrentState()}{GetCurrentState()}}
+{\footnotesize\ttfamily int Transition\+::\+Get\+Current\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el estado siguiente. 
+
+\begin{DoxyReturn}{Devuelve}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transition_aaeabaf1e00b870a5a9f6c83df9b7c1e1}\label{class_transition_aaeabaf1e00b870a5a9f6c83df9b7c1e1}} 
+\index{Transition@{Transition}!GetNextState@{GetNextState}}
+\index{GetNextState@{GetNextState}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{GetNextState()}{GetNextState()}}
+{\footnotesize\ttfamily int Transition\+::\+Get\+Next\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el estado siguiente. 
+
+\begin{DoxyReturn}{Devuelve}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transition_a4d57677d2dd130185c93024d213831c1}\label{class_transition_a4d57677d2dd130185c93024d213831c1}} 
+\index{Transition@{Transition}!GetSymbol@{GetSymbol}}
+\index{GetSymbol@{GetSymbol}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{GetSymbol()}{GetSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_symbol}{Symbol}} Transition\+::\+Get\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el símbolo. 
+
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_symbol}{Symbol}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transition_a11290525baaf2e916c11f9f312b493f6}\label{class_transition_a11290525baaf2e916c11f9f312b493f6}} 
+\index{Transition@{Transition}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Transition\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_transition}{Transition}} \&}]{transition }\end{DoxyParamCaption}) const}
+
+
+
+Sobreescritura del operador \texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transition} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_transition_ab83b01c630e5c15e954825327a49d05b}\label{class_transition_ab83b01c630e5c15e954825327a49d05b}} 
+\index{Transition@{Transition}!SetNextState@{SetNextState}}
+\index{SetNextState@{SetNextState}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{SetNextState()}{SetNextState()}}
+{\footnotesize\ttfamily void Transition\+::\+Set\+Next\+State (\begin{DoxyParamCaption}\item[{int}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Modifica el estado siguiente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em next\+\_\+state} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_transition_acb11415549eb67c450d769820435099f}\label{class_transition_acb11415549eb67c450d769820435099f}} 
+\index{Transition@{Transition}!SetSymbol@{SetSymbol}}
+\index{SetSymbol@{SetSymbol}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{SetSymbol()}{SetSymbol()}}
+{\footnotesize\ttfamily void Transition\+::\+Set\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Modiica el símbolo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_transition_a5e8cebbe65390ca02497f2e397f93db1}\label{class_transition_a5e8cebbe65390ca02497f2e397f93db1}} 
+\index{Transition@{Transition}!Write@{Write}}
+\index{Write@{Write}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void Transition\+::\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_transition_a08da6e089b07a445a5df032c6b78929c}\label{class_transition_a08da6e089b07a445a5df032c6b78929c}} 
+\index{Transition@{Transition}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Transition@{Transition}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_transition}{Transition}} \&}]{transition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobreescritura del operador de salida. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em transition} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_transition_8h}{Transition.\+h}}\item 
+\mbox{\hyperlink{_transition_8cc}{Transition.\+cc}}\end{DoxyCompactItemize}

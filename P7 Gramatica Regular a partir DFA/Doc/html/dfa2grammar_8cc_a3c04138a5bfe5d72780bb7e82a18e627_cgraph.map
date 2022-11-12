@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node2" href="$dfa2grammar_8cc.html#a8ddadc40d64363c5b91f57c08219291c" title="Comprueba que las extensiones de los ficheros sean correctas." alt="" coords="104,5,221,32"/>
+<area shape="rect" id="node3" href="$dfa2grammar_8cc.html#a54d17a6d0bb758f26b9dda4c6d8e8da8" title="Funcion que muestra la ayuda del programa." alt="" coords="139,56,187,83"/>
+<area shape="rect" id="node4" href="$dfa2grammar_8cc.html#a497cd109747dd44d282d055ebbb4944b" title="Lee los ficheros y crea el automata." alt="" coords="126,107,199,133"/>
+<area shape="rect" id="node5" href="$class_automata.html#a9ec263d73f9a306532a73e009da77c4f" title="Convierte un automata a una gramatica regular." alt="" coords="269,107,467,133"/>
+<area shape="rect" id="node6" href="$class_state.html#a149b6dca129bb208469478a215253aba" title="Retorna el id del estado." alt="" coords="542,77,634,104"/>
+<area shape="rect" id="node7" href="$class_non_terminal_symbol.html#a0cd518697c9c7eb9c7ea69323b311819" title="Setter del atributo nombre." alt="" coords="515,129,661,170"/>
+</map>

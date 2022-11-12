@@ -1,0 +1,26 @@
+\hypertarget{_production_8h_source}{}\doxysection{Production.\+h}
+\mbox{\hyperlink{_production_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_alphabet_8h}{Alphabet.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_non_terminal_symbol_8h}{NonTerminalSymbol.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_symbol_8h}{Symbol.h}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_production}{Production}} \{}
+\DoxyCodeLine{24  \textcolor{keyword}{private}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_non_terminal_symbol}{NonTerminalSymbol}} left\_;}
+\DoxyCodeLine{26   std::pair<Symbol, NonTerminalSymbol> production\_;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28  \textcolor{keyword}{public}:}
+\DoxyCodeLine{29   \mbox{\hyperlink{class_production_a12c7c685be71ed51ac10f7d0284e8d4f}{Production}}();}
+\DoxyCodeLine{30   \mbox{\hyperlink{class_production_a12c7c685be71ed51ac10f7d0284e8d4f}{Production}}(\mbox{\hyperlink{class_non_terminal_symbol}{NonTerminalSymbol}}, std::pair<Symbol, NonTerminalSymbol>);}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_production_ab5b3060f9e0a2bc189844e426d693dab}{\string~Production}}();}
+\DoxyCodeLine{32   std::ostream \&\mbox{\hyperlink{class_production_ab2a45006289b974a56ba1bf8a26382db}{WriteProduction}}(std::ostream \&);}
+\DoxyCodeLine{33   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_production_a1dcdd6c9e9f12d221451c39b383d7a27}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_production}{Production}} \&);}
+\DoxyCodeLine{34   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_production_a9faa7ebd57b9e308310220f122694358}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_production}{Production}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{35 \};}
+
+\end{DoxyCode}

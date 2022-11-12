@@ -1,0 +1,4 @@
+<map id="Automata::WriteAutomata" name="Automata::WriteAutomata">
+<area shape="rect" id="node1" title="Imprime los elementos del automata." alt="" coords="5,5,179,32"/>
+<area shape="rect" id="node2" href="$class_state.html#a149b6dca129bb208469478a215253aba" title="Retorna el id del estado." alt="" coords="227,5,319,32"/>
+</map>

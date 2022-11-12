@@ -1,0 +1,305 @@
+\hypertarget{class_alphabet}{}\doxysection{Referencia de la Clase Alphabet}
+\label{class_alphabet}\index{Alphabet@{Alphabet}}
+
+
+{\ttfamily \#include $<$Alphabet.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_alphabet_aac9f2f615174ca6c8f89331239cb765e}{Alphabet}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet_a6d17b122b01dccae913ec6251ad43149}{Alphabet}} (std\+::set$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet_a8a1da1bd7fdf2fd06a9768f9597a0b44}{$\sim$\+Alphabet}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$ \mbox{\hyperlink{class_alphabet_ada503ab99dbbd60b1171706e21ecd988}{Get\+Alphabet}} () const
+\begin{DoxyCompactList}\small\item\em Getter de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef}{Add\+Symbol}} (\mbox{\hyperlink{class_symbol}{Symbol}} \&)
+\begin{DoxyCompactList}\small\item\em Setter de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_alphabet_aa35b81a0830b6995fd2da26e4d36eaf4}{Add\+Symbol}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Método que añade un símbolo al alfabeto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_alphabet_aafe06af439e38bfec37ba06991adb388}{Empty}} ()
+\begin{DoxyCompactList}\small\item\em Método que compruba si el alfabeto está vacío. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_alphabet_a154f45f063a75a8116e8f9022440287e}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Retorna el tamaño del alfabeto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_alphabet_a0f307f0a4e9c0b390ab845b506790f70}{Search}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Busca un string en el alfabeto. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_alphabet_a8152ca5fbabb6d8c362e83c5bacf1507}{Write}} (std\+::ostream \&)
+\begin{DoxyCompactList}\small\item\em Escribir el alfabeto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_alphabet_a3a4cfedb55f681283755d1d52590706b}{Union}} (const \mbox{\hyperlink{class_alphabet}{Alphabet}} \&)
+\begin{DoxyCompactList}\small\item\em Realiza la unión de dos alfabetos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8}{Check\+Symbol}} (\mbox{\hyperlink{class_symbol}{Symbol}} \&)
+\begin{DoxyCompactList}\small\item\em Busca un símbolo en el alfabeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_alphabet_a60aeee615a8ad90c6a8a71c5750b7bbb}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_alphabet}{Alphabet}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_alphabet_aac9f2f615174ca6c8f89331239cb765e}\label{class_alphabet_aac9f2f615174ca6c8f89331239cb765e}} 
+\index{Alphabet@{Alphabet}!Alphabet@{Alphabet}}
+\index{Alphabet@{Alphabet}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Alphabet()}{Alphabet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Alphabet\+::\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_alphabet_a6d17b122b01dccae913ec6251ad43149}\label{class_alphabet_a6d17b122b01dccae913ec6251ad43149}} 
+\index{Alphabet@{Alphabet}!Alphabet@{Alphabet}}
+\index{Alphabet@{Alphabet}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Alphabet()}{Alphabet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Alphabet\+::\+Alphabet (\begin{DoxyParamCaption}\item[{std\+::set$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_alphabet_a8a1da1bd7fdf2fd06a9768f9597a0b44}\label{class_alphabet_a8a1da1bd7fdf2fd06a9768f9597a0b44}} 
+\index{Alphabet@{Alphabet}!````~Alphabet@{$\sim$Alphabet}}
+\index{````~Alphabet@{$\sim$Alphabet}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{$\sim$Alphabet()}{~Alphabet()}}
+{\footnotesize\ttfamily Alphabet\+::$\sim$\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_alphabet_aa35b81a0830b6995fd2da26e4d36eaf4}\label{class_alphabet_aa35b81a0830b6995fd2da26e4d36eaf4}} 
+\index{Alphabet@{Alphabet}!AddSymbol@{AddSymbol}}
+\index{AddSymbol@{AddSymbol}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{AddSymbol()}{AddSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Alphabet\+::\+Add\+Symbol (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+Método que añade un símbolo al alfabeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef}\label{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef}} 
+\index{Alphabet@{Alphabet}!AddSymbol@{AddSymbol}}
+\index{AddSymbol@{AddSymbol}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{AddSymbol()}{AddSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Alphabet\+::\+Add\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Setter de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8}\label{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8}} 
+\index{Alphabet@{Alphabet}!CheckSymbol@{CheckSymbol}}
+\index{CheckSymbol@{CheckSymbol}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{CheckSymbol()}{CheckSymbol()}}
+{\footnotesize\ttfamily bool Alphabet\+::\+Check\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_symbol}{Symbol}} \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Busca un símbolo en el alfabeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em symbol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_aafe06af439e38bfec37ba06991adb388}\label{class_alphabet_aafe06af439e38bfec37ba06991adb388}} 
+\index{Alphabet@{Alphabet}!Empty@{Empty}}
+\index{Empty@{Empty}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily bool Alphabet\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método que compruba si el alfabeto está vacío. 
+
+\begin{DoxyReturn}{Devuelve}
+Retorna true si el alfabeto está vacío, false en caso contrario 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_alphabet_aafe06af439e38bfec37ba06991adb388_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_ada503ab99dbbd60b1171706e21ecd988}\label{class_alphabet_ada503ab99dbbd60b1171706e21ecd988}} 
+\index{Alphabet@{Alphabet}!GetAlphabet@{GetAlphabet}}
+\index{GetAlphabet@{GetAlphabet}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{GetAlphabet()}{GetAlphabet()}}
+{\footnotesize\ttfamily std\+::set$<$ \mbox{\hyperlink{class_symbol}{Symbol}} $>$ Alphabet\+::\+Get\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter de la clase \mbox{\hyperlink{class_alphabet}{Alphabet}}. 
+
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_alphabet_ada503ab99dbbd60b1171706e21ecd988_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_a0f307f0a4e9c0b390ab845b506790f70}\label{class_alphabet_a0f307f0a4e9c0b390ab845b506790f70}} 
+\index{Alphabet@{Alphabet}!Search@{Search}}
+\index{Search@{Search}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Search()}{Search()}}
+{\footnotesize\ttfamily bool Alphabet\+::\+Search (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+Busca un string en el alfabeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_alphabet_a0f307f0a4e9c0b390ab845b506790f70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_a154f45f063a75a8116e8f9022440287e}\label{class_alphabet_a154f45f063a75a8116e8f9022440287e}} 
+\index{Alphabet@{Alphabet}!Size@{Size}}
+\index{Size@{Size}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int Alphabet\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna el tamaño del alfabeto. 
+
+\begin{DoxyReturn}{Devuelve}
+int 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_alphabet_a154f45f063a75a8116e8f9022440287e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_a3a4cfedb55f681283755d1d52590706b}\label{class_alphabet_a3a4cfedb55f681283755d1d52590706b}} 
+\index{Alphabet@{Alphabet}!Union@{Union}}
+\index{Union@{Union}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Union()}{Union()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_alphabet}{Alphabet}} Alphabet\+::\+Union (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_alphabet}{Alphabet}} \&}]{alphabet }\end{DoxyParamCaption})}
+
+
+
+Realiza la unión de dos alfabetos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em alphabet} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_alphabet}{Alphabet}} 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_alphabet_a3a4cfedb55f681283755d1d52590706b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_alphabet_a8152ca5fbabb6d8c362e83c5bacf1507}\label{class_alphabet_a8152ca5fbabb6d8c362e83c5bacf1507}} 
+\index{Alphabet@{Alphabet}!Write@{Write}}
+\index{Write@{Write}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily std\+::ostream \& Alphabet\+::\+Write (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Escribir el alfabeto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_alphabet_a60aeee615a8ad90c6a8a71c5750b7bbb}\label{class_alphabet_a60aeee615a8ad90c6a8a71c5750b7bbb}} 
+\index{Alphabet@{Alphabet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Alphabet@{Alphabet}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_alphabet}{Alphabet}} \&}]{alphabet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em alphabet} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_alphabet_8h}{Alphabet.\+h}}\item 
+\mbox{\hyperlink{_alphabet_8cc}{Alphabet.\+cc}}\end{DoxyCompactItemize}

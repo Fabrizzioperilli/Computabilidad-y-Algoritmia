@@ -1,0 +1,6 @@
+<map id="NonTerminalSymbol::SetName" name="NonTerminalSymbol::SetName">
+<area shape="rect" id="node1" title="Setter del atributo nombre." alt="" coords="471,5,617,47"/>
+<area shape="rect" id="node2" href="$class_automata.html#a9ec263d73f9a306532a73e009da77c4f" title="Convierte un automata a una gramatica regular." alt="" coords="225,13,423,39"/>
+<area shape="rect" id="node3" href="$dfa2grammar_8cc.html#a497cd109747dd44d282d055ebbb4944b" title="Lee los ficheros y crea el automata." alt="" coords="104,13,177,39"/>
+<area shape="rect" id="node4" href="$dfa2grammar_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
+</map>

@@ -1,0 +1,38 @@
+\hypertarget{_word_8h_source}{}\doxysection{Word.\+h}
+\mbox{\hyperlink{_word_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_alphabet_8h}{Alphabet.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_word}{Word}} \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{class_alphabet}{Alphabet}} alphabet\_;}
+\DoxyCodeLine{23   std::vector<Symbol> word\_;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_word_a17baf7109d46beb48d5b469f3baedc48}{Word}}();}
+\DoxyCodeLine{27   \mbox{\hyperlink{class_word_a17baf7109d46beb48d5b469f3baedc48}{Word}}(std::string, \mbox{\hyperlink{class_alphabet}{Alphabet}} \&);}
+\DoxyCodeLine{28   \mbox{\hyperlink{class_word_a1fbcaae6859604d92e94cab540cb3523}{\string~Word}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   std::vector<Symbol> \mbox{\hyperlink{class_word_a29c0dfb47cd5a361c6bf79888485dbc9}{GetWord}}();}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_word_ad2042d69d8f25dc8d068db2e1a58cef1}{SetWord}}(std::vector<Symbol>);}
+\DoxyCodeLine{32   \mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_word_ab6057f473f46846f416de6e9646ee892}{GetAlphabet}}();}
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_word_a77cbe2acfd0babd2b64b848992bdb7a4}{SetAlphabet}}(\mbox{\hyperlink{class_alphabet}{Alphabet}} \&);}
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_word_a9b5271bd09fabe70986f3972b6964597}{AddSymbol}}(\mbox{\hyperlink{class_symbol}{Symbol}} \&);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_word_a9937ab7d436b7304389d3aec3ed87d13}{WordLength}}();}
+\DoxyCodeLine{38   \mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_a2c5499029c204d6f2b7452659434774a}{WordInverse}}();}
+\DoxyCodeLine{39   \mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_ae7004f1a90960e726f3273c8cd68474f}{WordConcatenate}}(\mbox{\hyperlink{class_word}{Word}} \&);}
+\DoxyCodeLine{40   std::ostream \&\mbox{\hyperlink{class_word_a193a4b0c3fde6cfc8b3432d0aed55e02}{Write}}(std::ostream \&os);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_word_a6a1c86066718b7fcf7a2de7f5ee46185}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_word}{Word}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{43   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_word_aded2792f7c723153faf733111232f926}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_word}{Word}} \&);}
+\DoxyCodeLine{44   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_word_a8cc28fa21f617ad428661cd33ac6d15b}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_word}{Word}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{45   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_word_a800b60944bff251ddd2cfa09ca270f92}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_word}{Word}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{46   \mbox{\hyperlink{class_word}{Word}} \mbox{\hyperlink{class_word_ad3cef0551acaee08923c03cb4b0c0c25}{operator+}}(\mbox{\hyperlink{class_word}{Word}} \&);}
+\DoxyCodeLine{47 \};}
+
+\end{DoxyCode}

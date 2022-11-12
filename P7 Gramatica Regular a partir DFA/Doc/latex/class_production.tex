@@ -1,0 +1,132 @@
+\hypertarget{class_production}{}\doxysection{Referencia de la Clase Production}
+\label{class_production}\index{Production@{Production}}
+
+
+{\ttfamily \#include $<$Production.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_production_a12c7c685be71ed51ac10f7d0284e8d4f}{Production}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_production_aeb5af23282fa11652c9e8cf21e2ad6b5}{Production}} (\mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}}, std\+::pair$<$ \mbox{\hyperlink{class_symbol}{Symbol}}, \mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}} $>$)
+\begin{DoxyCompactList}\small\item\em Constructor con parametros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_production_ab5b3060f9e0a2bc189844e426d693dab}{$\sim$\+Production}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_production_ab2a45006289b974a56ba1bf8a26382db}{Write\+Production}} (std\+::ostream \&)
+\begin{DoxyCompactList}\small\item\em Escribe la produccion de la gramatica. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_production_a9faa7ebd57b9e308310220f122694358}{operator$<$}} (const \mbox{\hyperlink{class_production}{Production}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_production_a1dcdd6c9e9f12d221451c39b383d7a27}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_production}{Production}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_production_a12c7c685be71ed51ac10f7d0284e8d4f}\label{class_production_a12c7c685be71ed51ac10f7d0284e8d4f}} 
+\index{Production@{Production}!Production@{Production}}
+\index{Production@{Production}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{Production()}{Production()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Production\+::\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_production_aeb5af23282fa11652c9e8cf21e2ad6b5}\label{class_production_aeb5af23282fa11652c9e8cf21e2ad6b5}} 
+\index{Production@{Production}!Production@{Production}}
+\index{Production@{Production}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{Production()}{Production()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Production\+::\+Production (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}}}]{left,  }\item[{std\+::pair$<$ \mbox{\hyperlink{class_symbol}{Symbol}}, \mbox{\hyperlink{class_non_terminal_symbol}{Non\+Terminal\+Symbol}} $>$}]{production }\end{DoxyParamCaption})}
+
+
+
+Constructor con parametros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em left} & \\
+\hline
+{\em production} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_production_ab5b3060f9e0a2bc189844e426d693dab}\label{class_production_ab5b3060f9e0a2bc189844e426d693dab}} 
+\index{Production@{Production}!````~Production@{$\sim$Production}}
+\index{````~Production@{$\sim$Production}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{$\sim$Production()}{~Production()}}
+{\footnotesize\ttfamily Production\+::$\sim$\+Production (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_production_a9faa7ebd57b9e308310220f122694358}\label{class_production_a9faa7ebd57b9e308310220f122694358}} 
+\index{Production@{Production}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Production\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_production}{Production}} \&}]{production }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em production} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_production_ab2a45006289b974a56ba1bf8a26382db}\label{class_production_ab2a45006289b974a56ba1bf8a26382db}} 
+\index{Production@{Production}!WriteProduction@{WriteProduction}}
+\index{WriteProduction@{WriteProduction}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{WriteProduction()}{WriteProduction()}}
+{\footnotesize\ttfamily std\+::ostream \& Production\+::\+Write\+Production (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Escribe la produccion de la gramatica. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_production_a1dcdd6c9e9f12d221451c39b383d7a27}\label{class_production_a1dcdd6c9e9f12d221451c39b383d7a27}} 
+\index{Production@{Production}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Production@{Production}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_production}{Production}} \&}]{production }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em production} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_production_8h}{Production.\+h}}\item 
+\mbox{\hyperlink{_production_8cc}{Production.\+cc}}\end{DoxyCompactItemize}

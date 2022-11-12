@@ -1,0 +1,5 @@
+<map id="Automata::ConvertToGrammar" name="Automata::ConvertToGrammar">
+<area shape="rect" id="node1" title="Convierte un automata a una gramatica regular." alt="" coords="5,35,203,61"/>
+<area shape="rect" id="node2" href="$class_state.html#a149b6dca129bb208469478a215253aba" title="Retorna el id del estado." alt="" coords="278,5,370,32"/>
+<area shape="rect" id="node3" href="$class_non_terminal_symbol.html#a0cd518697c9c7eb9c7ea69323b311819" title="Setter del atributo nombre." alt="" coords="251,57,397,98"/>
+</map>

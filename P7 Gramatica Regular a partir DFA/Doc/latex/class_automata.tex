@@ -1,0 +1,192 @@
+\hypertarget{class_automata}{}\doxysection{Referencia de la Clase Automata}
+\label{class_automata}\index{Automata@{Automata}}
+
+
+{\ttfamily \#include $<$Automata.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_automata_ae13e4a7c4d7f0291c80b252a2510ebff}{Automata}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_automata_ab67873550db3831c61360c26af762ba6}{Automata}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_automata}{Automata}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_automata_a941900afd06b6842be934afbbc4b4ecf}{$\sim$\+Automata}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{class_automata}{Automata}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_automata_ada9b2fa859d83af93affda46a7ce80a0}{Get\+Alphabet}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el alfabeto del automata. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_automata_ad90fb4a02ab75fcdb84e7822e54f548c}{Check\+Word}} (\mbox{\hyperlink{class_word}{Word}} \&)
+\begin{DoxyCompactList}\small\item\em Compruba si la cadena es aceptada o rechaza por el automata. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_automata_a2938de28d3b12e9e70ab4e7eb140706c}{Write\+Automata}} (std\+::ostream \&)
+\begin{DoxyCompactList}\small\item\em Imprime los elementos del automata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grammar}{Grammar}} \mbox{\hyperlink{class_automata_a9ec263d73f9a306532a73e009da77c4f}{Convert\+To\+Grammar}} ()
+\begin{DoxyCompactList}\small\item\em Convierte un automata a una gramatica regular. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_automata_a49e1d4a0b7c3fb24204b0ee9412f7336}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_automata}{Automata}} \&)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_automata_ae13e4a7c4d7f0291c80b252a2510ebff}\label{class_automata_ae13e4a7c4d7f0291c80b252a2510ebff}} 
+\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Automata\+::\+Automata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_automata_ab67873550db3831c61360c26af762ba6}\label{class_automata_ab67873550db3831c61360c26af762ba6}} 
+\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Automata\+::\+Automata (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+fa }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_automata}{Automata}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+\_\+fa} & \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_automata_ab67873550db3831c61360c26af762ba6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_automata_a941900afd06b6842be934afbbc4b4ecf}\label{class_automata_a941900afd06b6842be934afbbc4b4ecf}} 
+\index{Automata@{Automata}!````~Automata@{$\sim$Automata}}
+\index{````~Automata@{$\sim$Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{$\sim$Automata()}{~Automata()}}
+{\footnotesize\ttfamily Automata\+::$\sim$\+Automata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{class_automata}{Automata}}. 
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_automata_ad90fb4a02ab75fcdb84e7822e54f548c}\label{class_automata_ad90fb4a02ab75fcdb84e7822e54f548c}} 
+\index{Automata@{Automata}!CheckWord@{CheckWord}}
+\index{CheckWord@{CheckWord}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{CheckWord()}{CheckWord()}}
+{\footnotesize\ttfamily bool Automata\+::\+Check\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_word}{Word}} \&}]{word }\end{DoxyParamCaption})}
+
+
+
+Compruba si la cadena es aceptada o rechaza por el automata. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em word} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_automata_ad90fb4a02ab75fcdb84e7822e54f548c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_automata_a9ec263d73f9a306532a73e009da77c4f}\label{class_automata_a9ec263d73f9a306532a73e009da77c4f}} 
+\index{Automata@{Automata}!ConvertToGrammar@{ConvertToGrammar}}
+\index{ConvertToGrammar@{ConvertToGrammar}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{ConvertToGrammar()}{ConvertToGrammar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_grammar}{Grammar}} Automata\+::\+Convert\+To\+Grammar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Convierte un automata a una gramatica regular. 
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_automata_a9ec263d73f9a306532a73e009da77c4f_cgraph}
+\end{center}
+\end{figure}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_automata_a9ec263d73f9a306532a73e009da77c4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_automata_ada9b2fa859d83af93affda46a7ce80a0}\label{class_automata_ada9b2fa859d83af93affda46a7ce80a0}} 
+\index{Automata@{Automata}!GetAlphabet@{GetAlphabet}}
+\index{GetAlphabet@{GetAlphabet}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{GetAlphabet()}{GetAlphabet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_alphabet}{Alphabet}} Automata\+::\+Get\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el alfabeto del automata. 
+
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_alphabet}{Alphabet}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_automata_a2938de28d3b12e9e70ab4e7eb140706c}\label{class_automata_a2938de28d3b12e9e70ab4e7eb140706c}} 
+\index{Automata@{Automata}!WriteAutomata@{WriteAutomata}}
+\index{WriteAutomata@{WriteAutomata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{WriteAutomata()}{WriteAutomata()}}
+{\footnotesize\ttfamily std\+::ostream \& Automata\+::\+Write\+Automata (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Imprime los elementos del automata. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+std\+::ostream\& 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_automata_a2938de28d3b12e9e70ab4e7eb140706c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{class_automata_a49e1d4a0b7c3fb24204b0ee9412f7336}\label{class_automata_a49e1d4a0b7c3fb24204b0ee9412f7336}} 
+\index{Automata@{Automata}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{class_automata}{Automata}} \&}]{automata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & \\
+\hline
+{\em automata} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_automata_8h}{Automata.\+h}}\item 
+\mbox{\hyperlink{_automata_8cc}{Automata.\+cc}}\end{DoxyCompactItemize}

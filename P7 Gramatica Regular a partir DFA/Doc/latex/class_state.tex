@@ -1,0 +1,222 @@
+\hypertarget{class_state}{}\doxysection{Referencia de la Clase State}
+\label{class_state}\index{State@{State}}
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}{State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \mbox{\hyperlink{class_state}{State}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state_a2d8ea465299f5bf79f0b26b837389e07}{State}} (int)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \mbox{\hyperlink{class_state}{State}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_state_a149b6dca129bb208469478a215253aba}{Get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el id del estado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_a8f20076e7000e8d30987f6238ebe5e09}{Set\+Id}} (int)
+\begin{DoxyCompactList}\small\item\em Modifica el id del estado. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{class_transition}{Transition}} $>$ \mbox{\hyperlink{class_state_ac897564052296bb777af788398a9837a}{Get\+Transitions}} () const
+\begin{DoxyCompactList}\small\item\em Retorna las transiciones del estado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_a7f7464ac2c24fbd53adafa1a7eb64673}{Set\+Transitions}} (std\+::set$<$ \mbox{\hyperlink{class_transition}{Transition}} $>$)
+\begin{DoxyCompactList}\small\item\em Modifica las transiciones del estado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_ab0016c4fa18851ece3397027278ae5a9}{Add\+Transition}} (\mbox{\hyperlink{class_transition}{Transition}} \&)
+\begin{DoxyCompactList}\small\item\em Añade una transición al estado. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_state_aee6c1b4d837c1b726b4d86ce3d20474b}{operator$<$}} (const \mbox{\hyperlink{class_state}{State}} \&) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}} \& \mbox{\hyperlink{class_state_a520af8c9479e6832b07612907b2c8108}{operator=}} (const \mbox{\hyperlink{class_state}{State}} \&)
+\begin{DoxyCompactList}\small\item\em Sobre carga del operador =. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_state_a7e4f9e4b6f2c96ccf3169ceb0d56252e}{operator==}} (const \mbox{\hyperlink{class_state}{State}} \&) const
+\begin{DoxyCompactList}\small\item\em Compara si dos estados son iguales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}\label{class_state_ab91bb1dd5aa6260ab2a456581daf9ec2}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\mbox{\Hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase \mbox{\hyperlink{class_state}{State}}. 
+
+\mbox{\Hypertarget{class_state_a2d8ea465299f5bf79f0b26b837389e07}\label{class_state_a2d8ea465299f5bf79f0b26b837389e07}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \mbox{\hyperlink{class_state}{State}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_state_ab0016c4fa18851ece3397027278ae5a9}\label{class_state_ab0016c4fa18851ece3397027278ae5a9}} 
+\index{State@{State}!AddTransition@{AddTransition}}
+\index{AddTransition@{AddTransition}!State@{State}}
+\doxysubsubsection{\texorpdfstring{AddTransition()}{AddTransition()}}
+{\footnotesize\ttfamily void State\+::\+Add\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_transition}{Transition}} \&}]{transition }\end{DoxyParamCaption})}
+
+
+
+Añade una transición al estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transition} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_a149b6dca129bb208469478a215253aba}\label{class_state_a149b6dca129bb208469478a215253aba}} 
+\index{State@{State}!GetId@{GetId}}
+\index{GetId@{GetId}!State@{State}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily int State\+::\+Get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el id del estado. 
+
+\begin{DoxyReturn}{Devuelve}
+int 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_a149b6dca129bb208469478a215253aba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_ac897564052296bb777af788398a9837a}\label{class_state_ac897564052296bb777af788398a9837a}} 
+\index{State@{State}!GetTransitions@{GetTransitions}}
+\index{GetTransitions@{GetTransitions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{GetTransitions()}{GetTransitions()}}
+{\footnotesize\ttfamily std\+::set$<$ \mbox{\hyperlink{class_transition}{Transition}} $>$ State\+::\+Get\+Transitions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna las transiciones del estado. 
+
+\begin{DoxyReturn}{Devuelve}
+std\+::set$<$\+Transition$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_aee6c1b4d837c1b726b4d86ce3d20474b}\label{class_state_aee6c1b4d837c1b726b4d86ce3d20474b}} 
+\index{State@{State}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool State\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{state }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador \texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a520af8c9479e6832b07612907b2c8108}\label{class_state_a520af8c9479e6832b07612907b2c8108}} 
+\index{State@{State}!operator=@{operator=}}
+\index{operator=@{operator=}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}} \& State\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Sobre carga del operador =. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\mbox{\hyperlink{class_state}{State}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a7e4f9e4b6f2c96ccf3169ceb0d56252e}\label{class_state_a7e4f9e4b6f2c96ccf3169ceb0d56252e}} 
+\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool State\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Compara si dos estados son iguales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a8f20076e7000e8d30987f6238ebe5e09}\label{class_state_a8f20076e7000e8d30987f6238ebe5e09}} 
+\index{State@{State}!SetId@{SetId}}
+\index{SetId@{SetId}!State@{State}}
+\doxysubsubsection{\texorpdfstring{SetId()}{SetId()}}
+{\footnotesize\ttfamily void State\+::\+Set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Modifica el id del estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_state_a8f20076e7000e8d30987f6238ebe5e09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_state_a7f7464ac2c24fbd53adafa1a7eb64673}\label{class_state_a7f7464ac2c24fbd53adafa1a7eb64673}} 
+\index{State@{State}!SetTransitions@{SetTransitions}}
+\index{SetTransitions@{SetTransitions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{SetTransitions()}{SetTransitions()}}
+{\footnotesize\ttfamily void State\+::\+Set\+Transitions (\begin{DoxyParamCaption}\item[{std\+::set$<$ \mbox{\hyperlink{class_transition}{Transition}} $>$}]{transitions }\end{DoxyParamCaption})}
+
+
+
+Modifica las transiciones del estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em transitions} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_state_8h}{State.\+h}}\item 
+\mbox{\hyperlink{_state_8cc}{State.\+cc}}\end{DoxyCompactItemize}

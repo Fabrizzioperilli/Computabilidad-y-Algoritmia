@@ -1,0 +1,6 @@
+<map id="ReadFile" name="ReadFile">
+<area shape="rect" id="node1" title="Lee los ficheros y crea el automata." alt="" coords="5,35,79,61"/>
+<area shape="rect" id="node2" href="$class_automata.html#a9ec263d73f9a306532a73e009da77c4f" title="Convierte un automata a una gramatica regular." alt="" coords="127,35,324,61"/>
+<area shape="rect" id="node3" href="$class_state.html#a149b6dca129bb208469478a215253aba" title="Retorna el id del estado." alt="" coords="399,5,491,32"/>
+<area shape="rect" id="node4" href="$class_non_terminal_symbol.html#a0cd518697c9c7eb9c7ea69323b311819" title="Setter del atributo nombre." alt="" coords="372,57,519,98"/>
+</map>

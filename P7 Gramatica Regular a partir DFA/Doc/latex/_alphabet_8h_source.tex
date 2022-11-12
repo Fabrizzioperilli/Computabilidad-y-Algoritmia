@@ -1,0 +1,32 @@
+\hypertarget{_alphabet_8h_source}{}\doxysection{Alphabet.\+h}
+\mbox{\hyperlink{_alphabet_8h}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_symbol_8h}{Symbol.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_alphabet}{Alphabet}} \{}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21   std::set<Symbol> alphabet\_;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24   \mbox{\hyperlink{class_alphabet_aac9f2f615174ca6c8f89331239cb765e}{Alphabet}}();}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_alphabet_aac9f2f615174ca6c8f89331239cb765e}{Alphabet}}(std::set<Symbol>);}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_alphabet_a8a1da1bd7fdf2fd06a9768f9597a0b44}{\string~Alphabet}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   std::set<Symbol> \mbox{\hyperlink{class_alphabet_ada503ab99dbbd60b1171706e21ecd988}{GetAlphabet}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef}{AddSymbol}}(\mbox{\hyperlink{class_symbol}{Symbol}} \&);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_alphabet_a98e6c425ea887d2925ca2c89b95f17ef}{AddSymbol}}(std::string str);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_alphabet_aafe06af439e38bfec37ba06991adb388}{Empty}}();}
+\DoxyCodeLine{33   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_alphabet_a154f45f063a75a8116e8f9022440287e}{Size}}();}
+\DoxyCodeLine{34   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_alphabet_a0f307f0a4e9c0b390ab845b506790f70}{Search}}(std::string);}
+\DoxyCodeLine{35   std::ostream \&\mbox{\hyperlink{class_alphabet_a8152ca5fbabb6d8c362e83c5bacf1507}{Write}}(std::ostream \&);}
+\DoxyCodeLine{36   \mbox{\hyperlink{class_alphabet}{Alphabet}} \mbox{\hyperlink{class_alphabet_a3a4cfedb55f681283755d1d52590706b}{Union}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_alphabet}{Alphabet}} \&);}
+\DoxyCodeLine{37   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_alphabet_ac82d17ceabe35fc0fca02c10ec441ae8}{CheckSymbol}}(\mbox{\hyperlink{class_symbol}{Symbol}} \&);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_alphabet_a60aeee615a8ad90c6a8a71c5750b7bbb}{operator<<}}(std::ostream \&, \mbox{\hyperlink{class_alphabet}{Alphabet}} \&);}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}
