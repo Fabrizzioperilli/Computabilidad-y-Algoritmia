@@ -128,19 +128,6 @@ bool Automata::ReadWord(Word &word) {
 }
 
 
-/// @brief Retorna el conjunto de estados siguientes
-/// @param state
-/// @param symbol
-/// @return std::set<int>
-std::set<int> Automata::GetNextStates(int state, Symbol &symbol) {
-  std::set<int> next_states;
-  for (auto &&i : transitions_)
-    if (i.GetCurrentState() == state && i.GetSymbol() == symbol)
-      next_states.insert(i.GetNextState());
-  return next_states;
-}
-
-
 /// @brief Imprime los elementos del automata
 /// @param os
 /// @return std::ostream&

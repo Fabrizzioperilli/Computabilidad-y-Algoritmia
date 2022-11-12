@@ -37,7 +37,7 @@ private:
   std::set<Transition> transitions_;
   State initial_state_;
   std::set<State> acceptance_states_;
-  std::set<int> GetNextStates(int, Symbol&);
+  
   State GetState(int);
   bool IsAcceptanceState(std::set<State>);
 
