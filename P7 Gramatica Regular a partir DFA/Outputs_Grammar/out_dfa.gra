@@ -11,5 +11,5 @@ A -> aB
 A -> bB
 B -> aB
 B -> bB
-S -> a@
+S -> aS
 S -> bA

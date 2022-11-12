@@ -170,11 +170,19 @@ Grammar Automata::ConvertToGrammar()
     if (i.GetCurrentState() == initial_state_.GetId())
     {
       std::pair<Symbol, NonTerminalSymbol> production_aux;
-      production_aux.first = i.GetSymbol();
-      production_aux.second = NonTerminalSymbol(char(i.GetNextState() + 64));
       initial_non_terminal_symbol.SetName('S');
-      set_non_terminal_symbols.insert(NonTerminalSymbol('S'));
-      set_productions.insert(Production(NonTerminalSymbol('S'), production_aux));
+      set_non_terminal_symbols.insert(initial_non_terminal_symbol);
+      production_aux.first = i.GetSymbol();
+      if (i.GetCurrentState() != i.GetNextState())
+      {
+        production_aux.second = NonTerminalSymbol(char(i.GetNextState() + 64));
+        set_productions.insert(Production(NonTerminalSymbol('S'), production_aux));
+      }
+      else
+      {
+        production_aux.second = NonTerminalSymbol('S');
+        set_productions.insert(Production(NonTerminalSymbol('S'), production_aux));
+      }
     }
     else
     {

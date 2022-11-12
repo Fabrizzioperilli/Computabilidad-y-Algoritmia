@@ -1,0 +1,20 @@
+2
+a
+b
+4
+A
+B
+C
+S
+S
+10
+A -> & 
+A -> aA
+A -> bB
+B -> & 
+B -> aA
+B -> bC
+C -> aC
+C -> bC
+S -> aA
+S -> bC
