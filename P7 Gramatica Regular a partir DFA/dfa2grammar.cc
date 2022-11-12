@@ -13,16 +13,16 @@
  * Creación del código.
  */
 
-#include "Automata.h"
 #include <iomanip>
 #include <iostream>
+
+#include "Automata.h"
 
 void Help();
 bool CheckExtension(std::string, std::string);
 void ReadFile(std::string, std::string);
 
 int main(int argc, char **argv) {
-
   const std::string kOptionHelp = "--help";
   const int kNumberParam = 3;
 
@@ -30,8 +30,7 @@ int main(int argc, char **argv) {
     if (CheckExtension(argv[1], argv[2])) {
       ReadFile(argv[1], argv[2]);
       std::cout << "Revise la salida en el fichero: " << argv[2] << std::endl;
-    }
-    else {
+    } else {
       std::cout << "Las extensiones de los ficheros no son correctas. Ejecute "
                    "./dfa2grammar --help para mas informacion" << std::endl;
       exit(EXIT_FAILURE);
@@ -63,7 +62,6 @@ void Help() {
 /// @param file_gra
 /// @return bool
 bool CheckExtension(std::string file_fa, std::string file_gra) {
-
   file_fa = file_fa.substr(file_fa.find_last_of(".") + 1);
   file_gra = file_gra.substr(file_gra.find_last_of(".") + 1);
 
@@ -84,17 +82,14 @@ void ReadFile(std::string file_fa, std::string file_gra) {
   input_file_fa.open(file_fa);
   output_file_gra.open(file_gra);
 
-  if(output_file_gra.is_open()) {
-  Automata automata(file_fa);
-  Grammar grammar = automata.ConvertToGrammar();
-  output_file_gra << grammar;
-  } 
-  else {
+  if (output_file_gra.is_open()) {
+    Automata automata(file_fa);
+    Grammar grammar = automata.ConvertToGrammar();
+    output_file_gra << grammar;
+  } else {
     std::cout << "No se puede abrir el fichero" << file_fa << " o no existe" << std::endl;
     exit(EXIT_FAILURE);
   }
-  
-
 
   output_file_gra.close();
 }

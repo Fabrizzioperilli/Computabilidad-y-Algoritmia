@@ -28,8 +28,7 @@ private:
   std::set<Production> productions_;
 public:
   Grammar();
-  Grammar(Alphabet, std::set<NonTerminalSymbol>, NonTerminalSymbol,
-          std::set<Production>);
+  Grammar(Alphabet, std::set<NonTerminalSymbol>, NonTerminalSymbol, std::set<Production>);
   ~Grammar();
   Alphabet GetAlphabet() const;
 

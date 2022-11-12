@@ -49,10 +49,12 @@ Alphabet Grammar::GetAlphabet() const {
 /// @return std::ostream&
 std::ostream& Grammar::WriteGrammar(std::ostream& os) {
   os << alphabet_.Size() << std::endl;
+  
   for (auto symbol : alphabet_.GetAlphabet()) 
     os << symbol << std::endl;
   
   os << non_terminal_symbols_.size() << std::endl;
+  
   for (auto non_terminal_symbol : non_terminal_symbols_)
     os << non_terminal_symbol.GetName() << std::endl;
 
