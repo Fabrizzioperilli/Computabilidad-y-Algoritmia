@@ -152,22 +152,14 @@ Grammar Automata::ConvertToGrammar() {
 
   for (auto i : transitions_) {
     std::pair<Symbol, NonTerminalSymbol> production_aux;
+      production_aux.first = i.GetSymbol();     
+      production_aux.second = NonTerminalSymbol(char(i.GetNextState() + 65));
+      set_non_terminal_symbols.insert(production_aux.second);
+      set_productions.insert(Production(NonTerminalSymbol(char(i.GetCurrentState() + 65)), production_aux));
+      
     if (i.GetCurrentState() == initial_state_.GetId()) {
-      initial_non_terminal_symbol.SetName('S');
+      initial_non_terminal_symbol = NonTerminalSymbol(char(i.GetCurrentState() + 65));
       set_non_terminal_symbols.insert(initial_non_terminal_symbol);
-      production_aux.first = i.GetSymbol();
-      if (i.GetCurrentState() != i.GetNextState()) {
-        production_aux.second = NonTerminalSymbol(char(i.GetNextState() + 64));
-        set_productions.insert(Production(NonTerminalSymbol('S'), production_aux));
-      } else {
-        production_aux.second = NonTerminalSymbol('S');
-        set_productions.insert(Production(NonTerminalSymbol('S'), production_aux));
-      }
-    } else {
-      production_aux.first = i.GetSymbol();
-      production_aux.second = NonTerminalSymbol(char(i.GetNextState() + 64));
-      set_non_terminal_symbols.insert(NonTerminalSymbol(char(i.GetNextState() + 64)));
-      set_productions.insert(Production(NonTerminalSymbol(char(i.GetCurrentState() + 64)), production_aux));
     }
   }
 
@@ -175,7 +167,7 @@ Grammar Automata::ConvertToGrammar() {
     std::pair<Symbol, NonTerminalSymbol> production_aux;
     production_aux.first = Symbol(STR_EMPTY);
     production_aux.second = NonTerminalSymbol(' ');
-    set_productions.insert(Production(NonTerminalSymbol(char(i.GetId() + 64)), production_aux));
+    set_productions.insert(Production(NonTerminalSymbol(char(i.GetId() + 65)), production_aux));
   }
 
   return Grammar(alphabet_, set_non_terminal_symbols, initial_non_terminal_symbol, set_productions);
