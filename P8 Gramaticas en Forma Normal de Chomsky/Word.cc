@@ -180,3 +180,7 @@ std::istream &operator>>(std::istream &is, Word &w) {
   w = Word(str, w.alphabet_);
   return is;
 }
+
+int Word::GetSize() {
+  return word_.size();
+}

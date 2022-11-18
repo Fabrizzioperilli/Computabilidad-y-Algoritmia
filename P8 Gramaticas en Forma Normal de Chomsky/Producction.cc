@@ -54,3 +54,7 @@ std::istream &operator>>(std::istream &is, Production &production) {
 Word Production::GetProduction() { 
   return production_; 
 }
+
+Symbol Production::GetSymbolLeft() { 
+  return symbol_left_; 
+}

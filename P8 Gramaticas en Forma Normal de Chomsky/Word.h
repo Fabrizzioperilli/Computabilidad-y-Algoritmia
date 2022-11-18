@@ -31,8 +31,8 @@ public:
   void SetWord(std::vector<Symbol>);
   Alphabet GetAlphabet();
   void SetAlphabet(Alphabet &);
+  int GetSize();
   
-
   void AddSymbol(Symbol &);
   int WordLength();
   Word WordInverse();

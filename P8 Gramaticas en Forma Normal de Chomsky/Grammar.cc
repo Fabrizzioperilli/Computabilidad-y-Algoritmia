@@ -71,7 +71,10 @@ Grammar::Grammar(std::string input_file) {
     for (int i = 0; i < n_productions; i++) {
       Production production;
       name_file >> production;
-      productions_.insert(production);
+      if (CheckCleanGrammar(production))
+        productions_.insert(production);
+      else  
+        std::cout << "Error en fichero " << input_file << ": La gramatica no está simplicaficada" << std::endl;
     }
     
   }
@@ -116,4 +119,17 @@ void Grammar::CheckFormatFile(std::ifstream& name_file) {
 
 std::set<Production> Grammar::GetProductions() const { 
   return productions_; 
+}
+
+bool Grammar::CheckCleanGrammar(Production& production) {
+  const std::regex regex_mayus("[A-Z]");
+    if ((production.GetProduction().GetSize() == 1) && (regex_match(production.GetProduction().GetWord()[0].GetSymbol(), regex_mayus)))
+      return false;
+    else if ((production.GetProduction().GetSize() == 1) && (production.GetProduction().GetWord()[0].GetSymbol() == STR_EMPTY)) {
+      if (production.GetSymbolLeft().GetSymbol() == start_symbol_.GetSymbol())
+        return true;
+      else
+        return false;
+    }
+  return true;
 }

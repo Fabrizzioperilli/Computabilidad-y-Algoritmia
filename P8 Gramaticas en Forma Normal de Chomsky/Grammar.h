@@ -21,6 +21,7 @@
 #include "Alphabet.h"
 #include <iostream>
 #include <fstream>
+#include <regex>
 
 #include <set>
 
@@ -39,6 +40,7 @@ public:
   std::set<Symbol> GetNonTerminalSymbols() const;
   Symbol GetStartSymbol() const;
   std::set<Production> GetProductions() const;
+  bool CheckCleanGrammar(Production&);
 
   std::ostream& WriteGrammar(std::ostream&);
   friend std::ostream &operator<<(std::ostream &, Grammar &);
