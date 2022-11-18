@@ -172,3 +172,11 @@ bool Word::operator!=(const Word &w) const {
 Word Word::operator+(Word &word) { 
   return WordConcatenate(word); 
 }
+
+
+std::istream &operator>>(std::istream &is, Word &w) {
+  std::string str;
+  is >> str;
+  w = Word(str, w.alphabet_);
+  return is;
+}

@@ -44,3 +44,13 @@ std::ostream &operator<<(std::ostream &os, Production &production) {
   return os;
 }
 
+std::istream &operator>>(std::istream &is, Production &production) {
+  is >> production.symbol_left_;
+  is.ignore(3);
+  is >> production.production_;
+  return is;
+}
+
+Word Production::GetProduction() { 
+  return production_; 
+}

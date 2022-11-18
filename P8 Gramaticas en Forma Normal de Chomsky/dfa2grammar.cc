@@ -84,6 +84,7 @@ void ReadFile(std::string input_file_gra, std::string output_file_gra) {
   Alphabet alpha = grammar.GetAlphabet();
   std::set<Symbol> symbols = grammar.GetNonTerminalSymbols();
   Symbol start_symbol = grammar.GetStartSymbol();
+  std::set<Production> productions = grammar.GetProductions();
   output_file.open(output_file_gra);
 
   if (output_file.is_open()) {
@@ -92,6 +93,9 @@ void ReadFile(std::string input_file_gra, std::string output_file_gra) {
     for (auto i : symbols)
       output_file << i << std::endl;
     output_file << start_symbol << std::endl;
+    
+    for (auto i : productions)
+      output_file << i << std::endl;
     
   } else {
     std::cout << "No se puede abrir el fichero" << output_file_gra << " o no existe" << std::endl;

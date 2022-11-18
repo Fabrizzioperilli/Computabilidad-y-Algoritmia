@@ -70,8 +70,7 @@ Grammar::Grammar(std::string input_file) {
 
     for (int i = 0; i < n_productions; i++) {
       Production production;
-      // name_file >> production;
-      CheckFormatFile(name_file);
+      name_file >> production;
       productions_.insert(production);
     }
     
@@ -113,4 +112,8 @@ void Grammar::CheckFormatFile(std::ifstream& name_file) {
     std::cout << "Error en fichero de entrada. Formato incorrecto, comprueba que no existan espacios en blanco" << std::endl;
     exit(EXIT_FAILURE);
     }
+}
+
+std::set<Production> Grammar::GetProductions() const { 
+  return productions_; 
 }

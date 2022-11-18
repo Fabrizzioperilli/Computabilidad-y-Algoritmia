@@ -38,6 +38,7 @@ public:
   Alphabet GetAlphabet() const;
   std::set<Symbol> GetNonTerminalSymbols() const;
   Symbol GetStartSymbol() const;
+  std::set<Production> GetProductions() const;
 
   std::ostream& WriteGrammar(std::ostream&);
   friend std::ostream &operator<<(std::ostream &, Grammar &);

@@ -41,6 +41,7 @@ public:
 
   bool operator<(const Word &) const;
   friend std::ostream &operator<<(std::ostream &, Word &);
+  friend std::istream &operator>>(std::istream &, Word &);
   bool operator==(const Word &) const;
   bool operator!=(const Word &) const;
   Word operator+(Word &);
