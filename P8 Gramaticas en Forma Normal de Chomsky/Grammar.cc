@@ -163,6 +163,8 @@ void Grammar::AddProduction(Production& production) {
 /// @return Grammar
 Grammar Grammar::Convert2CNF() {
   std::set<Production> productions_cnf;
+  std::set<Production> productions_cnf_step2;
+
   std::set<Symbol> non_terminal_symbols_cnf = non_terminal_symbols_;
   Production aux_production;
   Symbol new_symbol;
@@ -198,7 +200,44 @@ Grammar Grammar::Convert2CNF() {
       }
   }
 
-  return Grammar(alphabet_, non_terminal_symbols_cnf, start_symbol_, productions_cnf);
+  for (auto i : productions_cnf ) {
+    aux_production = i;
+    if (i.GetProduction().WordLength() > 2) {
+      for (int j = i.GetProduction().WordLength() - 1; j > 1; j--) {
+        if (aux_production.GetProduction().WordLength() > 2) {
+          std::string name_symbol = "Z(" + aux_production.GetProduction().GetWord()[j - 1].GetSymbol() + "," +
+                                    aux_production.GetProduction().GetWord()[j].GetSymbol() + ")";
+          new_symbol.SetSymbol(name_symbol);
+          Word new_word;
+          new_word.AddSymbol(aux_production.GetProduction().GetWord()[j-1]);
+          new_word.AddSymbol(aux_production.GetProduction().GetWord()[j]);
+          Production new_production(new_symbol, new_word);
+          non_terminal_symbols_cnf.insert(new_symbol);
+          productions_cnf_step2.insert(new_production);
+        
+
+          Word word_aux = aux_production.GetProduction();
+          word_aux.DeleteSymbol(j);
+          j--;
+          word_aux.ModifySymbol(j, new_symbol);
+          aux_production.SetProduction(word_aux);
+        }
+      }
+    productions_cnf_step2.insert(aux_production);
+    }
+  }
+
+  for (auto i : productions_cnf) {
+     if (i.GetProduction().WordLength() == 1)
+        productions_cnf_step2.insert(i);
+      else if (i.GetProduction().WordLength() == 2) {
+        if (non_terminal_symbols_cnf.find(i.GetProduction().GetWord()[0]) != non_terminal_symbols_cnf.end() &&
+            non_terminal_symbols_cnf.find(i.GetProduction().GetWord()[1]) != non_terminal_symbols_cnf.end()) 
+          productions_cnf_step2.insert(i);
+      }
+  }
+
+  return Grammar(alphabet_, non_terminal_symbols_cnf, start_symbol_, productions_cnf_step2);
 }
 
 

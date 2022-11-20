@@ -85,7 +85,6 @@ void ReadFile(std::string input_file_gra, std::string output_file_gra) {
   
   if (output_file.is_open()) {
     output_file << grammar_cnf << std::endl;
-    output_file << grammar << std::endl;
   } else {
     std::cout << "No se puede abrir el fichero" << output_file_gra << " o no existe" << std::endl;
     exit(EXIT_FAILURE);

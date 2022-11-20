@@ -131,8 +131,18 @@ Word Word::WordConcatenate(Word &w) {
 }
 
 
+/// @brief Modifca el simbolo indicado por el indice
+/// @param pos 
+/// @param symbol 
 void Word::ModifySymbol(int pos, Symbol &symbol) {
   word_[pos] = symbol;
+}
+
+
+/// @brief Elminina el simbolo indicado por el indice
+/// @param pos 
+void Word::DeleteSymbol(int pos) {
+  word_.erase(word_.begin() + pos);
 }
 
 

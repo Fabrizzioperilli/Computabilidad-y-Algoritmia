@@ -38,6 +38,7 @@ public:
   Word WordInverse();
   Word WordConcatenate(Word &);
   void ModifySymbol(int, Symbol &);
+  void DeleteSymbol(int);
   std::ostream &Write(std::ostream &os);
 
   Word operator+(Word &);

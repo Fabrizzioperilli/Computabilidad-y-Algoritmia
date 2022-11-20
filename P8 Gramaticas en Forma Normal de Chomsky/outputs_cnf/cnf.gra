@@ -2,19 +2,21 @@
 a
 b
 c
-5
+8
 S
 X
 Y
+Z(X,Zb)
+Z(Za,X)
+Z(Zb,X)
 Za
 Zb
 S
-16
-S -> ZaXZaX
-S -> ZaXZb
+18
+S -> Z(Za,X)Z(Za,X)
+S -> ZaZ(X,Zb)
+S -> ZaZ(Zb,X)
 S -> ZaZb
-S -> ZaZbX
-X -> XY
 X -> ZaY
 X -> ZbY
 X -> a
@@ -24,31 +26,9 @@ Y -> ZbY
 Y -> a
 Y -> b
 Y -> c
+Z(X,Zb) -> XZb
+Z(Za,X) -> ZaX
+Z(Zb,X) -> ZbX
 Za -> a
 Zb -> b
-
-3
-a
-b
-c
-3
-S
-X
-Y
-S
-14
-S -> aXaX
-S -> aXb
-S -> ab
-S -> abX
-X -> XY
-X -> a
-X -> aY
-X -> b
-X -> bY
-Y -> a
-Y -> aY
-Y -> b
-Y -> bY
-Y -> c
 

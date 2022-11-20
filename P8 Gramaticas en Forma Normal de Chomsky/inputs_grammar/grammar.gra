@@ -7,7 +7,7 @@ S
 X
 Y
 S
-14
+13
 S -> aXaX
 S -> abX
 S -> aXb
@@ -16,7 +16,6 @@ X -> aY
 X -> bY
 X -> a
 X -> b
-X -> XY
 Y -> aY
 Y -> bY
 Y -> a
