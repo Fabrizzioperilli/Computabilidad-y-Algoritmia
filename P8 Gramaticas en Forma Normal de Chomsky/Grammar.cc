@@ -15,10 +15,12 @@
 
 #include "Grammar.h"
 
-/// @brief Constructor de copia 
+/// @brief Constructor de copia
 Grammar::Grammar() {}
 
 
+/// @brief Constructor con parametros
+/// @param input_file
 Grammar::Grammar(std::string input_file) {
   std::ifstream name_file(input_file);
   std::string aux_alphabet;
@@ -49,14 +51,13 @@ Grammar::Grammar(std::string input_file) {
       exit(EXIT_FAILURE);
     }
 
-    for (int i = 0; i < n_non_terminal; i++)
-    {
+    for (int i = 0; i < n_non_terminal; i++) {
       Symbol symbol_non_terminal;
       name_file >> symbol_non_terminal;
       CheckFormatFile(name_file);
       non_terminal_symbols_.insert(symbol_non_terminal);
     }
-    
+
     name_file >> start_symbol_;
     CheckFormatFile(name_file);
 
@@ -64,7 +65,7 @@ Grammar::Grammar(std::string input_file) {
     CheckFormatFile(name_file);
 
     if (n_productions < 1) {
-      std::cout << "Error en fichero " << input_file << ": La gramatica no puede estar vacia" << std::endl;
+      std::cout << "Error en fichero " << input_file << ": Las producciones no pueden estar vacias" << std::endl;
       exit(EXIT_FAILURE);
     }
 
@@ -73,15 +74,32 @@ Grammar::Grammar(std::string input_file) {
       name_file >> production;
       if (CheckCleanGrammar(production))
         productions_.insert(production);
-      else  
-        std::cout << "Error en fichero " << input_file << ": La gramatica no está simplicaficada" << std::endl;
+      else {
+        std::cout << "Error en fichero " << input_file << ": La gramatica no está simplicaficada. "
+                     "Compruebe que no tenga producciones vacías o "
+                     "producciones unitarias" << std::endl;
+        exit(EXIT_FAILURE);
+      }
     }
-    
-  }
-  else{
+
+  } else {
     std::cout << "No se puede abrir el fichero" << input_file << " o no existe" << std::endl;
     exit(EXIT_FAILURE);
   }
+}
+
+
+/// @brief Constructor con la tupla de la gramatica
+/// @param alphabet 
+/// @param non_terminal_symbols 
+/// @param start_symbol 
+/// @param productions 
+Grammar::Grammar(Alphabet& alphabet, std::set<Symbol>& non_terminal_symbols,
+                 Symbol& start_symbol, std::set<Production>& productions) {
+  alphabet_ = alphabet;
+  non_terminal_symbols_ = non_terminal_symbols;
+  start_symbol_ = start_symbol;
+  productions_ = productions;
 }
 
 
@@ -98,8 +116,8 @@ Alphabet Grammar::GetAlphabet() const {
 
 /// @brief Getter de non_terminal_symbols_.
 /// @return std::set<Symbol>
-std::set<Symbol> Grammar::GetNonTerminalSymbols() const { 
-  return non_terminal_symbols_; 
+std::set<Symbol> Grammar::GetNonTerminalSymbols() const {
+  return non_terminal_symbols_;
 }
 
 
@@ -110,26 +128,109 @@ Symbol Grammar::GetStartSymbol() const {
 }
 
 
-void Grammar::CheckFormatFile(std::ifstream& name_file) {
-  if (name_file.peek() == ' ') {
-    std::cout << "Error en fichero de entrada. Formato incorrecto, comprueba que no existan espacios en blanco" << std::endl;
-    exit(EXIT_FAILURE);
-    }
-}
-
+/// @brief Getter de productions_.
+/// @return  std::set<Production>
 std::set<Production> Grammar::GetProductions() const { 
   return productions_; 
 }
 
+
+/// @brief Comrpruba si la gramatica está limpia
+/// @param production 
+/// @return bool
 bool Grammar::CheckCleanGrammar(Production& production) {
   const std::regex regex_mayus("[A-Z]");
-    if ((production.GetProduction().GetSize() == 1) && (regex_match(production.GetProduction().GetWord()[0].GetSymbol(), regex_mayus)))
+  if ((production.GetProduction().WordLength() == 1) &&
+      (regex_match(production.GetProduction().GetWord()[0].GetSymbol(), regex_mayus)))
+    return false;
+  else if ((production.GetProduction().WordLength() == 1) && (production.GetProduction().GetWord()[0].GetSymbol() == STR_EMPTY)) {
+    if (production.GetSymbolLeft().GetSymbol() == start_symbol_.GetSymbol())
+      return true;
+    else
       return false;
-    else if ((production.GetProduction().GetSize() == 1) && (production.GetProduction().GetWord()[0].GetSymbol() == STR_EMPTY)) {
-      if (production.GetSymbolLeft().GetSymbol() == start_symbol_.GetSymbol())
-        return true;
-      else
-        return false;
-    }
+  }
   return true;
+}
+
+
+/// @brief Añade una produccion a la gramatica
+/// @param production 
+void Grammar::AddProduction(Production& production) {
+  productions_.insert(production);
+}
+
+
+/// @brief Convertir la gramatica a forma normal de Chomsky
+/// @return Grammar
+Grammar Grammar::Convert2CNF() {
+  std::set<Production> productions_cnf = productions_;
+  std::set<Symbol> non_terminal_symbols_cnf = non_terminal_symbols_;
+
+  for (auto i : productions_cnf) {
+    if (i.GetProduction().WordLength() >= 2)
+      for (int j = 0; j < i.GetProduction().WordLength(); j++)
+        if (alphabet_.Search(i.GetProduction().GetWord()[j].GetSymbol())) {
+          std::string name_symbol =
+              "C" + i.GetProduction().GetWord()[j].GetSymbol();
+          Symbol new_symbol = name_symbol;
+          Word new_word;
+          new_word.AddSymbol(i.GetProduction().GetWord()[j]);
+          Production new_production(new_symbol, new_word);
+          productions_cnf.insert(new_production);
+          non_terminal_symbols_cnf.insert(new_symbol);
+
+          Production aux_production = i;
+          productions_cnf.erase(i);
+
+          aux_production.GetProduction().GetWord()[j] = new_symbol;
+          productions_cnf.insert(aux_production);
+        }
+  }
+
+  return Grammar(alphabet_, non_terminal_symbols_cnf, start_symbol_,
+                 productions_cnf);
+}
+
+
+/// @brief Imprime la gramatica
+/// @param os 
+/// @return std::ostream&
+std::ostream& Grammar::WriteGrammar(std::ostream& os) {
+  os << alphabet_.GetAlphabet().size() << std::endl;
+
+  for (auto i : alphabet_.GetAlphabet()) 
+    os << i << std::endl;
+
+  os << non_terminal_symbols_.size() << std::endl;
+
+  for (auto i : non_terminal_symbols_) 
+    os << i << std::endl;
+
+  os << start_symbol_ << std::endl;
+  os << productions_.size() << std::endl;
+
+  for (auto i : productions_) 
+    os << i << std::endl;
+  
+  return os;
+}
+
+
+/// @brief Sobrecarga del operador de salida
+/// @param os 
+/// @param grammar 
+/// @return std::ostram&
+std::ostream& operator<<(std::ostream& os, Grammar& grammar) {
+  return grammar.WriteGrammar(os);
+}
+
+
+/// @brief Comprueba el formato del fichero.
+/// @param name_file 
+void Grammar::CheckFormatFile(std::ifstream& name_file) {
+  if (name_file.peek() == ' ') {
+    std::cout << "Error en fichero de entrada. Formato incorrecto, comprueba "
+                 "que no existan espacios en blanco" << std::endl;
+    exit(EXIT_FAILURE);
+  }
 }

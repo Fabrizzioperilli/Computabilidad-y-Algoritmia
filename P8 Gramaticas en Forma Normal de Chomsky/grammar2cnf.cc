@@ -3,7 +3,7 @@
  * @details Grado en Ingenierıa Informatica
  * @details Asignatura: Computabilidad y Algoritmia
  * @details Curso: 2º
- *          Practica 7: Gramtica regular a partir de DFA
+ *          Practica 8: Gramaticas en Forma Normal de Chomsky
  * @author Fabrizzio Daniell Perilli Martin
  *   Correo: alu0101138589@ull.edu.es
  * @date Fecha: 15/11/2022
@@ -72,31 +72,19 @@ bool CheckExtension(std::string file_fa, std::string file_gra) {
 }
 
 
-/// @brief Lee los ficheros y crea el automata
+/// @brief Lee los ficheros y crea la gramatica
 /// @param file_fa
 /// @param file_gra
 void ReadFile(std::string input_file_gra, std::string output_file_gra) {
 
   std::ofstream output_file;
-
-  Grammar grammar(input_file_gra);
-  
-  Alphabet alpha = grammar.GetAlphabet();
-  std::set<Symbol> symbols = grammar.GetNonTerminalSymbols();
-  Symbol start_symbol = grammar.GetStartSymbol();
-  std::set<Production> productions = grammar.GetProductions();
   output_file.open(output_file_gra);
 
+  Grammar grammar(input_file_gra);
+  Grammar grammar_cnf = grammar.Convert2CNF();
+
   if (output_file.is_open()) {
-    // gramar.ConvertCNF()
-    output_file << alpha << std::endl;
-    for (auto i : symbols)
-      output_file << i << std::endl;
-    output_file << start_symbol << std::endl;
-    
-    for (auto i : productions)
-      output_file << i << std::endl;
-    
+    output_file << grammar_cnf;
   } else {
     std::cout << "No se puede abrir el fichero" << output_file_gra << " o no existe" << std::endl;
     exit(EXIT_FAILURE);

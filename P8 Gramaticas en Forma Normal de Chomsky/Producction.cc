@@ -15,46 +15,76 @@
 
 #include "Production.h"
 
-
+/// @brief Constructor por defecto
 Production::Production() {}
 
+
+/// @brief Constructor con parametros
+/// @param symbol_left
+/// @param production
 Production::Production(Symbol symbol_left, Word &production) {
   symbol_left_ = symbol_left;
   production_ = production;
 }
 
+
+/// @brief Destructor
+Production::~Production() {}
+
+
+/// @brief Getter de la producción
+/// @return Word
+Word Production::GetProduction() { 
+  return production_; 
+}
+
+
+/// @brief Getter del símbolo izquierdo
+/// @return Symbol
+Symbol Production::GetSymbolLeft() { 
+  return symbol_left_; 
+}
+
+
+/// @brief Método que imprime una producción
+/// @param os
+/// @return std::ostream&
 std::ostream &Production::WriteProduction(std::ostream &os) {
   os << symbol_left_ << " -> " << production_;
   return os;
 }
 
+
+/// @brief Método de comparación de producciones
+/// @param production
+/// @return
 bool Production::operator<(const Production &production) const {
-  if (symbol_left_ < production.symbol_left_) {
+  if (symbol_left_ < production.symbol_left_)
     return true;
-  } else if (symbol_left_ == production.symbol_left_) {
-    if (production_ < production.production_) {
-      return true;
-    }
-  }
+  else if (symbol_left_ == production.symbol_left_)
+    if (production_ < production.production_) return true;
+
   return false;
 }
 
+
+/// @brief Sobrecarfa del operador de salida
+/// @param os
+/// @param production
+/// @return
 std::ostream &operator<<(std::ostream &os, Production &production) {
   production.WriteProduction(os);
   return os;
 }
 
+
+/// @brief Sobrecarga del operador de entrada
+/// @param is
+/// @param production
+/// @return std::istream&
 std::istream &operator>>(std::istream &is, Production &production) {
   is >> production.symbol_left_;
   is.ignore(3);
   is >> production.production_;
   return is;
-}
-
-Word Production::GetProduction() { 
-  return production_; 
-}
-
-Symbol Production::GetSymbolLeft() { 
-  return symbol_left_; 
 }

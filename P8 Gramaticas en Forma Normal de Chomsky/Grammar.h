@@ -15,33 +15,38 @@
 
 #pragma once
 
-
-#include "Production.h"
-#include "Symbol.h"
-#include "Alphabet.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <regex>
-
 #include <set>
 
+#include "Alphabet.h"
+#include "Production.h"
+#include "Symbol.h"
+
 class Grammar {
-private:
+ private:
   Alphabet alphabet_;
   std::set<Symbol> non_terminal_symbols_;
   Symbol start_symbol_;
   std::set<Production> productions_;
-  void CheckFormatFile(std::ifstream&);
-public:
+  void CheckFormatFile(std::ifstream &);
+
+ public:
   Grammar();
   Grammar(std::string);
+  Grammar(Alphabet &, std::set<Symbol> &, Symbol &, std::set<Production> &);
   ~Grammar();
+
   Alphabet GetAlphabet() const;
   std::set<Symbol> GetNonTerminalSymbols() const;
   Symbol GetStartSymbol() const;
   std::set<Production> GetProductions() const;
-  bool CheckCleanGrammar(Production&);
 
-  std::ostream& WriteGrammar(std::ostream&);
+  bool CheckCleanGrammar(Production &);
+  void AddProduction(Production &);
+  Grammar Convert2CNF();
+
+  std::ostream &WriteGrammar(std::ostream &);
   friend std::ostream &operator<<(std::ostream &, Grammar &);
 };

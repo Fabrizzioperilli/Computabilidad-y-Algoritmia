@@ -134,6 +134,14 @@ std::ostream &Word::Write(std::ostream &os) {
 }
 
 
+/// @brief Sobrecarga del operador + para concatenar dos cadenas
+/// @param word 
+/// @return Word
+Word Word::operator+(Word &word) { 
+  return WordConcatenate(word); 
+}
+
+
 /// @brief Sobrecarga del operador < para comparar dos cadenas
 /// @param w 
 /// @return bool
@@ -141,14 +149,6 @@ bool Word::operator<(const Word &w) const {
   return word_ < w.word_; 
 }
 
-
-/// @brief Sobrecarga del operador << para imprimir una cadena
-/// @param os 
-/// @param w 
-/// @return std::ostream
-std::ostream &operator<<(std::ostream &os, Word &w) { 
-  return w.Write(os); 
-}
 
 /// @brief Sobre carga del operador == para comparar dos cadenas
 /// @param w 
@@ -166,21 +166,22 @@ bool Word::operator!=(const Word &w) const {
 }
 
 
-/// @brief Sobrecarga del operador + para concatenar dos cadenas
-/// @param word 
-/// @return Word
-Word Word::operator+(Word &word) { 
-  return WordConcatenate(word); 
+/// @brief Sobrecarga del operador << para imprimir una cadena
+/// @param os 
+/// @param w 
+/// @return std::ostream
+std::ostream &operator<<(std::ostream &os, Word &w) { 
+  return w.Write(os); 
 }
 
 
+/// @brief Sobrecarga del operador >> para leer una cadena
+/// @param is 
+/// @param w 
+/// @return 
 std::istream &operator>>(std::istream &is, Word &w) {
   std::string str;
   is >> str;
   w = Word(str, w.alphabet_);
   return is;
-}
-
-int Word::GetSize() {
-  return word_.size();
 }

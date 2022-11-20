@@ -31,18 +31,17 @@ public:
   void SetWord(std::vector<Symbol>);
   Alphabet GetAlphabet();
   void SetAlphabet(Alphabet &);
-  int GetSize();
-  
+
   void AddSymbol(Symbol &);
   int WordLength();
   Word WordInverse();
   Word WordConcatenate(Word &);
   std::ostream &Write(std::ostream &os);
 
+  Word operator+(Word &);
   bool operator<(const Word &) const;
-  friend std::ostream &operator<<(std::ostream &, Word &);
-  friend std::istream &operator>>(std::istream &, Word &);
   bool operator==(const Word &) const;
   bool operator!=(const Word &) const;
-  Word operator+(Word &);
+  friend std::ostream &operator<<(std::ostream &, Word &);
+  friend std::istream &operator>>(std::istream &, Word &);
 };

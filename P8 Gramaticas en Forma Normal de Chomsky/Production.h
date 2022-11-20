@@ -28,9 +28,10 @@ class Production {
  public:
   Production();
   Production(Symbol, Word&);
-  ~Production(){}
+  ~Production();
   Word GetProduction();
   Symbol GetSymbolLeft();
+
   std::ostream &WriteProduction(std::ostream &);
   bool operator<(const Production &) const;
   friend std::ostream &operator<<(std::ostream &, Production &);
