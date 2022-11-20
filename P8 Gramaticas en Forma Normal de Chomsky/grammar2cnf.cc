@@ -13,7 +13,7 @@
  * Creación del código.
  */
 
-#include <iomanip>
+
 #include <iostream>
 
 #include "Grammar.h"
@@ -82,9 +82,10 @@ void ReadFile(std::string input_file_gra, std::string output_file_gra) {
 
   Grammar grammar(input_file_gra);
   Grammar grammar_cnf = grammar.Convert2CNF();
-
+  
   if (output_file.is_open()) {
-    output_file << grammar_cnf;
+    output_file << grammar_cnf << std::endl;
+    output_file << grammar << std::endl;
   } else {
     std::cout << "No se puede abrir el fichero" << output_file_gra << " o no existe" << std::endl;
     exit(EXIT_FAILURE);

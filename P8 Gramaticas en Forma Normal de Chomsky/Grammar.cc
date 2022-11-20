@@ -139,7 +139,6 @@ std::set<Production> Grammar::GetProductions() const {
 /// @param production 
 /// @return bool
 bool Grammar::CheckCleanGrammar(Production& production) {
-  const std::regex regex_mayus("[A-Z]");
   if ((production.GetProduction().WordLength() == 1) &&
       (regex_match(production.GetProduction().GetWord()[0].GetSymbol(), regex_mayus)))
     return false;
@@ -163,32 +162,43 @@ void Grammar::AddProduction(Production& production) {
 /// @brief Convertir la gramatica a forma normal de Chomsky
 /// @return Grammar
 Grammar Grammar::Convert2CNF() {
-  std::set<Production> productions_cnf = productions_;
+  std::set<Production> productions_cnf;
   std::set<Symbol> non_terminal_symbols_cnf = non_terminal_symbols_;
-
-  for (auto i : productions_cnf) {
-    if (i.GetProduction().WordLength() >= 2)
+  Production aux_production;
+  Symbol new_symbol;
+  
+  for (auto i : productions_) {
+    if (i.GetProduction().WordLength() >= 2) {
       for (int j = 0; j < i.GetProduction().WordLength(); j++)
         if (alphabet_.Search(i.GetProduction().GetWord()[j].GetSymbol())) {
-          std::string name_symbol =
-              "C" + i.GetProduction().GetWord()[j].GetSymbol();
-          Symbol new_symbol = name_symbol;
+          std::string name_symbol = "Z" + i.GetProduction().GetWord()[j].GetSymbol();
+          new_symbol.SetSymbol(name_symbol);
           Word new_word;
           new_word.AddSymbol(i.GetProduction().GetWord()[j]);
           Production new_production(new_symbol, new_word);
           productions_cnf.insert(new_production);
           non_terminal_symbols_cnf.insert(new_symbol);
-
-          Production aux_production = i;
-          productions_cnf.erase(i);
-
-          aux_production.GetProduction().GetWord()[j] = new_symbol;
-          productions_cnf.insert(aux_production);
+          
+          Word word_aux = i.GetProduction();
+          word_aux.ModifySymbol(j, new_symbol);
+          i.SetProduction(word_aux);
+          aux_production = i;
         }
+    productions_cnf.insert(aux_production);
+    }
+  }
+  
+  for (auto i : productions_) {
+     if (i.GetProduction().WordLength() == 1)
+        productions_cnf.insert(i);
+      else if (i.GetProduction().WordLength() == 2) {
+        if (non_terminal_symbols_.find(i.GetProduction().GetWord()[0]) != non_terminal_symbols_.end() &&
+            non_terminal_symbols_.find(i.GetProduction().GetWord()[1]) != non_terminal_symbols_.end()) 
+          productions_cnf.insert(i);
+      }
   }
 
-  return Grammar(alphabet_, non_terminal_symbols_cnf, start_symbol_,
-                 productions_cnf);
+  return Grammar(alphabet_, non_terminal_symbols_cnf, start_symbol_, productions_cnf);
 }
 
 

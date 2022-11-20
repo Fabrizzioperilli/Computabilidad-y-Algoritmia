@@ -28,6 +28,7 @@ public:
   ~Word();
 
   std::vector<Symbol> GetWord();
+  std::vector<Symbol> GetWord() const;
   void SetWord(std::vector<Symbol>);
   Alphabet GetAlphabet();
   void SetAlphabet(Alphabet &);
@@ -36,6 +37,7 @@ public:
   int WordLength();
   Word WordInverse();
   Word WordConcatenate(Word &);
+  void ModifySymbol(int, Symbol &);
   std::ostream &Write(std::ostream &os);
 
   Word operator+(Word &);

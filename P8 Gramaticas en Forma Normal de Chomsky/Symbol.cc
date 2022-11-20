@@ -83,6 +83,14 @@ bool Symbol::operator==(const Symbol &s) const {
   return symbol_ == s.symbol_; 
 }
 
+/// @brief Sobrecarga del operador =
+/// @param s 
+/// @return Symbol
+Symbol Symbol::operator=(const Symbol &s) { 
+  symbol_ = s.symbol_; 
+  return *this; 
+}
+
 
 /// @brief Sobrecarga del operador !=
 /// @param s

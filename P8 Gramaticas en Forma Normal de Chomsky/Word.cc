@@ -67,6 +67,13 @@ std::vector<Symbol> Word::GetWord() {
 }
 
 
+/// @brief Getter de la clase Word
+/// @return std::vector<Symbol>
+std::vector<Symbol> Word::GetWord() const{ 
+  return word_; 
+}
+
+
 /// @brief Setter de la clase Word
 /// @param word 
 void Word::SetWord(std::vector<Symbol> word) { 
@@ -122,6 +129,12 @@ Word Word::WordConcatenate(Word &w) {
     word.word_.push_back(w.word_[i]);
   return word;
 }
+
+
+void Word::ModifySymbol(int pos, Symbol &symbol) {
+  word_[pos] = symbol;
+}
+
 
 
 /// @brief Imprime la cadena

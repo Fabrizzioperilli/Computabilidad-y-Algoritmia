@@ -38,6 +38,8 @@ public:
   bool operator<(const Symbol &) const;
   friend std::ostream &operator<<(std::ostream &, Symbol &);
   bool operator==(const Symbol &) const;
+  Symbol operator=(const Symbol &);
   bool operator!=(const Symbol &) const;
   friend std::istream &operator>>(std::istream &, Symbol &);
+
 };

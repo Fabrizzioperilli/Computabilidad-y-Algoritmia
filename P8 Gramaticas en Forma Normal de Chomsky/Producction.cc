@@ -46,6 +46,19 @@ Symbol Production::GetSymbolLeft() {
 }
 
 
+/// @brief Setter de la producción
+/// @param production 
+void Production::SetProduction(Word &production) { 
+  production_ = production; 
+}
+
+
+/// @brief Setter del símbolo izquierdo
+void Production::SetSymbolLeft(Symbol symbol_left) { 
+  symbol_left_ = symbol_left; 
+}
+
+
 /// @brief Método que imprime una producción
 /// @param os
 /// @return std::ostream&

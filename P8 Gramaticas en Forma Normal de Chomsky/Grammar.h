@@ -24,6 +24,8 @@
 #include "Production.h"
 #include "Symbol.h"
 
+const std::regex regex_mayus("[A-Z]");
+
 class Grammar {
  private:
   Alphabet alphabet_;

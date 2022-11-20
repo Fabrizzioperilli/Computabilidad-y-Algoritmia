@@ -31,6 +31,8 @@ class Production {
   ~Production();
   Word GetProduction();
   Symbol GetSymbolLeft();
+  void SetProduction(Word&);
+  void SetSymbolLeft(Symbol);
 
   std::ostream &WriteProduction(std::ostream &);
   bool operator<(const Production &) const;

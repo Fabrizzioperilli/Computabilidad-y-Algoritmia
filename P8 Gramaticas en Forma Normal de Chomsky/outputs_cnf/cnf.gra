@@ -1,0 +1,54 @@
+3
+a
+b
+c
+5
+S
+X
+Y
+Za
+Zb
+S
+16
+S -> ZaXZaX
+S -> ZaXZb
+S -> ZaZb
+S -> ZaZbX
+X -> XY
+X -> ZaY
+X -> ZbY
+X -> a
+X -> b
+Y -> ZaY
+Y -> ZbY
+Y -> a
+Y -> b
+Y -> c
+Za -> a
+Zb -> b
+
+3
+a
+b
+c
+3
+S
+X
+Y
+S
+14
+S -> aXaX
+S -> aXb
+S -> ab
+S -> abX
+X -> XY
+X -> a
+X -> aY
+X -> b
+X -> bY
+Y -> a
+Y -> aY
+Y -> b
+Y -> bY
+Y -> c
+
