@@ -222,6 +222,7 @@ Grammar Grammar::Convert2CNF() {
           word_aux.ModifySymbol(j, new_symbol);
           aux_production.SetProduction(word_aux);
         }
+
       }
     productions_cnf_step2.insert(aux_production);
     }
